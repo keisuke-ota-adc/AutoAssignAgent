@@ -63,27 +63,30 @@ Entity はノード右上の `en` および Tr/Ac のラベル行で区別する
 
 ### プロジェクト（Transaction）
 
-`project-status.md` では詳細は未確定のため、各大分類の下にプレースホルダを置く。
+大分類は `project-status.md` に準拠。受注と要因確定は同一帯。**受注・要因確定待ち**の小分類は案（順不同・往復可）。**完了待ち**のメンバー管理小分類は同ドキュメント §7.1。クローズ待ちの小分類は別途定義。
 
 ```mermaid
 flowchart LR
-  subgraph p1["大分類: 受注待ち"]
+  subgraph p1["大分類: 受注・要因確定待ち（小分類は案・順不同）"]
     direction TB
-    p1l2[詳細・別途定義]
+    p1a[要員予約待ち]
+    p1b[要因入力・起票待ち]
+    p1c[社内確認・承認待ち]
+    p1d[顧客返答・合意待ち]
+    p1e[再見積・要因修正待ち]
+    p1f[契約・発注手続待ち]
   end
-  subgraph p2["大分類: 要因確定待ち"]
+  subgraph p2["大分類: 完了待ち（メンバー管理・§7.1）"]
     direction TB
-    p2l2[詳細・別途定義]
+    p2a[参画待ち]
+    p2b[稼働中]
+    p2c[補充・代替手配待ち]
   end
-  subgraph p3["大分類: 完了待ち"]
+  subgraph p3["大分類: クローズ待ち"]
     direction TB
-    p3l2[詳細・別途定義]
+    p3l2[小分類・別途定義]
   end
-  subgraph p4["大分類: クローズ待ち"]
-    direction TB
-    p4l2[詳細・別途定義]
-  end
-  p1 --> p2 --> p3 --> p4
+  p1 --> p2 --> p3
 ```
 
 ### 予約（Transaction）

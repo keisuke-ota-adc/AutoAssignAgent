@@ -120,5 +120,5 @@ flowchart LR
 
 - `docs/data-model-flowchart.md`（プロジェクト・予約・稼働割当の関係）
 - `docs/work-assignment-status.md`（稼働割当の大分類: 予定・稼働・終了・無効）
-- `docs/project-status.md`（プロジェクト大分類。要因・完了待ちとの役割分担）
+- `docs/project-status.md`（プロジェクト大分類。受注・要因確定待ち・完了待ち・クローズ待ちとの役割分担）
 - `docs/employee-status.md`（社員の起用可否ステータス）
