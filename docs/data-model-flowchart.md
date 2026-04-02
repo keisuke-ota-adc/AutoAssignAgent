@@ -20,7 +20,7 @@ flowchart LR
   bp["<div style='font-size:10px;text-align:right'>en</div><div style='text-align:center;font-weight:600'>BP</div><div style='text-align:center;font-size:11px;opacity:.85'>Ac</div>"]
   prj["<div style='font-size:10px;text-align:right'>en</div><div style='text-align:center;font-weight:600'>プロジェクト</div><div style='text-align:center;font-size:11px;opacity:.85'>Tr</div>"]
   res["<div style='font-size:10px;text-align:right'>en</div><div style='text-align:center;font-weight:600'>予約</div><div style='text-align:center;font-size:11px;opacity:.85'>Tr</div>"]
-  asn["<div style='font-size:10px;text-align:right'>en</div><div style='text-align:center;font-weight:600'>割当</div><div style='text-align:center;font-size:11px;opacity:.85'>Tr</div>"]
+  asn["<div style='font-size:10px;text-align:right'>en</div><div style='text-align:center;font-weight:600'>稼働割当</div><div style='text-align:center;font-size:11px;opacity:.85'>Tr</div>"]
   sls["<div style='text-align:center;font-weight:600'>営業</div><div style='text-align:center;font-size:11px;opacity:.85'>Role</div>"]
   ps["<div style='text-align:center;font-weight:600'>PS技術者</div><div style='text-align:center;font-size:11px;opacity:.85'>Role</div>"]
 
