@@ -103,7 +103,6 @@ flowchart LR
     r1a[承認待ち]
     r1b[差戻し対応待ち]
     r1c[契約待ち]
-    r1e[予約完了]
   end
   subgraph r2["大分類: 確定済み"]
     direction TB
