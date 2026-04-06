@@ -41,6 +41,8 @@ flowchart LR
   class ps,sls role
 ```
 
+**予約と稼働割当:** 予約Trは稼働割当と**同種の情報を複数内包**する。稼働割当Trは**後続**として別レコードで持ち、**予約・大分類：確定待ち・小分類：予約完了**に至ったタイミングで内包情報から生成する想定（`docs/reservation-status.md`）。図上の `res --- asn` は、この親子・生成元と後続Trの関係を表す。
+
 表示できない場合は、init から `'defaultRenderer': 'elk'` を削除すると dagre に戻る。
 
 ## 凡例
@@ -72,9 +74,7 @@ flowchart LR
     p1a[要員予約待ち]
     p1b[要因入力・起票待ち]
     p1c[社内確認・承認待ち]
-    p1d[顧客返答・合意待ち]
-    p1e[再見積・要因修正待ち]
-    p1f[契約・発注手続待ち]
+    p1d[契約・発注手続待ち]
   end
   subgraph p2["大分類: 完了待ち（メンバー管理・§7.1）"]
     direction TB
@@ -91,19 +91,22 @@ flowchart LR
 
 ### 予約（Transaction）
 
-申請時点の大分類は必ず「確定待ち」から始まる。確定待ち・不成立済みの**詳細**は案（`reservation-status.md`）。
+申請時点の大分類は必ず「確定待ち」から始まる（ドラフトは小分類**作成中**）。詳細は `reservation-status.md`。**確定待ち・予約完了**で稼働割当生成のトリガとする。
 
 ```mermaid
 flowchart LR
-  subgraph r1["大分類: 確定待ち（詳細は案）"]
+  subgraph r1["大分類: 確定待ち"]
     direction TB
+    r1d[作成中]
     r1a[承認待ち]
     r1b[差戻し対応待ち]
-    r1c[審査不要・処理待ち]
+    r1c[契約待ち]
+    r1e[予約完了]
   end
   subgraph r2["大分類: 確定済み"]
     direction TB
-    r2l2[詳細なし]
+    r2a[顧客合意待ち]
+    r2b[予約完了]
   end
   subgraph r3["大分類: 不成立済み（詳細は案）"]
     direction TB
@@ -116,21 +119,24 @@ flowchart LR
 
 ### 稼働割当（Transaction）
 
-本流は「予定→稼働→終了」。大分類に**無効**もあり、本流を経ずに遷移しうる（`work-assignment-status.md`）。詳細は同ドキュメントで未確定のため、各大分類の下にプレースホルダを置く（例: 欠員補填・代理稼働・期間変更承認待ち などは必要時に定義）。
+本流は「稼働待ち→稼働終了待ち→稼働終了」。大分類に**無効**もあり、本流を経ずに遷移しうる（`work-assignment-status.md`）。各大分類の小分類は同ドキュメント §3.5 に従う。
 
 ```mermaid
 flowchart LR
-  subgraph w1["大分類: 予定"]
+  subgraph w1["大分類: 稼働待ち"]
     direction TB
-    w1l2[詳細・未定]
+    w1a[開始日待ち]
+    w1b[準備中]
   end
-  subgraph w2["大分類: 稼働"]
+  subgraph w2["大分類: 稼働終了待ち"]
     direction TB
-    w2l2[詳細・未定]
+    w2a[稼働中]
+    w2b[更新確認中]
   end
-  subgraph w3["大分類: 終了"]
+  subgraph w3["大分類: 稼働終了"]
     direction TB
-    w3l2[詳細・未定]
+    w3a[稼働終了]
+    w3b[途中離脱]
   end
   subgraph w4["大分類: 無効"]
     direction TB

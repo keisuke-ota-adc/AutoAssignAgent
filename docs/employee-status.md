@@ -52,5 +52,5 @@ flowchart LR
 ## 6. 関連ドキュメント
 
 - `docs/data-model-flowchart.md`（社員と Role・稼働割当の関係）
-- `docs/work-assignment-status.md`（稼働割当の大分類: 予定・稼働・終了・無効）
+- `docs/work-assignment-status.md`（稼働割当の大分類: 稼働待ち・稼働終了待ち・稼働終了・無効）
 - `docs/project-status.md`（プロジェクトの大分類ステータス）
