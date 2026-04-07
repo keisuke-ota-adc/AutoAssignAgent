@@ -1,0 +1,4105 @@
+{
+    "modelName": "New model",
+    "collections": [
+        {
+            "collectionName": "WorkAssignment",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "Id",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": true,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "e6050c31-0c06-4897-85bd-d17b84363d4c",
+                    "error": {}
+                },
+                {
+                    "name": "StaffingOrder_Id",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "b966757a-fb69-4337-9872-f8dca42cc313",
+                    "error": {},
+                    "relationshipType": "Foreign Key",
+                    "foreignCollection": "465ab053-9432-4c43-82ae-b0457f3c35cc",
+                    "foreignField": [
+                        "465ab053-9432-4c43-82ae-b0457f3c35cc",
+                        "97fabd89-bdc3-419a-8094-fb4f5a7d9c21"
+                    ],
+                    "parentRelationship": "5f2cb9b8-7e99-406b-8c82-ea1f95e89138"
+                },
+                {
+                    "name": "Poject_Id",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "5a5db95c-dc04-42a2-a274-2ca272bb37b3",
+                    "error": {},
+                    "relationshipType": "Foreign Key",
+                    "foreignCollection": "b351e292-4128-4bb7-91c6-4b0c069dec74",
+                    "foreignField": [
+                        "b351e292-4128-4bb7-91c6-4b0c069dec74",
+                        "697788b9-0c45-4fe7-92ac-deb3663ef79b"
+                    ],
+                    "parentRelationship": "2c4204af-454c-4326-83d1-0b69bf11ef43"
+                },
+                {
+                    "name": "Staff_Id",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "39b52248-d4d0-42fd-a147-913db77730e1",
+                    "error": {},
+                    "childRelationships": [
+                        "2343d276-8a20-43ff-8c4a-2b94d2835be6"
+                    ]
+                },
+                {
+                    "GUID": "364dbad7-8f18-441a-960f-1b637353316a",
+                    "name": "Period",
+                    "type": "reference",
+                    "$ref": "#model/definitions/Period",
+                    "refType": "model",
+                    "ref": "5be6c733-b357-4f55-be6d-03e9bcad7997",
+                    "refIdPath": [
+                        "f3321cfc-32e0-473e-a669-b1eb1b354577",
+                        "13bb6015-7e95-4647-82a9-fbd9bf76c181",
+                        "5be6c733-b357-4f55-be6d-03e9bcad7997"
+                    ],
+                    "isActivated": true,
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "error": {
+                        "name": false,
+                        "code": false
+                    }
+                },
+                {
+                    "GUID": "1f9ca5a9-d667-485c-94dc-30c96a91c212",
+                    "name": "Monthly_Allocation",
+                    "type": "reference",
+                    "$ref": "#model/definitions/Monthly_Allocation",
+                    "refType": "model",
+                    "ref": "f75968e4-0f1c-4e1f-a2e3-dec489e18312",
+                    "refIdPath": [
+                        "f3321cfc-32e0-473e-a669-b1eb1b354577",
+                        "13bb6015-7e95-4647-82a9-fbd9bf76c181",
+                        "f75968e4-0f1c-4e1f-a2e3-dec489e18312"
+                    ],
+                    "isActivated": true,
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "error": {
+                        "name": false,
+                        "code": false
+                    }
+                },
+                {
+                    "name": "Main_Status",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "error": {
+                        "name": false,
+                        "code": false
+                    },
+                    "required": true,
+                    "GUID": "3d041159-5f84-43b9-a3ff-c44a1de58577",
+                    "childRelationships": [
+                        "5fa333a8-8b77-4b4b-b28f-abd7435e1ec6"
+                    ],
+                    "foreignCollection": "",
+                    "foreignField": []
+                },
+                {
+                    "name": "Sub_Status",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "d5c81dee-cd93-4ae1-b3d4-9838222d4e3f",
+                    "childRelationships": [
+                        "87f52dd0-3aa4-45ed-9abc-93e093b5cec6"
+                    ],
+                    "required": true,
+                    "error": {
+                        "name": false,
+                        "code": false
+                    },
+                    "foreignCollection": "",
+                    "foreignField": []
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "f6ed48cf-055d-4834-99cb-0f6bdddbd53f"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "GUID": "d01f7501-dcb7-4e9b-9e3b-14a5a867fbe3",
+            "bucketId": "43b4e1fb-760a-44f1-9b62-0e1c42ee7cee"
+        },
+        {
+            "collectionName": "Project",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "Id",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": true,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "697788b9-0c45-4fe7-92ac-deb3663ef79b",
+                    "required": false,
+                    "childRelationships": [
+                        "dcca2278-19b4-4f37-a024-4261a85c6705",
+                        "2c4204af-454c-4326-83d1-0b69bf11ef43"
+                    ],
+                    "error": {}
+                },
+                {
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "36b2569b-bfb3-41d0-ae9f-76afa7a2e51f",
+                    "name": "Sales_Employee_Id",
+                    "error": {},
+                    "relationshipType": "Foreign Key",
+                    "foreignCollection": "7722533f-7242-4c5a-9535-44e7c539fb6f",
+                    "foreignField": [
+                        "7722533f-7242-4c5a-9535-44e7c539fb6f",
+                        "df0adbb7-d544-413b-aded-7b7cc055d0f6"
+                    ],
+                    "parentRelationship": "d707681d-a84e-4cd5-8873-e1560995d533"
+                },
+                {
+                    "GUID": "0607d18c-317d-49eb-aa23-7e4f75765f99",
+                    "name": "Customer",
+                    "type": "reference",
+                    "$ref": "#model/definitions/Customer",
+                    "refType": "model",
+                    "ref": "19540d19-656b-4903-b000-367731cf651d",
+                    "refIdPath": [
+                        "f3321cfc-32e0-473e-a669-b1eb1b354577",
+                        "13bb6015-7e95-4647-82a9-fbd9bf76c181",
+                        "19540d19-656b-4903-b000-367731cf651d"
+                    ],
+                    "isActivated": true,
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "error": {
+                        "name": false,
+                        "code": false
+                    }
+                },
+                {
+                    "name": "Description",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "c43cfbf6-3fe1-4a58-bde7-44eaed0f69ac",
+                    "mode": "ntext",
+                    "error": {}
+                },
+                {
+                    "GUID": "0a5d3022-f4b8-4759-a502-7badcb464432",
+                    "name": "Period",
+                    "type": "reference",
+                    "$ref": "#model/definitions/Period",
+                    "refType": "model",
+                    "ref": "5be6c733-b357-4f55-be6d-03e9bcad7997",
+                    "refIdPath": [
+                        "f3321cfc-32e0-473e-a669-b1eb1b354577",
+                        "13bb6015-7e95-4647-82a9-fbd9bf76c181",
+                        "5be6c733-b357-4f55-be6d-03e9bcad7997"
+                    ],
+                    "isActivated": true,
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "error": {
+                        "name": false,
+                        "code": false
+                    }
+                },
+                {
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "alternateKey": false,
+                    "childType": "binary",
+                    "type": "binary",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "aac40d18-0693-4f94-b16b-207b1f53b68d",
+                    "name": "Attachments",
+                    "error": {}
+                },
+                {
+                    "name": "Main_Status",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "error": {
+                        "name": false,
+                        "code": false
+                    },
+                    "required": true,
+                    "GUID": "15e3fe41-d571-4ddc-93c6-926b0d8602e3",
+                    "childRelationships": [
+                        "e6c44ed0-f809-4c6f-87df-f77b802e178e"
+                    ],
+                    "foreignCollection": "",
+                    "foreignField": []
+                },
+                {
+                    "name": "Sub_Status",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "caf6b5e3-57c3-4f78-8049-2a01e0033ce8",
+                    "childRelationships": [
+                        "e9b43148-9168-4c4d-afa2-d150af82b369"
+                    ],
+                    "required": true,
+                    "error": {
+                        "name": false,
+                        "code": false
+                    },
+                    "foreignCollection": "",
+                    "foreignField": []
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "5e8e3675-2ec0-4b88-a84b-a6a25e4348dd"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "GUID": "b351e292-4128-4bb7-91c6-4b0c069dec74",
+            "bucketId": "31bd3274-d6cc-4b12-b16a-bebd0547d2a7"
+        },
+        {
+            "collectionName": "StaffingOrder",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "Id",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": true,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "97fabd89-bdc3-419a-8094-fb4f5a7d9c21",
+                    "error": {},
+                    "childRelationships": [
+                        "5f2cb9b8-7e99-406b-8c82-ea1f95e89138"
+                    ]
+                },
+                {
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "4de736bf-1223-4782-9e49-3e6fbd6f92a5",
+                    "required": true,
+                    "name": "Project_Id",
+                    "foreignCollection": "b351e292-4128-4bb7-91c6-4b0c069dec74",
+                    "foreignField": [
+                        "b351e292-4128-4bb7-91c6-4b0c069dec74",
+                        "697788b9-0c45-4fe7-92ac-deb3663ef79b"
+                    ],
+                    "relationshipType": "Foreign Key",
+                    "parentRelationship": "dcca2278-19b4-4f37-a024-4261a85c6705",
+                    "error": {}
+                },
+                {
+                    "GUID": "93494a4f-cfbe-4954-8af0-f834b4d4d9fe",
+                    "name": "Period",
+                    "type": "reference",
+                    "$ref": "#model/definitions/Period",
+                    "refType": "model",
+                    "ref": "5be6c733-b357-4f55-be6d-03e9bcad7997",
+                    "refIdPath": [
+                        "f3321cfc-32e0-473e-a669-b1eb1b354577",
+                        "13bb6015-7e95-4647-82a9-fbd9bf76c181",
+                        "5be6c733-b357-4f55-be6d-03e9bcad7997"
+                    ],
+                    "isActivated": true,
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "error": {
+                        "name": false,
+                        "code": false
+                    },
+                    "hackoladeMeta": {}
+                },
+                {
+                    "name": "Description",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "3d7a4ea8-c32c-4cd6-bb1c-e4d30aa42b58",
+                    "mode": "ntext",
+                    "error": {}
+                },
+                {
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "subtype": "list<object>",
+                    "properties": [
+                        {
+                            "GUID": "bf149a42-62f3-423b-b276-1fbe88f73b10",
+                            "type": "reference",
+                            "$ref": "#model/definitions/Staff",
+                            "refType": "model",
+                            "ref": "12034391-de6a-4a5f-bb0e-a6a4d4cd64e1",
+                            "refIdPath": [
+                                "f3321cfc-32e0-473e-a669-b1eb1b354577",
+                                "13bb6015-7e95-4647-82a9-fbd9bf76c181",
+                                "12034391-de6a-4a5f-bb0e-a6a4d4cd64e1"
+                            ],
+                            "isActivated": true,
+                            "compositeKey": [
+                                "compositePrimaryKey",
+                                "compositeUniqueKey"
+                            ],
+                            "compositePrimaryKey": false,
+                            "compositeUniqueKey": false,
+                            "primaryKey": false,
+                            "alternateKey": false,
+                            "hackoladeMeta": {},
+                            "displayName": "Staff_Resource",
+                            "arrayItem": true,
+                            "error": {
+                                "displayName": false
+                            }
+                        }
+                    ],
+                    "primaryKey": false,
+                    "additionalItems": true,
+                    "uniqueItems": false,
+                    "alternateKey": false,
+                    "childType": "list",
+                    "type": "array",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "e91d65bc-387c-4a45-a954-980ea73bb9ac",
+                    "name": "Staff_Resource_List",
+                    "error": {}
+                },
+                {
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "alternateKey": false,
+                    "childType": "binary",
+                    "type": "binary",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "63ccf12f-a83a-4358-8926-7b52c511094a",
+                    "name": "Attachments",
+                    "error": {}
+                },
+                {
+                    "name": "Total_Amount",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "index": true,
+                    "exclusiveMinimum": false,
+                    "exclusiveMaximum": false,
+                    "primaryKey": false,
+                    "mode": "int32",
+                    "alternateKey": false,
+                    "childType": "integer",
+                    "type": "numeric",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "07bb8a43-04af-4198-b4f1-7d927ac0ec97",
+                    "error": {}
+                },
+                {
+                    "name": "Main_Status",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "error": {},
+                    "required": true,
+                    "GUID": "719b6b39-9b73-4bc8-9526-daa6c8a939ea",
+                    "childRelationships": [
+                        "39b9ed50-d1f8-4148-8a5a-dc099d2cfc45"
+                    ]
+                },
+                {
+                    "name": "Sub_Status",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "795e843e-eebc-4053-a4d0-5f10f726330d",
+                    "childRelationships": [
+                        "5dde96c3-c44e-4ad0-8117-cb0c2064de1f"
+                    ],
+                    "required": true,
+                    "error": {}
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [
+                    {
+                        "primaryKey": false,
+                        "alternateKey": false,
+                        "childType": "varchar",
+                        "type": "string",
+                        "compositeKey": [
+                            "compositePrimaryKey",
+                            "compositeUniqueKey"
+                        ],
+                        "compositePrimaryKey": false,
+                        "compositeUniqueKey": false,
+                        "name": "Status",
+                        "isActivated": true,
+                        "GUID": "99713080-b02a-4feb-af8f-3554cc4f06f1",
+                        "sampleName": "",
+                        "isPatternField": true,
+                        "error": {},
+                        "hackoladeMeta": {},
+                        "definitionRefs": []
+                    }
+                ],
+                "GUID": "bb88cd40-b85d-44ba-9cd1-2f4c99528f00"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "GUID": "465ab053-9432-4c43-82ae-b0457f3c35cc",
+            "polyglotOnly": false,
+            "bucketId": "11479816-59ea-4786-960c-f43dc4bb45a4",
+            "description": "予約",
+            "primaryKey": [],
+            "childCollection": []
+        },
+        {
+            "collectionName": "Employee",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "Id",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": true,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "df0adbb7-d544-413b-aded-7b7cc055d0f6",
+                    "childRelationships": [
+                        "d707681d-a84e-4cd5-8873-e1560995d533"
+                    ],
+                    "error": {}
+                },
+                {
+                    "name": "Staff_Id",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "d0f62abe-3b22-42ff-8e1c-7ff147bc195b",
+                    "error": {},
+                    "relationshipType": "Foreign Key",
+                    "foreignCollection": "8e985525-5bf1-4633-945a-35054a47d5e1",
+                    "foreignField": [
+                        "8e985525-5bf1-4633-945a-35054a47d5e1",
+                        "692ca41a-893a-4498-aaec-7001ad6e7e81"
+                    ],
+                    "parentRelationship": "5fb50e3a-7ee8-40af-b725-c39f266d22a2"
+                },
+                {
+                    "name": "Name",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "childType": "varchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "a65c8e44-9af4-49e6-8b93-3e669fd5c4c6",
+                    "error": {}
+                },
+                {
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "index": true,
+                    "exclusiveMinimum": false,
+                    "exclusiveMaximum": false,
+                    "primaryKey": false,
+                    "mode": "int32",
+                    "alternateKey": false,
+                    "childType": "integer",
+                    "type": "numeric",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "e48edbfc-464f-4dde-b596-7d73cdc30ff8",
+                    "name": "Number",
+                    "error": {}
+                },
+                {
+                    "name": "Grade",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "childType": "varchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "bdd94487-4b23-40ca-8371-64cead5fea98",
+                    "error": {}
+                },
+                {
+                    "name": "Role_Id",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "a089a46e-8ba1-44c4-bbdb-4cfad826a0a1",
+                    "error": {},
+                    "relationshipType": "Foreign Key",
+                    "foreignCollection": "2ffada2e-93f5-4524-a1b8-5164c9f84f7e",
+                    "foreignField": [
+                        "2ffada2e-93f5-4524-a1b8-5164c9f84f7e",
+                        "02d54cc6-6dda-47b6-bc9d-69a66873770d"
+                    ],
+                    "parentRelationship": "7f58d1b6-2468-42b5-be05-48e875c1ba17"
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "0e071353-50e1-49ac-9e2c-ce8a28850724"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "GUID": "7722533f-7242-4c5a-9535-44e7c539fb6f",
+            "bucketId": "16e6b351-03a2-4495-a5cb-318758a14203",
+            "childCollection": []
+        },
+        {
+            "collectionName": "Role",
+            "type": "object",
+            "properties": [
+                {
+                    "type": "choice",
+                    "properties": [
+                        {
+                            "subschema": true,
+                            "isActivated": true,
+                            "type": "document",
+                            "GUID": "fa64ec6a-9460-473e-8a6c-f10d4599cba8",
+                            "childType": "object",
+                            "properties": [],
+                            "additionalProperties": true,
+                            "displayName": "Sales",
+                            "error": {}
+                        },
+                        {
+                            "subschema": true,
+                            "isActivated": true,
+                            "type": "document",
+                            "GUID": "fb4aa03f-5dd3-490a-9fb7-961bfbbc4077",
+                            "childType": "object",
+                            "properties": [],
+                            "additionalProperties": true,
+                            "displayName": "PS_Engineer",
+                            "error": {}
+                        },
+                        {
+                            "subschema": true,
+                            "isActivated": true,
+                            "type": "document",
+                            "GUID": "0db60759-10d6-4afc-8f85-e81adb0a872f",
+                            "childType": "object",
+                            "properties": [],
+                            "displayName": "PS_BusinessAchitect",
+                            "error": {}
+                        },
+                        {
+                            "subschema": true,
+                            "isActivated": true,
+                            "type": "document",
+                            "GUID": "e84f01a5-a891-4628-9776-089caaf14445",
+                            "childType": "object",
+                            "properties": [],
+                            "displayName": "PS_PojectManager",
+                            "error": {}
+                        }
+                    ],
+                    "isActivated": true,
+                    "choice": "anyOf",
+                    "GUID": "47c1727d-b77a-4827-b30a-4f194f156821"
+                },
+                {
+                    "name": "Id",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": true,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "02d54cc6-6dda-47b6-bc9d-69a66873770d",
+                    "error": {},
+                    "childRelationships": [
+                        "7f58d1b6-2468-42b5-be05-48e875c1ba17",
+                        "f417f3c6-3e20-434e-bbf3-9d694e205c3b",
+                        "4f06ee06-921e-4c86-b96f-8a97ab8023bb",
+                        "9d315ea1-5b60-4f4d-b542-dc80d60de36c"
+                    ]
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "d63c99de-a1a8-4fbf-8944-e1cd35ede718"
+            },
+            "isActivated": true,
+            "additionalProperties": true,
+            "GUID": "2ffada2e-93f5-4524-a1b8-5164c9f84f7e",
+            "bucketId": "16e6b351-03a2-4495-a5cb-318758a14203",
+            "error": {},
+            "childCollection": [],
+            "parentCollections": [],
+            "parentCollection": ""
+        },
+        {
+            "collectionName": "Staff",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "Id",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "692ca41a-893a-4498-aaec-7001ad6e7e81",
+                    "error": {},
+                    "childRelationships": [
+                        "5fb50e3a-7ee8-40af-b725-c39f266d22a2",
+                        "898b0089-d41a-47a7-84f6-fc3473741671",
+                        "4fb17ddc-f925-4f11-96cb-0faec57bb0d8"
+                    ],
+                    "relationshipType": "Foreign Key",
+                    "foreignCollection": "465ab053-9432-4c43-82ae-b0457f3c35cc",
+                    "foreignField": [
+                        "465ab053-9432-4c43-82ae-b0457f3c35cc",
+                        "e91d65bc-387c-4a45-a954-980ea73bb9ac",
+                        "bf149a42-62f3-423b-b276-1fbe88f73b10",
+                        "12034391-de6a-4a5f-bb0e-a6a4d4cd64e1",
+                        "2340c430-c063-4904-ba8d-c2dadbe7f83d"
+                    ],
+                    "parentRelationship": "e847e6ba-37a1-4922-8fe8-8c9cdd90f3be"
+                },
+                {
+                    "name": "Display_Name",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "ff128eb6-ba31-4ce9-aaf2-73a793fb8285",
+                    "mode": "ntext",
+                    "error": {}
+                },
+                {
+                    "name": "Role_Id",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "8f341593-620c-4cea-a2c3-284a403eea72",
+                    "error": {},
+                    "relationshipType": "Foreign Key",
+                    "foreignCollection": "2ffada2e-93f5-4524-a1b8-5164c9f84f7e",
+                    "foreignField": [
+                        "2ffada2e-93f5-4524-a1b8-5164c9f84f7e",
+                        "02d54cc6-6dda-47b6-bc9d-69a66873770d"
+                    ],
+                    "parentRelationship": "4f06ee06-921e-4c86-b96f-8a97ab8023bb"
+                },
+                {
+                    "name": "Staff_Category",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "required": true,
+                    "pattern": "^[A-Za-z_][A-Za-z0-9_]*$",
+                    "primaryKey": false,
+                    "symbols": [
+                        "Y"
+                    ],
+                    "alternateKey": false,
+                    "childType": "enum",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "502d8f09-1dae-49cd-88c5-a72ef618e2dc",
+                    "error": {}
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "f0e79151-cc33-43d2-9977-b037153541cb"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "GUID": "8e985525-5bf1-4633-945a-35054a47d5e1",
+            "bucketId": "16e6b351-03a2-4495-a5cb-318758a14203"
+        },
+        {
+            "collectionName": "Business_Partner",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "Id",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": true,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "b4266208-673c-46ef-81ee-076e6f7a9121",
+                    "childRelationships": [],
+                    "error": {},
+                    "foreignCollection": "",
+                    "foreignField": []
+                },
+                {
+                    "name": "Staff_Id",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "fbf73a6f-8e0e-401e-a9da-0a10e934c83a",
+                    "relationshipType": "Foreign Key",
+                    "foreignCollection": "8e985525-5bf1-4633-945a-35054a47d5e1",
+                    "foreignField": [
+                        "8e985525-5bf1-4633-945a-35054a47d5e1",
+                        "692ca41a-893a-4498-aaec-7001ad6e7e81"
+                    ],
+                    "parentRelationship": "898b0089-d41a-47a7-84f6-fc3473741671",
+                    "error": {}
+                },
+                {
+                    "name": "Name",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "40ce81c3-61d7-416a-8b57-4432a36d36a1",
+                    "mode": "ntext",
+                    "error": {}
+                },
+                {
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "index": true,
+                    "exclusiveMinimum": false,
+                    "exclusiveMaximum": false,
+                    "primaryKey": false,
+                    "mode": "int32",
+                    "alternateKey": false,
+                    "childType": "integer",
+                    "type": "numeric",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "c12810f0-11ca-4ac5-ad66-8c019af71dd0",
+                    "name": "Number",
+                    "error": {},
+                    "foreignCollection": "",
+                    "foreignField": []
+                },
+                {
+                    "name": "Role_Id",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "ab758ee7-9e41-4214-9dbe-c6db17e06df3",
+                    "relationshipType": "Foreign Key",
+                    "foreignCollection": "2ffada2e-93f5-4524-a1b8-5164c9f84f7e",
+                    "foreignField": [
+                        "2ffada2e-93f5-4524-a1b8-5164c9f84f7e",
+                        "02d54cc6-6dda-47b6-bc9d-69a66873770d"
+                    ],
+                    "parentRelationship": "9d315ea1-5b60-4f4d-b542-dc80d60de36c",
+                    "error": {}
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "b7132a1c-e3e6-4b27-9c32-95e3c18d200f"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "GUID": "2be3c97d-483a-474f-b219-cfbabfe4e88f",
+            "bucketId": "16e6b351-03a2-4495-a5cb-318758a14203"
+        },
+        {
+            "collectionName": "Main_Status_StaffingOrder",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "Id",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": true,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "8686734e-d824-4979-b5e9-d5b9d8fd5d98",
+                    "error": {},
+                    "childRelationships": [
+                        "415a9e32-a353-4ed3-bbf2-57531e5a7ad3"
+                    ],
+                    "relationshipType": "Foreign Key",
+                    "foreignCollection": "465ab053-9432-4c43-82ae-b0457f3c35cc",
+                    "foreignField": [
+                        "465ab053-9432-4c43-82ae-b0457f3c35cc",
+                        "719b6b39-9b73-4bc8-9526-daa6c8a939ea"
+                    ],
+                    "parentRelationship": "39b9ed50-d1f8-4148-8a5a-dc099d2cfc45"
+                },
+                {
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "730520b7-6ca1-461d-ae03-43d49d6939f5",
+                    "name": "Name",
+                    "mode": "ntext",
+                    "error": {}
+                },
+                {
+                    "name": "Order",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "index": true,
+                    "exclusiveMinimum": false,
+                    "exclusiveMaximum": false,
+                    "primaryKey": false,
+                    "mode": "int32",
+                    "alternateKey": false,
+                    "childType": "integer",
+                    "type": "numeric",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "error": {},
+                    "GUID": "80faecdb-b2c0-4cab-937d-abe9fb9c4d21"
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "b60a8592-8e10-44e5-8841-55fefcdab9a0"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "GUID": "d3cc3aa9-6ec9-4409-b35b-01cae6352f56",
+            "bucketId": "11479816-59ea-4786-960c-f43dc4bb45a4"
+        },
+        {
+            "collectionName": "Sub_Status__StaffingOrder",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "Id",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": true,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "64b68477-5191-422f-979c-caebff634dc4",
+                    "error": {},
+                    "foreignCollection": "465ab053-9432-4c43-82ae-b0457f3c35cc",
+                    "foreignField": [
+                        "465ab053-9432-4c43-82ae-b0457f3c35cc",
+                        "795e843e-eebc-4053-a4d0-5f10f726330d"
+                    ],
+                    "relationshipType": "Foreign Key",
+                    "parentRelationship": "5dde96c3-c44e-4ad0-8117-cb0c2064de1f"
+                },
+                {
+                    "name": "Main_Status_Id",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "5ce306f3-3cbe-4d07-ba7e-442c7dcda5ce",
+                    "error": {},
+                    "relationshipType": "Foreign Key",
+                    "foreignCollection": "d3cc3aa9-6ec9-4409-b35b-01cae6352f56",
+                    "foreignField": [
+                        "d3cc3aa9-6ec9-4409-b35b-01cae6352f56",
+                        "8686734e-d824-4979-b5e9-d5b9d8fd5d98"
+                    ],
+                    "parentRelationship": "415a9e32-a353-4ed3-bbf2-57531e5a7ad3"
+                },
+                {
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "0d601bb9-b4e0-40de-8a05-f837df5dc414",
+                    "name": "Name",
+                    "mode": "ntext",
+                    "error": {},
+                    "foreignCollection": "",
+                    "foreignField": []
+                },
+                {
+                    "name": "Order",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "index": true,
+                    "exclusiveMinimum": false,
+                    "exclusiveMaximum": false,
+                    "primaryKey": false,
+                    "mode": "int32",
+                    "alternateKey": false,
+                    "childType": "integer",
+                    "type": "numeric",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "error": {},
+                    "GUID": "8fb0aa82-b9be-4657-a32b-dd92573be6ae",
+                    "foreignCollection": "",
+                    "foreignField": []
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "0aefcce2-cd79-41d5-b694-1a09183794ef"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "GUID": "83f1137b-4e38-4a42-b17d-89d969485107",
+            "bucketId": "11479816-59ea-4786-960c-f43dc4bb45a4"
+        },
+        {
+            "collectionName": "Main_Status_Project",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "Id",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": true,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "699596ab-463e-45e0-ba0a-41f0c521ab48",
+                    "childRelationships": [
+                        "cf499803-5576-48a6-acfd-297d9ac4a0d6"
+                    ],
+                    "error": {},
+                    "relationshipType": "Foreign Key",
+                    "foreignCollection": "b351e292-4128-4bb7-91c6-4b0c069dec74",
+                    "foreignField": [
+                        "b351e292-4128-4bb7-91c6-4b0c069dec74",
+                        "15e3fe41-d571-4ddc-93c6-926b0d8602e3"
+                    ],
+                    "parentRelationship": "e6c44ed0-f809-4c6f-87df-f77b802e178e"
+                },
+                {
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "45a5bac6-3b5e-4bc6-9704-36463b2c6fba",
+                    "name": "Name",
+                    "mode": "ntext",
+                    "error": {},
+                    "foreignCollection": "",
+                    "foreignField": []
+                },
+                {
+                    "name": "Order",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "index": true,
+                    "exclusiveMinimum": false,
+                    "exclusiveMaximum": false,
+                    "primaryKey": false,
+                    "mode": "int32",
+                    "alternateKey": false,
+                    "childType": "integer",
+                    "type": "numeric",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "error": {},
+                    "GUID": "2d700f30-3b38-4961-93a7-384a1e83cd10",
+                    "foreignCollection": "",
+                    "foreignField": []
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "e57966be-0ff9-484a-857f-5799083c868a"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "GUID": "44bb5641-62a0-4e43-ae99-0e3f7b0e4f7f",
+            "bucketId": "31bd3274-d6cc-4b12-b16a-bebd0547d2a7"
+        },
+        {
+            "collectionName": "Sub_Status_Project",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "Id",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": true,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "ceb4b08a-f5c2-4c2d-9bf6-e3798aee4f83",
+                    "error": {},
+                    "relationshipType": "Foreign Key",
+                    "foreignCollection": "b351e292-4128-4bb7-91c6-4b0c069dec74",
+                    "foreignField": [
+                        "b351e292-4128-4bb7-91c6-4b0c069dec74",
+                        "caf6b5e3-57c3-4f78-8049-2a01e0033ce8"
+                    ],
+                    "parentRelationship": "e9b43148-9168-4c4d-afa2-d150af82b369"
+                },
+                {
+                    "name": "Main_Status_Id",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "570515bf-fb49-45fd-b000-5094553509bb",
+                    "error": {},
+                    "relationshipType": "Foreign Key",
+                    "foreignCollection": "44bb5641-62a0-4e43-ae99-0e3f7b0e4f7f",
+                    "foreignField": [
+                        "44bb5641-62a0-4e43-ae99-0e3f7b0e4f7f",
+                        "699596ab-463e-45e0-ba0a-41f0c521ab48"
+                    ],
+                    "parentRelationship": "cf499803-5576-48a6-acfd-297d9ac4a0d6"
+                },
+                {
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "5359d1b8-6f09-4ee6-9205-3c1b70346932",
+                    "name": "Name",
+                    "mode": "ntext",
+                    "error": {},
+                    "foreignCollection": "",
+                    "foreignField": []
+                },
+                {
+                    "name": "Order",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "index": true,
+                    "exclusiveMinimum": false,
+                    "exclusiveMaximum": false,
+                    "primaryKey": false,
+                    "mode": "int32",
+                    "alternateKey": false,
+                    "childType": "integer",
+                    "type": "numeric",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "error": {},
+                    "GUID": "76e88961-019c-4f51-89bd-ea98c8814372",
+                    "foreignCollection": "",
+                    "foreignField": []
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "02d3ae06-8126-47cb-8774-6981241e5431"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "GUID": "427cb85d-c62e-4bf3-a7f2-69cbee6f56d5",
+            "bucketId": "31bd3274-d6cc-4b12-b16a-bebd0547d2a7"
+        },
+        {
+            "collectionName": "Main_Status_WorkAssignment",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "Id",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": true,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "9cbeb48e-7446-4edd-b469-790dfbeaf98a",
+                    "childRelationships": [
+                        "f0a6c69c-7805-407a-873a-7254ffe89fde"
+                    ],
+                    "error": {},
+                    "relationshipType": "Foreign Key",
+                    "foreignCollection": "d01f7501-dcb7-4e9b-9e3b-14a5a867fbe3",
+                    "foreignField": [
+                        "d01f7501-dcb7-4e9b-9e3b-14a5a867fbe3",
+                        "3d041159-5f84-43b9-a3ff-c44a1de58577"
+                    ],
+                    "parentRelationship": "5fa333a8-8b77-4b4b-b28f-abd7435e1ec6"
+                },
+                {
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "cbe2c1fb-626b-4e5c-85c8-9241cd53548d",
+                    "name": "Name",
+                    "mode": "ntext",
+                    "error": {},
+                    "foreignCollection": "",
+                    "foreignField": []
+                },
+                {
+                    "name": "Order",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "index": true,
+                    "exclusiveMinimum": false,
+                    "exclusiveMaximum": false,
+                    "primaryKey": false,
+                    "mode": "int32",
+                    "alternateKey": false,
+                    "childType": "integer",
+                    "type": "numeric",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "error": {},
+                    "GUID": "e50274bf-9c06-4f88-a39d-4b25d8a97d11",
+                    "foreignCollection": "",
+                    "foreignField": []
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "093aee9c-774f-46f4-adf9-9f9bddd6a81c"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "GUID": "b960eb07-bdd2-4298-9069-8ae51c9d735d",
+            "bucketId": "43b4e1fb-760a-44f1-9b62-0e1c42ee7cee"
+        },
+        {
+            "collectionName": "Sub_Status_WorkAssignment",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "Id",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": true,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "6c72b822-1065-411c-89c3-f90bc1f0dd4d",
+                    "error": {},
+                    "relationshipType": "Foreign Key",
+                    "foreignCollection": "d01f7501-dcb7-4e9b-9e3b-14a5a867fbe3",
+                    "foreignField": [
+                        "d01f7501-dcb7-4e9b-9e3b-14a5a867fbe3",
+                        "d5c81dee-cd93-4ae1-b3d4-9838222d4e3f"
+                    ],
+                    "parentRelationship": "87f52dd0-3aa4-45ed-9abc-93e093b5cec6"
+                },
+                {
+                    "name": "Main_Status_Id",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "0fe1b06c-597e-4718-8198-6bbc01abb025",
+                    "error": {},
+                    "foreignCollection": "b960eb07-bdd2-4298-9069-8ae51c9d735d",
+                    "foreignField": [
+                        "b960eb07-bdd2-4298-9069-8ae51c9d735d",
+                        "9cbeb48e-7446-4edd-b469-790dfbeaf98a"
+                    ],
+                    "relationshipType": "Foreign Key",
+                    "parentRelationship": "f0a6c69c-7805-407a-873a-7254ffe89fde"
+                },
+                {
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "18721fd0-090b-4ca4-bd39-48a216b7382d",
+                    "name": "Name",
+                    "mode": "ntext",
+                    "error": {},
+                    "foreignCollection": "",
+                    "foreignField": []
+                },
+                {
+                    "name": "Order",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "index": true,
+                    "exclusiveMinimum": false,
+                    "exclusiveMaximum": false,
+                    "primaryKey": false,
+                    "mode": "int32",
+                    "alternateKey": false,
+                    "childType": "integer",
+                    "type": "numeric",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "error": {},
+                    "GUID": "3e8ee5ce-39c1-4178-b49c-8c134e0d289d",
+                    "foreignCollection": "",
+                    "foreignField": []
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "908151c9-e219-433e-989c-1586b48b79eb"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "GUID": "e86ef3e8-5f88-4613-b6ce-050fc5ae40c7",
+            "bucketId": "43b4e1fb-760a-44f1-9b62-0e1c42ee7cee"
+        },
+        {
+            "collectionName": "Status_Staff",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "Id",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": true,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "213a2810-204b-4a64-a0e0-bdacfada5618",
+                    "childRelationships": [
+                        "e0cc55e4-a3e8-42e2-941b-5bc2b5cc5183"
+                    ],
+                    "error": {}
+                },
+                {
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "9faf22da-441d-4d36-8bdb-5a651d50b39b",
+                    "name": "Name",
+                    "mode": "ntext",
+                    "error": {},
+                    "foreignCollection": "",
+                    "foreignField": []
+                },
+                {
+                    "name": "Order",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "index": true,
+                    "exclusiveMinimum": false,
+                    "exclusiveMaximum": false,
+                    "primaryKey": false,
+                    "mode": "int32",
+                    "alternateKey": false,
+                    "childType": "integer",
+                    "type": "numeric",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "error": {},
+                    "GUID": "38d023b8-b4ee-4700-b049-45579e4e1c95",
+                    "foreignCollection": "",
+                    "foreignField": []
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "04d38b29-f427-4d65-9a4c-96cb1f36f580"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "GUID": "ca58d02a-a7f1-4aa8-b8a3-617b1324047f",
+            "bucketId": "16e6b351-03a2-4495-a5cb-318758a14203"
+        },
+        {
+            "collectionName": "Staff-Status",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "Id",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": true,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "911d62dc-feb9-47a6-a81c-e4e9469c1028",
+                    "error": {}
+                },
+                {
+                    "name": "Staff_Id",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "55777e85-5f0d-40aa-950e-3f999361ce64",
+                    "error": {},
+                    "relationshipType": "Foreign Key",
+                    "foreignCollection": "8e985525-5bf1-4633-945a-35054a47d5e1",
+                    "foreignField": [
+                        "8e985525-5bf1-4633-945a-35054a47d5e1",
+                        "692ca41a-893a-4498-aaec-7001ad6e7e81"
+                    ],
+                    "parentRelationship": "4fb17ddc-f925-4f11-96cb-0faec57bb0d8"
+                },
+                {
+                    "name": "Status_Id",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "2c91d609-6ee4-4892-91cd-be9d04279863",
+                    "error": {},
+                    "relationshipType": "Foreign Key",
+                    "foreignCollection": "ca58d02a-a7f1-4aa8-b8a3-617b1324047f",
+                    "foreignField": [
+                        "ca58d02a-a7f1-4aa8-b8a3-617b1324047f",
+                        "213a2810-204b-4a64-a0e0-bdacfada5618"
+                    ],
+                    "parentRelationship": "e0cc55e4-a3e8-42e2-941b-5bc2b5cc5183"
+                },
+                {
+                    "GUID": "9dad79c8-cf62-4ad4-9d47-5c590b3a6f84",
+                    "name": "Status_Period",
+                    "type": "reference",
+                    "$ref": "#model/definitions/Period",
+                    "refType": "model",
+                    "ref": "5be6c733-b357-4f55-be6d-03e9bcad7997",
+                    "refIdPath": [
+                        "f3321cfc-32e0-473e-a669-b1eb1b354577",
+                        "13bb6015-7e95-4647-82a9-fbd9bf76c181",
+                        "5be6c733-b357-4f55-be6d-03e9bcad7997"
+                    ],
+                    "isActivated": true,
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "error": {
+                        "name": false
+                    }
+                },
+                {
+                    "GUID": "3a2f380f-e99c-4146-846f-31e87e0c6e67",
+                    "name": "Status_Valid_Period",
+                    "type": "reference",
+                    "$ref": "#model/definitions/Period",
+                    "refType": "model",
+                    "ref": "5be6c733-b357-4f55-be6d-03e9bcad7997",
+                    "refIdPath": [
+                        "f3321cfc-32e0-473e-a669-b1eb1b354577",
+                        "13bb6015-7e95-4647-82a9-fbd9bf76c181",
+                        "5be6c733-b357-4f55-be6d-03e9bcad7997"
+                    ],
+                    "isActivated": true,
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "error": {
+                        "name": false
+                    }
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "4c269df2-e344-4942-aa50-7de1113c6924"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "GUID": "385df7ee-e3fb-482d-8bb7-d9ac8a08d0c0",
+            "bucketId": "16e6b351-03a2-4495-a5cb-318758a14203"
+        }
+    ],
+    "buckets": [
+        {
+            "name": "要員（スタッフ）",
+            "type": "bucket",
+            "collectionIds": [
+                "7722533f-7242-4c5a-9535-44e7c539fb6f",
+                "2ffada2e-93f5-4524-a1b8-5164c9f84f7e",
+                "8e985525-5bf1-4633-945a-35054a47d5e1",
+                "2be3c97d-483a-474f-b219-cfbabfe4e88f",
+                "ca58d02a-a7f1-4aa8-b8a3-617b1324047f",
+                "385df7ee-e3fb-482d-8bb7-d9ac8a08d0c0"
+            ],
+            "backgroundColor": {
+                "r": 216,
+                "g": 0,
+                "b": 115,
+                "a": 1
+            },
+            "show": true,
+            "isActivated": true,
+            "indexes": [],
+            "GUID": "16e6b351-03a2-4495-a5cb-318758a14203",
+            "description": "# 社内アサイン予約アプリのメインデータモデル"
+        },
+        {
+            "name": "予約",
+            "type": "bucket",
+            "collectionIds": [
+                "465ab053-9432-4c43-82ae-b0457f3c35cc",
+                "d3cc3aa9-6ec9-4409-b35b-01cae6352f56",
+                "83f1137b-4e38-4a42-b17d-89d969485107"
+            ],
+            "backgroundColor": {
+                "r": 0,
+                "g": 138,
+                "b": 0,
+                "a": 1
+            },
+            "show": true,
+            "isActivated": true,
+            "indexes": [],
+            "GUID": "11479816-59ea-4786-960c-f43dc4bb45a4"
+        },
+        {
+            "name": "プロジェクト",
+            "type": "bucket",
+            "collectionIds": [
+                "b351e292-4128-4bb7-91c6-4b0c069dec74",
+                "44bb5641-62a0-4e43-ae99-0e3f7b0e4f7f",
+                "427cb85d-c62e-4bf3-a7f2-69cbee6f56d5"
+            ],
+            "backgroundColor": {
+                "r": 0,
+                "g": 188,
+                "b": 213,
+                "a": 1
+            },
+            "show": true,
+            "isActivated": true,
+            "indexes": [],
+            "GUID": "31bd3274-d6cc-4b12-b16a-bebd0547d2a7"
+        },
+        {
+            "name": "稼働割当",
+            "type": "bucket",
+            "collectionIds": [
+                "d01f7501-dcb7-4e9b-9e3b-14a5a867fbe3",
+                "b960eb07-bdd2-4298-9069-8ae51c9d735d",
+                "e86ef3e8-5f88-4613-b6ce-050fc5ae40c7"
+            ],
+            "backgroundColor": {
+                "r": 3,
+                "g": 169,
+                "b": 245,
+                "a": 1
+            },
+            "show": true,
+            "isActivated": true,
+            "indexes": [],
+            "GUID": "43b4e1fb-760a-44f1-9b62-0e1c42ee7cee"
+        }
+    ],
+    "views": [],
+    "relationships": [
+        {
+            "name": "fk StaffingOrder.ProjectId to Project.Id",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "b351e292-4128-4bb7-91c6-4b0c069dec74",
+                    "697788b9-0c45-4fe7-92ac-deb3663ef79b"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "465ab053-9432-4c43-82ae-b0457f3c35cc",
+                    "4de736bf-1223-4782-9e49-3e6fbd6f92a5"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "1",
+            "GUID": "dcca2278-19b4-4f37-a024-4261a85c6705",
+            "parentCollection": "b351e292-4128-4bb7-91c6-4b0c069dec74",
+            "childCollection": "465ab053-9432-4c43-82ae-b0457f3c35cc",
+            "level": "field",
+            "hackoladeStyles": {
+                "GUID": "14b26f51-4504-4176-8d07-68750dd68386",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 1204.1444876783394,
+                        "y": 1248.4681489716506
+                    },
+                    {
+                        "x": 1118.5246247915504,
+                        "y": 1248.4681489716506
+                    },
+                    {
+                        "x": 1118.5246247915504,
+                        "y": 1185.190476190475
+                    },
+                    {
+                        "x": 1032.9047619047615,
+                        "y": 1185.190476190475
+                    }
+                ],
+                "sides": [
+                    "left",
+                    "right"
+                ]
+            }
+        },
+        {
+            "name": "fk Project.Sales_Employee_Id to Employee.Id",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "7722533f-7242-4c5a-9535-44e7c539fb6f",
+                    "df0adbb7-d544-413b-aded-7b7cc055d0f6"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "b351e292-4128-4bb7-91c6-4b0c069dec74",
+                    "36b2569b-bfb3-41d0-ae9f-76afa7a2e51f"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "1",
+            "parentCollection": "7722533f-7242-4c5a-9535-44e7c539fb6f",
+            "childCollection": "b351e292-4128-4bb7-91c6-4b0c069dec74",
+            "GUID": "d707681d-a84e-4cd5-8873-e1560995d533",
+            "level": "field",
+            "lineSize": 2,
+            "hackoladeStyles": {
+                "GUID": "3179b8e2-c1d9-411d-95ff-a98817cbfd2b",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 1032.9047619047615,
+                        "y": 1264.8571428571415
+                    },
+                    {
+                        "x": 1160.0714285714282,
+                        "y": 1264.8571428571415
+                    },
+                    {
+                        "x": 1160.0714285714282,
+                        "y": 1887.5238095238092
+                    },
+                    {
+                        "x": 1287.238095238095,
+                        "y": 1887.5238095238092
+                    }
+                ],
+                "sides": [
+                    "right",
+                    "left"
+                ]
+            }
+        },
+        {
+            "name": "fk WorkAssignment.StaffingOrder_Id to StaffingOrder.Id",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "465ab053-9432-4c43-82ae-b0457f3c35cc",
+                    "97fabd89-bdc3-419a-8094-fb4f5a7d9c21"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "d01f7501-dcb7-4e9b-9e3b-14a5a867fbe3",
+                    "b966757a-fb69-4337-9872-f8dca42cc313"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "1",
+            "parentCollection": "465ab053-9432-4c43-82ae-b0457f3c35cc",
+            "childCollection": "d01f7501-dcb7-4e9b-9e3b-14a5a867fbe3",
+            "GUID": "5f2cb9b8-7e99-406b-8c82-ea1f95e89138",
+            "level": "field",
+            "lineSize": 2,
+            "hackoladeStyles": {
+                "GUID": "002c1b0d-f09c-4304-9bda-afdc0703dac2",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 995.9047619047662,
+                        "y": 1635.523809523809
+                    },
+                    {
+                        "x": 1100.024624791553,
+                        "y": 1635.523809523809
+                    },
+                    {
+                        "x": 1100.024624791553,
+                        "y": 1309.1348156383174
+                    },
+                    {
+                        "x": 1204.1444876783394,
+                        "y": 1309.1348156383174
+                    }
+                ],
+                "sides": [
+                    "right",
+                    "left"
+                ]
+            }
+        },
+        {
+            "name": "fk Employee.Role_Id to Role.Id",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "2ffada2e-93f5-4524-a1b8-5164c9f84f7e",
+                    "02d54cc6-6dda-47b6-bc9d-69a66873770d"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "7722533f-7242-4c5a-9535-44e7c539fb6f",
+                    "a089a46e-8ba1-44c4-bbdb-4cfad826a0a1"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "1",
+            "parentCollection": "2ffada2e-93f5-4524-a1b8-5164c9f84f7e",
+            "childCollection": "7722533f-7242-4c5a-9535-44e7c539fb6f",
+            "GUID": "7f58d1b6-2468-42b5-be05-48e875c1ba17",
+            "level": "field",
+            "lineSize": 2,
+            "hackoladeStyles": {
+                "GUID": "59eab03a-03ce-4fbe-8fcd-80abb17d0da8",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 1497.238095238095,
+                        "y": 1887.5238095238092
+                    },
+                    {
+                        "x": 1535.4047619047624,
+                        "y": 1887.5238095238092
+                    },
+                    {
+                        "x": 1535.4047619047624,
+                        "y": 1724.023809523812
+                    },
+                    {
+                        "x": 1573.5714285714296,
+                        "y": 1724.023809523812
+                    }
+                ],
+                "sides": [
+                    "right",
+                    "left"
+                ]
+            }
+        },
+        {
+            "name": "fk StaffingOrder.Staff_List..Staff.Role_Id to Role.Id",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "2ffada2e-93f5-4524-a1b8-5164c9f84f7e",
+                    "02d54cc6-6dda-47b6-bc9d-69a66873770d"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "465ab053-9432-4c43-82ae-b0457f3c35cc",
+                    "e91d65bc-387c-4a45-a954-980ea73bb9ac",
+                    "bf149a42-62f3-423b-b276-1fbe88f73b10",
+                    "12034391-de6a-4a5f-bb0e-a6a4d4cd64e1",
+                    "bc681389-d13c-4c27-a793-2b59ab204dec"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "1",
+            "parentCollection": "2ffada2e-93f5-4524-a1b8-5164c9f84f7e",
+            "childCollection": "465ab053-9432-4c43-82ae-b0457f3c35cc",
+            "GUID": "f417f3c6-3e20-434e-bbf3-9d694e205c3b",
+            "level": "field",
+            "lineSize": 2,
+            "hackoladeStyles": {
+                "GUID": "73c3b4f5-dc49-435d-927d-5d0cf0f8144b",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 1465.4778210116726,
+                        "y": 1430.4681489716506
+                    },
+                    {
+                        "x": 1465.4778210116726,
+                        "y": 1541.9959792477312
+                    },
+                    {
+                        "x": 1720.5714285714296,
+                        "y": 1541.9959792477312
+                    },
+                    {
+                        "x": 1720.5714285714296,
+                        "y": 1653.523809523812
+                    }
+                ],
+                "sides": [
+                    "bottom",
+                    "top"
+                ]
+            }
+        },
+        {
+            "name": "fk WorkAssignment.Poject_Id to Project.Id",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "b351e292-4128-4bb7-91c6-4b0c069dec74",
+                    "697788b9-0c45-4fe7-92ac-deb3663ef79b"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "d01f7501-dcb7-4e9b-9e3b-14a5a867fbe3",
+                    "5a5db95c-dc04-42a2-a274-2ca272bb37b3"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "1",
+            "parentCollection": "b351e292-4128-4bb7-91c6-4b0c069dec74",
+            "childCollection": "d01f7501-dcb7-4e9b-9e3b-14a5a867fbe3",
+            "GUID": "2c4204af-454c-4326-83d1-0b69bf11ef43",
+            "level": "field",
+            "lineSize": 2,
+            "hackoladeStyles": {
+                "GUID": "cfecf027-414c-4a8e-860b-d4e260326b35",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 857.4047619047662,
+                        "y": 1554.1904761904757
+                    },
+                    {
+                        "x": 857.4047619047662,
+                        "y": 1449.357142857142
+                    },
+                    {
+                        "x": 894.4047619047614,
+                        "y": 1449.357142857142
+                    },
+                    {
+                        "x": 894.4047619047614,
+                        "y": 1344.5238095238083
+                    }
+                ],
+                "sides": [
+                    "top",
+                    "bottom"
+                ]
+            }
+        },
+        {
+            "name": "fk Staff.Role_Id to Role.Id",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "2ffada2e-93f5-4524-a1b8-5164c9f84f7e",
+                    "02d54cc6-6dda-47b6-bc9d-69a66873770d"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "8e985525-5bf1-4633-945a-35054a47d5e1",
+                    "8f341593-620c-4cea-a2c3-284a403eea72"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "1",
+            "parentCollection": "2ffada2e-93f5-4524-a1b8-5164c9f84f7e",
+            "childCollection": "8e985525-5bf1-4633-945a-35054a47d5e1",
+            "GUID": "4f06ee06-921e-4c86-b96f-8a97ab8023bb",
+            "level": "field",
+            "lineSize": 2,
+            "hackoladeStyles": {
+                "GUID": "4e18bde7-b98b-493f-8124-5a1ad7e8316a",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 1435.9047619047642,
+                        "y": 1654.5238095238094
+                    },
+                    {
+                        "x": 1435.9047619047642,
+                        "y": 1628.523809523812
+                    },
+                    {
+                        "x": 1671.5714285714296,
+                        "y": 1628.523809523812
+                    },
+                    {
+                        "x": 1671.5714285714296,
+                        "y": 1653.523809523812
+                    }
+                ],
+                "sides": [
+                    "top",
+                    "top"
+                ]
+            }
+        },
+        {
+            "name": "fk Employee.Staff_Id to Staff.Id",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "8e985525-5bf1-4633-945a-35054a47d5e1",
+                    "692ca41a-893a-4498-aaec-7001ad6e7e81"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "7722533f-7242-4c5a-9535-44e7c539fb6f",
+                    "d0f62abe-3b22-42ff-8e1c-7ff147bc195b"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "0..1",
+            "parentCollection": "8e985525-5bf1-4633-945a-35054a47d5e1",
+            "childCollection": "7722533f-7242-4c5a-9535-44e7c539fb6f",
+            "GUID": "5fb50e3a-7ee8-40af-b725-c39f266d22a2",
+            "level": "field",
+            "lineSize": 2,
+            "hackoladeStyles": {
+                "GUID": "b2b9d6c8-ae08-40b5-9896-577b1f8e8a2e",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#a73939",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 1392.238095238095,
+                        "y": 1819.5238095238092
+                    },
+                    {
+                        "x": 1392.238095238095,
+                        "y": 1788.5238095238092
+                    },
+                    {
+                        "x": 1341.9047619047642,
+                        "y": 1788.5238095238092
+                    },
+                    {
+                        "x": 1341.9047619047642,
+                        "y": 1757.5238095238094
+                    }
+                ],
+                "sides": [
+                    "top",
+                    "bottom"
+                ]
+            }
+        },
+        {
+            "name": "fk Employee.Role_Id to Role.Id",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "2ffada2e-93f5-4524-a1b8-5164c9f84f7e",
+                    "02d54cc6-6dda-47b6-bc9d-69a66873770d"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "2be3c97d-483a-474f-b219-cfbabfe4e88f",
+                    "ab758ee7-9e41-4214-9dbe-c6db17e06df3"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "1",
+            "GUID": "9d315ea1-5b60-4f4d-b542-dc80d60de36c",
+            "level": "field",
+            "parentCollection": "2ffada2e-93f5-4524-a1b8-5164c9f84f7e",
+            "childCollection": "2be3c97d-483a-474f-b219-cfbabfe4e88f",
+            "lineSize": 2,
+            "hackoladeStyles": {
+                "GUID": "59eab03a-03ce-4fbe-8fcd-80abb17d0da8",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 1812.2380952380952,
+                        "y": 1903.1904761904775
+                    },
+                    {
+                        "x": 1892.5714285714296,
+                        "y": 1903.1904761904775
+                    },
+                    {
+                        "x": 1892.5714285714296,
+                        "y": 1724.023809523812
+                    },
+                    {
+                        "x": 1867.5714285714296,
+                        "y": 1724.023809523812
+                    }
+                ],
+                "sides": [
+                    "right",
+                    "right"
+                ]
+            }
+        },
+        {
+            "name": "fk Employee.Staff_Id to Staff.Id",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "8e985525-5bf1-4633-945a-35054a47d5e1",
+                    "692ca41a-893a-4498-aaec-7001ad6e7e81"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "2be3c97d-483a-474f-b219-cfbabfe4e88f",
+                    "fbf73a6f-8e0e-401e-a9da-0a10e934c83a"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "0..1",
+            "GUID": "898b0089-d41a-47a7-84f6-fc3473741671",
+            "level": "field",
+            "parentCollection": "8e985525-5bf1-4633-945a-35054a47d5e1",
+            "childCollection": "2be3c97d-483a-474f-b219-cfbabfe4e88f",
+            "lineSize": 2,
+            "hackoladeStyles": {
+                "GUID": "b2b9d6c8-ae08-40b5-9896-577b1f8e8a2e",
+                "autoPositioning": false,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#a73939",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 1615.2380952380952,
+                        "y": 1903.1904761904775
+                    },
+                    {
+                        "x": 1553.904761904763,
+                        "y": 1903.1904761904775
+                    },
+                    {
+                        "x": 1553.904761904763,
+                        "y": 1706.0238095238094
+                    },
+                    {
+                        "x": 1529.9047619047642,
+                        "y": 1706.0238095238094
+                    }
+                ],
+                "sides": [
+                    "left",
+                    "right"
+                ]
+            }
+        },
+        {
+            "name": "fk Staff.Id to WorkAssignment.Staff_Id",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "d01f7501-dcb7-4e9b-9e3b-14a5a867fbe3",
+                    "39b52248-d4d0-42fd-a147-913db77730e1"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "8e985525-5bf1-4633-945a-35054a47d5e1",
+                    "692ca41a-893a-4498-aaec-7001ad6e7e81"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "1",
+            "parentCollection": "d01f7501-dcb7-4e9b-9e3b-14a5a867fbe3",
+            "childCollection": "8e985525-5bf1-4633-945a-35054a47d5e1",
+            "GUID": "2343d276-8a20-43ff-8c4a-2b94d2835be6",
+            "level": "field",
+            "lineSize": 2,
+            "hackoladeStyles": {
+                "GUID": "6f1fee64-0b34-4903-9383-5c3cb2bc306b",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 1247.9047619047642,
+                        "y": 1706.0238095238094
+                    },
+                    {
+                        "x": 1121.904761904765,
+                        "y": 1706.0238095238094
+                    },
+                    {
+                        "x": 1121.904761904765,
+                        "y": 1716.8571428571424
+                    },
+                    {
+                        "x": 995.9047619047662,
+                        "y": 1716.8571428571424
+                    }
+                ],
+                "sides": [
+                    "left",
+                    "right"
+                ]
+            }
+        },
+        {
+            "name": "fk Staff.Id to StaffingOrder.Staff_Resource_List..Staff.Staff_Id",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "465ab053-9432-4c43-82ae-b0457f3c35cc",
+                    "e91d65bc-387c-4a45-a954-980ea73bb9ac",
+                    "bf149a42-62f3-423b-b276-1fbe88f73b10",
+                    "12034391-de6a-4a5f-bb0e-a6a4d4cd64e1",
+                    "2340c430-c063-4904-ba8d-c2dadbe7f83d"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "8e985525-5bf1-4633-945a-35054a47d5e1",
+                    "692ca41a-893a-4498-aaec-7001ad6e7e81"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "1",
+            "parentCollection": "465ab053-9432-4c43-82ae-b0457f3c35cc",
+            "childCollection": "8e985525-5bf1-4633-945a-35054a47d5e1",
+            "GUID": "e847e6ba-37a1-4922-8fe8-8c9cdd90f3be",
+            "level": "field",
+            "lineSize": 2,
+            "hackoladeStyles": {
+                "GUID": "8dc0e0ee-dcd0-49ba-b135-87d8f7b7d46d",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 1388.9047619047642,
+                        "y": 1654.5238095238094
+                    },
+                    {
+                        "x": 1388.9047619047642,
+                        "y": 1542.49597924773
+                    },
+                    {
+                        "x": 1400.1444876783394,
+                        "y": 1542.49597924773
+                    },
+                    {
+                        "x": 1400.1444876783394,
+                        "y": 1430.4681489716506
+                    }
+                ],
+                "sides": [
+                    "top",
+                    "bottom"
+                ]
+            }
+        },
+        {
+            "name": "fk Sub_Status.Main_Status_Id to Main_Status.Id",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "d3cc3aa9-6ec9-4409-b35b-01cae6352f56",
+                    "8686734e-d824-4979-b5e9-d5b9d8fd5d98"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "83f1137b-4e38-4a42-b17d-89d969485107",
+                    "5ce306f3-3cbe-4d07-ba7e-442c7dcda5ce"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "1",
+            "parentCollection": "d3cc3aa9-6ec9-4409-b35b-01cae6352f56",
+            "childCollection": "83f1137b-4e38-4a42-b17d-89d969485107",
+            "GUID": "415a9e32-a353-4ed3-bbf2-57531e5a7ad3",
+            "level": "field",
+            "lineSize": 2,
+            "hackoladeStyles": {
+                "GUID": "df2367b9-fd28-4d7f-a28a-4ce59da39e2b",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 1881.2397257735784,
+                        "y": 1322.944339447842
+                    },
+                    {
+                        "x": 1914.2397257735784,
+                        "y": 1322.944339447842
+                    },
+                    {
+                        "x": 1914.2397257735784,
+                        "y": 1161.944339447842
+                    },
+                    {
+                        "x": 1889.2397257735784,
+                        "y": 1161.944339447842
+                    }
+                ],
+                "sides": [
+                    "right",
+                    "right"
+                ]
+            }
+        },
+        {
+            "name": "fk Main_Status.Id to StaffingOrder.Main_Status",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "465ab053-9432-4c43-82ae-b0457f3c35cc",
+                    "719b6b39-9b73-4bc8-9526-daa6c8a939ea"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "d3cc3aa9-6ec9-4409-b35b-01cae6352f56",
+                    "8686734e-d824-4979-b5e9-d5b9d8fd5d98"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "1",
+            "parentCollection": "465ab053-9432-4c43-82ae-b0457f3c35cc",
+            "childCollection": "d3cc3aa9-6ec9-4409-b35b-01cae6352f56",
+            "GUID": "39b9ed50-d1f8-4148-8a5a-dc099d2cfc45",
+            "level": "field",
+            "lineSize": 2,
+            "hackoladeStyles": {
+                "GUID": "dde650ba-5444-49d1-b955-bb990eed43f0",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 1660.2397257735784,
+                        "y": 1161.944339447842
+                    },
+                    {
+                        "x": 1628.1921067259589,
+                        "y": 1161.944339447842
+                    },
+                    {
+                        "x": 1628.1921067259589,
+                        "y": 1187.801482304984
+                    },
+                    {
+                        "x": 1596.1444876783394,
+                        "y": 1187.801482304984
+                    }
+                ],
+                "sides": [
+                    "left",
+                    "right"
+                ]
+            }
+        },
+        {
+            "name": "fk Sub_Status.Id to StaffingOrder.Sub_Status",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "465ab053-9432-4c43-82ae-b0457f3c35cc",
+                    "795e843e-eebc-4053-a4d0-5f10f726330d"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "83f1137b-4e38-4a42-b17d-89d969485107",
+                    "64b68477-5191-422f-979c-caebff634dc4"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "1",
+            "parentCollection": "465ab053-9432-4c43-82ae-b0457f3c35cc",
+            "childCollection": "83f1137b-4e38-4a42-b17d-89d969485107",
+            "GUID": "5dde96c3-c44e-4ad0-8117-cb0c2064de1f",
+            "level": "field",
+            "lineSize": 2,
+            "hackoladeStyles": {
+                "GUID": "fc00b90b-d8b4-443e-8e6e-e1063fd2d2a9",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 1652.2397257735784,
+                        "y": 1322.944339447842
+                    },
+                    {
+                        "x": 1624.1921067259589,
+                        "y": 1322.944339447842
+                    },
+                    {
+                        "x": 1624.1921067259589,
+                        "y": 1309.1348156383174
+                    },
+                    {
+                        "x": 1596.1444876783394,
+                        "y": 1309.1348156383174
+                    }
+                ],
+                "sides": [
+                    "left",
+                    "right"
+                ]
+            }
+        },
+        {
+            "name": "fk Main_Status.Id to Project.Main_Status",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "b351e292-4128-4bb7-91c6-4b0c069dec74",
+                    "15e3fe41-d571-4ddc-93c6-926b0d8602e3"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "44bb5641-62a0-4e43-ae99-0e3f7b0e4f7f",
+                    "699596ab-463e-45e0-ba0a-41f0c521ab48"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "1",
+            "parentCollection": "b351e292-4128-4bb7-91c6-4b0c069dec74",
+            "childCollection": "44bb5641-62a0-4e43-ae99-0e3f7b0e4f7f",
+            "GUID": "e6c44ed0-f809-4c6f-87df-f77b802e178e",
+            "level": "field",
+            "lineSize": 2,
+            "hackoladeStyles": {
+                "GUID": "5d1f9709-a736-42a2-bb5f-0e539f2081e9",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 689.239725773577,
+                        "y": 1183.2776727811765
+                    },
+                    {
+                        "x": 722.5722438391692,
+                        "y": 1183.2776727811765
+                    },
+                    {
+                        "x": 722.5722438391692,
+                        "y": 1185.190476190475
+                    },
+                    {
+                        "x": 755.9047619047614,
+                        "y": 1185.190476190475
+                    }
+                ],
+                "sides": [
+                    "right",
+                    "left"
+                ]
+            }
+        },
+        {
+            "name": "fk Sub_Status(1).Id to Project.Sub_Status",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "b351e292-4128-4bb7-91c6-4b0c069dec74",
+                    "caf6b5e3-57c3-4f78-8049-2a01e0033ce8"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "427cb85d-c62e-4bf3-a7f2-69cbee6f56d5",
+                    "ceb4b08a-f5c2-4c2d-9bf6-e3798aee4f83"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "1",
+            "parentCollection": "b351e292-4128-4bb7-91c6-4b0c069dec74",
+            "childCollection": "427cb85d-c62e-4bf3-a7f2-69cbee6f56d5",
+            "GUID": "e9b43148-9168-4c4d-afa2-d150af82b369",
+            "level": "field",
+            "lineSize": 2,
+            "hackoladeStyles": {
+                "GUID": "9d9d67cc-bf77-41f0-ad85-9a7c1a47376a",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 691.9063924402434,
+                        "y": 1334.944339447843
+                    },
+                    {
+                        "x": 723.9055771725024,
+                        "y": 1334.944339447843
+                    },
+                    {
+                        "x": 723.9055771725024,
+                        "y": 1264.8571428571415
+                    },
+                    {
+                        "x": 755.9047619047614,
+                        "y": 1264.8571428571415
+                    }
+                ],
+                "sides": [
+                    "right",
+                    "left"
+                ]
+            }
+        },
+        {
+            "name": "fk Sub_Status_Project.Main_Status_Id to Main_Status_Project.Id",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "44bb5641-62a0-4e43-ae99-0e3f7b0e4f7f",
+                    "699596ab-463e-45e0-ba0a-41f0c521ab48"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "427cb85d-c62e-4bf3-a7f2-69cbee6f56d5",
+                    "570515bf-fb49-45fd-b000-5094553509bb"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "1",
+            "parentCollection": "44bb5641-62a0-4e43-ae99-0e3f7b0e4f7f",
+            "childCollection": "427cb85d-c62e-4bf3-a7f2-69cbee6f56d5",
+            "GUID": "cf499803-5576-48a6-acfd-297d9ac4a0d6",
+            "level": "field",
+            "lineSize": 2,
+            "hackoladeStyles": {
+                "GUID": "1e21fd43-d46e-4640-b598-d34657d7a16b",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 691.9063924402434,
+                        "y": 1313.944339447843
+                    },
+                    {
+                        "x": 716.9063924402434,
+                        "y": 1313.944339447843
+                    },
+                    {
+                        "x": 716.9063924402434,
+                        "y": 1204.2776727811765
+                    },
+                    {
+                        "x": 689.239725773577,
+                        "y": 1204.2776727811765
+                    }
+                ],
+                "sides": [
+                    "right",
+                    "right"
+                ]
+            }
+        },
+        {
+            "name": "fk Main_Status_Project(1).Id to WorkAssignment.Main_Status",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "d01f7501-dcb7-4e9b-9e3b-14a5a867fbe3",
+                    "3d041159-5f84-43b9-a3ff-c44a1de58577"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "b960eb07-bdd2-4298-9069-8ae51c9d735d",
+                    "9cbeb48e-7446-4edd-b469-790dfbeaf98a"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "1",
+            "parentCollection": "d01f7501-dcb7-4e9b-9e3b-14a5a867fbe3",
+            "childCollection": "b960eb07-bdd2-4298-9069-8ae51c9d735d",
+            "GUID": "5fa333a8-8b77-4b4b-b28f-abd7435e1ec6",
+            "level": "field",
+            "lineSize": 2,
+            "hackoladeStyles": {
+                "GUID": "3e65f442-631a-49cb-a97f-8fe0b1cee83f",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 647.9063924402442,
+                        "y": 1629.9443394478435
+                    },
+                    {
+                        "x": 683.4055771725052,
+                        "y": 1629.9443394478435
+                    },
+                    {
+                        "x": 683.4055771725052,
+                        "y": 1635.523809523809
+                    },
+                    {
+                        "x": 718.9047619047662,
+                        "y": 1635.523809523809
+                    }
+                ],
+                "sides": [
+                    "right",
+                    "left"
+                ]
+            }
+        },
+        {
+            "name": "fk Sub_Status_Project(1).Id to WorkAssignment.Sub_Status",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "d01f7501-dcb7-4e9b-9e3b-14a5a867fbe3",
+                    "d5c81dee-cd93-4ae1-b3d4-9838222d4e3f"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "e86ef3e8-5f88-4613-b6ce-050fc5ae40c7",
+                    "6c72b822-1065-411c-89c3-f90bc1f0dd4d"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "1",
+            "parentCollection": "d01f7501-dcb7-4e9b-9e3b-14a5a867fbe3",
+            "childCollection": "e86ef3e8-5f88-4613-b6ce-050fc5ae40c7",
+            "GUID": "87f52dd0-3aa4-45ed-9abc-93e093b5cec6",
+            "level": "field",
+            "lineSize": 2,
+            "hackoladeStyles": {
+                "GUID": "940c4a1d-8e8a-419b-8e71-d74d4cb985d3",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 646.5730591069093,
+                        "y": 1770.9443394478426
+                    },
+                    {
+                        "x": 682.7389105058378,
+                        "y": 1770.9443394478426
+                    },
+                    {
+                        "x": 682.7389105058378,
+                        "y": 1716.8571428571424
+                    },
+                    {
+                        "x": 718.9047619047662,
+                        "y": 1716.8571428571424
+                    }
+                ],
+                "sides": [
+                    "right",
+                    "left"
+                ]
+            }
+        },
+        {
+            "name": "fk Sub_Status_Project(1).Main_Status_Id to Main_Status_Project(1).Id",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "b960eb07-bdd2-4298-9069-8ae51c9d735d",
+                    "9cbeb48e-7446-4edd-b469-790dfbeaf98a"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "e86ef3e8-5f88-4613-b6ce-050fc5ae40c7",
+                    "0fe1b06c-597e-4718-8198-6bbc01abb025"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "1",
+            "parentCollection": "b960eb07-bdd2-4298-9069-8ae51c9d735d",
+            "childCollection": "e86ef3e8-5f88-4613-b6ce-050fc5ae40c7",
+            "GUID": "f0a6c69c-7805-407a-873a-7254ffe89fde",
+            "level": "field",
+            "lineSize": 2,
+            "hackoladeStyles": {
+                "GUID": "bec0a170-3aea-4f22-ba0e-e5c289fb8f2e",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 646.5730591069093,
+                        "y": 1749.9443394478426
+                    },
+                    {
+                        "x": 672.9063924402442,
+                        "y": 1749.9443394478426
+                    },
+                    {
+                        "x": 672.9063924402442,
+                        "y": 1650.9443394478435
+                    },
+                    {
+                        "x": 647.9063924402442,
+                        "y": 1650.9443394478435
+                    }
+                ],
+                "sides": [
+                    "right",
+                    "right"
+                ]
+            }
+        },
+        {
+            "name": "fk Staff-Status.Staff_Id to Staff.Id",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "8e985525-5bf1-4633-945a-35054a47d5e1",
+                    "692ca41a-893a-4498-aaec-7001ad6e7e81"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "385df7ee-e3fb-482d-8bb7-d9ac8a08d0c0",
+                    "55777e85-5f0d-40aa-950e-3f999361ce64"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "1",
+            "parentCollection": "8e985525-5bf1-4633-945a-35054a47d5e1",
+            "childCollection": "385df7ee-e3fb-482d-8bb7-d9ac8a08d0c0",
+            "GUID": "4fb17ddc-f925-4f11-96cb-0faec57bb0d8",
+            "level": "field",
+            "lineSize": 2,
+            "hackoladeStyles": {
+                "GUID": "f5fe04ac-7b6a-4a48-8b59-8c93f2fb108a",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 1412.0000000000007,
+                        "y": 2029.3333333333333
+                    },
+                    {
+                        "x": 1412.0000000000007,
+                        "y": 1893.4285714285713
+                    },
+                    {
+                        "x": 1435.9047619047642,
+                        "y": 1893.4285714285713
+                    },
+                    {
+                        "x": 1435.9047619047642,
+                        "y": 1757.5238095238094
+                    }
+                ],
+                "sides": [
+                    "top",
+                    "bottom"
+                ]
+            }
+        },
+        {
+            "name": "fk Staff-Status.Status_Id to Status_Staff.Id",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "ca58d02a-a7f1-4aa8-b8a3-617b1324047f",
+                    "213a2810-204b-4a64-a0e0-bdacfada5618"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "385df7ee-e3fb-482d-8bb7-d9ac8a08d0c0",
+                    "2c91d609-6ee4-4892-91cd-be9d04279863"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "1",
+            "parentCollection": "ca58d02a-a7f1-4aa8-b8a3-617b1324047f",
+            "childCollection": "385df7ee-e3fb-482d-8bb7-d9ac8a08d0c0",
+            "GUID": "e0cc55e4-a3e8-42e2-941b-5bc2b5cc5183",
+            "level": "field",
+            "lineSize": 2,
+            "hackoladeStyles": {
+                "GUID": "e1408364-c97e-43b9-8334-cbb8afe8bb77",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 1548.0000000000007,
+                        "y": 2104.333333333333
+                    },
+                    {
+                        "x": 1583.4531962201218,
+                        "y": 2104.333333333333
+                    },
+                    {
+                        "x": 1583.4531962201218,
+                        "y": 2085.944339447845
+                    },
+                    {
+                        "x": 1618.906392440243,
+                        "y": 2085.944339447845
+                    }
+                ],
+                "sides": [
+                    "right",
+                    "left"
+                ]
+            }
+        }
+    ],
+    "users": [],
+    "diagramViews": [],
+    "idToNameHashTable": {
+        "b351e292-4128-4bb7-91c6-4b0c069dec74": "Project",
+        "465ab053-9432-4c43-82ae-b0457f3c35cc": "StaffingOrder",
+        "16e6b351-03a2-4495-a5cb-318758a14203": "要員（スタッフ）",
+        "d01f7501-dcb7-4e9b-9e3b-14a5a867fbe3": "WorkAssignment",
+        "97fabd89-bdc3-419a-8094-fb4f5a7d9c21": "Id",
+        "697788b9-0c45-4fe7-92ac-deb3663ef79b": "Id",
+        "4de736bf-1223-4782-9e49-3e6fbd6f92a5": "Project_Id",
+        "dcca2278-19b4-4f37-a024-4261a85c6705": "fk StaffingOrder.ProjectId to Project.Id",
+        "3d7a4ea8-c32c-4cd6-bb1c-e4d30aa42b58": "Description",
+        "5be6c733-b357-4f55-be6d-03e9bcad7997": "Period",
+        "f75968e4-0f1c-4e1f-a2e3-dec489e18312": "Monthly_Allocation",
+        "93494a4f-cfbe-4954-8af0-f834b4d4d9fe": "Period",
+        "e91d65bc-387c-4a45-a954-980ea73bb9ac": "Staff_Resource_List",
+        "12034391-de6a-4a5f-bb0e-a6a4d4cd64e1": "Staff",
+        "24762497-4fd4-4020-a4f6-1567e4cd2ef4": "Amount",
+        "63ccf12f-a83a-4358-8926-7b52c511094a": "Attachments",
+        "07bb8a43-04af-4198-b4f1-7d927ac0ec97": "Total_Amount",
+        "bc681389-d13c-4c27-a793-2b59ab204dec": "Role_Id",
+        "6751b634-aa64-4e1c-878c-6215b3b0209d": "Monthly_Allocation",
+        "7722533f-7242-4c5a-9535-44e7c539fb6f": "Employee",
+        "df0adbb7-d544-413b-aded-7b7cc055d0f6": "Id",
+        "a65c8e44-9af4-49e6-8b93-3e669fd5c4c6": "Name",
+        "e6050c31-0c06-4897-85bd-d17b84363d4c": "Id",
+        "39b52248-d4d0-42fd-a147-913db77730e1": "Staff_Id",
+        "364dbad7-8f18-441a-960f-1b637353316a": "Period",
+        "1f9ca5a9-d667-485c-94dc-30c96a91c212": "Monthly_Allocation",
+        "19540d19-656b-4903-b000-367731cf651d": "Customer",
+        "68de3adc-2927-4a05-9368-4ee9d7a5db2d": "Name",
+        "0607d18c-317d-49eb-aa23-7e4f75765f99": "Customer",
+        "0a5d3022-f4b8-4759-a502-7badcb464432": "Period",
+        "d707681d-a84e-4cd5-8873-e1560995d533": "fk Project.Sales_Employee_Id to Employee.Id",
+        "aac40d18-0693-4f94-b16b-207b1f53b68d": "Attachments",
+        "5f2cb9b8-7e99-406b-8c82-ea1f95e89138": "fk WorkAssignment.StaffingOrder_Id to StaffingOrder.Id",
+        "2ffada2e-93f5-4524-a1b8-5164c9f84f7e": "Role",
+        "02d54cc6-6dda-47b6-bc9d-69a66873770d": "Id",
+        "7f58d1b6-2468-42b5-be05-48e875c1ba17": "fk Employee.Role_Id to Role.Id",
+        "f417f3c6-3e20-434e-bbf3-9d694e205c3b": "fk StaffingOrder.Staff_List..Staff.Role_Id to Role.Id",
+        "b966757a-fb69-4337-9872-f8dca42cc313": "StaffingOrder_Id",
+        "5a5db95c-dc04-42a2-a274-2ca272bb37b3": "Poject_Id",
+        "2c4204af-454c-4326-83d1-0b69bf11ef43": "fk WorkAssignment.Poject_Id to Project.Id",
+        "36b2569b-bfb3-41d0-ae9f-76afa7a2e51f": "Sales_Employee_Id",
+        "c43cfbf6-3fe1-4a58-bde7-44eaed0f69ac": "Description",
+        "8e985525-5bf1-4633-945a-35054a47d5e1": "Staff",
+        "e48edbfc-464f-4dde-b596-7d73cdc30ff8": "Number",
+        "bdd94487-4b23-40ca-8371-64cead5fea98": "Grade",
+        "a089a46e-8ba1-44c4-bbdb-4cfad826a0a1": "Role_Id",
+        "692ca41a-893a-4498-aaec-7001ad6e7e81": "Id",
+        "ff128eb6-ba31-4ce9-aaf2-73a793fb8285": "Display_Name",
+        "8f341593-620c-4cea-a2c3-284a403eea72": "Role_Id",
+        "4f06ee06-921e-4c86-b96f-8a97ab8023bb": "fk Staff.Role_Id to Role.Id",
+        "502d8f09-1dae-49cd-88c5-a72ef618e2dc": "Staff_Category",
+        "5fb50e3a-7ee8-40af-b725-c39f266d22a2": "fk Employee.Staff_Id to Staff.Id",
+        "b4266208-673c-46ef-81ee-076e6f7a9121": "Id",
+        "40ce81c3-61d7-416a-8b57-4432a36d36a1": "Name",
+        "c12810f0-11ca-4ac5-ad66-8c019af71dd0": "Number",
+        "ab758ee7-9e41-4214-9dbe-c6db17e06df3": "Role_Id",
+        "2be3c97d-483a-474f-b219-cfbabfe4e88f": "Business_Partner",
+        "9d315ea1-5b60-4f4d-b542-dc80d60de36c": "fk Employee.Role_Id to Role.Id",
+        "898b0089-d41a-47a7-84f6-fc3473741671": "fk Employee.Staff_Id to Staff.Id",
+        "fbf73a6f-8e0e-401e-a9da-0a10e934c83a": "Staff_Id",
+        "d0f62abe-3b22-42ff-8e1c-7ff147bc195b": "Staff_Id",
+        "2340c430-c063-4904-ba8d-c2dadbe7f83d": "Staff_Id",
+        "2343d276-8a20-43ff-8c4a-2b94d2835be6": "fk Staff.Id to WorkAssignment.Staff_Id",
+        "e847e6ba-37a1-4922-8fe8-8c9cdd90f3be": "fk Staff.Id to StaffingOrder.Staff_Resource_List..Staff.Staff_Id",
+        "99713080-b02a-4feb-af8f-3554cc4f06f1": "Status",
+        "719b6b39-9b73-4bc8-9526-daa6c8a939ea": "Main_Status",
+        "11479816-59ea-4786-960c-f43dc4bb45a4": "予約",
+        "d3cc3aa9-6ec9-4409-b35b-01cae6352f56": "Main_Status_StaffingOrder",
+        "8686734e-d824-4979-b5e9-d5b9d8fd5d98": "Id",
+        "730520b7-6ca1-461d-ae03-43d49d6939f5": "Name",
+        "80faecdb-b2c0-4cab-937d-abe9fb9c4d21": "Order",
+        "64b68477-5191-422f-979c-caebff634dc4": "Id",
+        "0d601bb9-b4e0-40de-8a05-f837df5dc414": "Name",
+        "8fb0aa82-b9be-4657-a32b-dd92573be6ae": "Order",
+        "83f1137b-4e38-4a42-b17d-89d969485107": "Sub_Status__StaffingOrder",
+        "5ce306f3-3cbe-4d07-ba7e-442c7dcda5ce": "Main_Status_Id",
+        "415a9e32-a353-4ed3-bbf2-57531e5a7ad3": "fk Sub_Status.Main_Status_Id to Main_Status.Id",
+        "39b9ed50-d1f8-4148-8a5a-dc099d2cfc45": "fk Main_Status.Id to StaffingOrder.Main_Status",
+        "795e843e-eebc-4053-a4d0-5f10f726330d": "Sub_Status",
+        "5dde96c3-c44e-4ad0-8117-cb0c2064de1f": "fk Sub_Status.Id to StaffingOrder.Sub_Status",
+        "31bd3274-d6cc-4b12-b16a-bebd0547d2a7": "プロジェクト",
+        "43b4e1fb-760a-44f1-9b62-0e1c42ee7cee": "稼働割当",
+        "699596ab-463e-45e0-ba0a-41f0c521ab48": "Id",
+        "45a5bac6-3b5e-4bc6-9704-36463b2c6fba": "Name",
+        "2d700f30-3b38-4961-93a7-384a1e83cd10": "Order",
+        "44bb5641-62a0-4e43-ae99-0e3f7b0e4f7f": "Main_Status_Project",
+        "ceb4b08a-f5c2-4c2d-9bf6-e3798aee4f83": "Id",
+        "570515bf-fb49-45fd-b000-5094553509bb": "Main_Status_Id",
+        "5359d1b8-6f09-4ee6-9205-3c1b70346932": "Name",
+        "76e88961-019c-4f51-89bd-ea98c8814372": "Order",
+        "427cb85d-c62e-4bf3-a7f2-69cbee6f56d5": "Sub_Status_Project",
+        "15e3fe41-d571-4ddc-93c6-926b0d8602e3": "Main_Status",
+        "caf6b5e3-57c3-4f78-8049-2a01e0033ce8": "Sub_Status",
+        "e6c44ed0-f809-4c6f-87df-f77b802e178e": "fk Main_Status.Id to Project.Main_Status",
+        "e9b43148-9168-4c4d-afa2-d150af82b369": "fk Sub_Status(1).Id to Project.Sub_Status",
+        "9cbeb48e-7446-4edd-b469-790dfbeaf98a": "Id",
+        "cbe2c1fb-626b-4e5c-85c8-9241cd53548d": "Name",
+        "e50274bf-9c06-4f88-a39d-4b25d8a97d11": "Order",
+        "b960eb07-bdd2-4298-9069-8ae51c9d735d": "Main_Status_WorkAssignment",
+        "6c72b822-1065-411c-89c3-f90bc1f0dd4d": "Id",
+        "0fe1b06c-597e-4718-8198-6bbc01abb025": "Main_Status_Id",
+        "18721fd0-090b-4ca4-bd39-48a216b7382d": "Name",
+        "3e8ee5ce-39c1-4178-b49c-8c134e0d289d": "Order",
+        "e86ef3e8-5f88-4613-b6ce-050fc5ae40c7": "Sub_Status_WorkAssignment",
+        "cf499803-5576-48a6-acfd-297d9ac4a0d6": "fk Sub_Status_Project.Main_Status_Id to Main_Status_Project.Id",
+        "3d041159-5f84-43b9-a3ff-c44a1de58577": "Main_Status",
+        "d5c81dee-cd93-4ae1-b3d4-9838222d4e3f": "Sub_Status",
+        "5fa333a8-8b77-4b4b-b28f-abd7435e1ec6": "fk Main_Status_Project(1).Id to WorkAssignment.Main_Status",
+        "87f52dd0-3aa4-45ed-9abc-93e093b5cec6": "fk Sub_Status_Project(1).Id to WorkAssignment.Sub_Status",
+        "f0a6c69c-7805-407a-873a-7254ffe89fde": "fk Sub_Status_Project(1).Main_Status_Id to Main_Status_Project(1).Id",
+        "213a2810-204b-4a64-a0e0-bdacfada5618": "Id",
+        "9faf22da-441d-4d36-8bdb-5a651d50b39b": "Name",
+        "38d023b8-b4ee-4700-b049-45579e4e1c95": "Order",
+        "ca58d02a-a7f1-4aa8-b8a3-617b1324047f": "Status_Staff",
+        "385df7ee-e3fb-482d-8bb7-d9ac8a08d0c0": "Staff-Status",
+        "911d62dc-feb9-47a6-a81c-e4e9469c1028": "Id",
+        "55777e85-5f0d-40aa-950e-3f999361ce64": "Staff_Id",
+        "2c91d609-6ee4-4892-91cd-be9d04279863": "Status_Id",
+        "9dad79c8-cf62-4ad4-9d47-5c590b3a6f84": "Status_Period",
+        "3a2f380f-e99c-4146-846f-31e87e0c6e67": "Status_Valid_Period",
+        "4fb17ddc-f925-4f11-96cb-0faec57bb0d8": "fk Staff-Status.Staff_Id to Staff.Id",
+        "e0cc55e4-a3e8-42e2-941b-5bc2b5cc5183": "fk Staff-Status.Status_Id to Status_Staff.Id"
+    },
+    "definitions": {
+        "type": "definitions",
+        "properties": [
+            {
+                "name": "Period",
+                "hackoladeMeta": {},
+                "isActivated": true,
+                "properties": [
+                    {
+                        "hackoladeMeta": {},
+                        "isActivated": true,
+                        "index": true,
+                        "alternateKey": false,
+                        "childType": "date",
+                        "type": "string",
+                        "compositeKey": [
+                            "compositePrimaryKey",
+                            "compositeUniqueKey"
+                        ],
+                        "compositePrimaryKey": false,
+                        "compositeUniqueKey": false,
+                        "error": {},
+                        "GUID": "50f180f3-fb21-43de-bd99-ec0f13564535",
+                        "arrayItem": true,
+                        "primaryKey": false,
+                        "displayName": "start"
+                    },
+                    {
+                        "hackoladeMeta": {},
+                        "isActivated": true,
+                        "index": true,
+                        "alternateKey": false,
+                        "childType": "date",
+                        "type": "string",
+                        "compositeKey": [
+                            "compositePrimaryKey",
+                            "compositeUniqueKey"
+                        ],
+                        "compositePrimaryKey": false,
+                        "compositeUniqueKey": false,
+                        "GUID": "f22941fe-ca29-401b-af14-ec9c7d81924e",
+                        "arrayItem": true,
+                        "displayName": "end",
+                        "error": {}
+                    }
+                ],
+                "primaryKey": false,
+                "additionalItems": true,
+                "uniqueItems": false,
+                "alternateKey": false,
+                "childType": "tuple",
+                "type": "array",
+                "compositeKey": [
+                    "compositePrimaryKey",
+                    "compositeUniqueKey"
+                ],
+                "compositePrimaryKey": false,
+                "compositeUniqueKey": false,
+                "GUID": "5be6c733-b357-4f55-be6d-03e9bcad7997",
+                "definitionRefs": [
+                    [
+                        "465ab053-9432-4c43-82ae-b0457f3c35cc",
+                        "93494a4f-cfbe-4954-8af0-f834b4d4d9fe"
+                    ],
+                    [
+                        "d01f7501-dcb7-4e9b-9e3b-14a5a867fbe3",
+                        "364dbad7-8f18-441a-960f-1b637353316a"
+                    ],
+                    [
+                        "b351e292-4128-4bb7-91c6-4b0c069dec74",
+                        "0a5d3022-f4b8-4759-a502-7badcb464432"
+                    ],
+                    [
+                        "385df7ee-e3fb-482d-8bb7-d9ac8a08d0c0",
+                        "9dad79c8-cf62-4ad4-9d47-5c590b3a6f84"
+                    ],
+                    [
+                        "385df7ee-e3fb-482d-8bb7-d9ac8a08d0c0",
+                        "3a2f380f-e99c-4146-846f-31e87e0c6e67"
+                    ]
+                ],
+                "description": "期間　年/月　から　年/月",
+                "error": {}
+            },
+            {
+                "name": "Staff",
+                "hackoladeMeta": {},
+                "isActivated": true,
+                "primaryKey": false,
+                "enabled": true,
+                "properties": [
+                    {
+                        "name": "Staff_Id",
+                        "hackoladeMeta": {},
+                        "isActivated": true,
+                        "primaryKey": false,
+                        "alternateKey": false,
+                        "childType": "nvarchar",
+                        "type": "string",
+                        "compositeKey": [
+                            "compositePrimaryKey",
+                            "compositeUniqueKey"
+                        ],
+                        "compositePrimaryKey": false,
+                        "compositeUniqueKey": false,
+                        "GUID": "2340c430-c063-4904-ba8d-c2dadbe7f83d",
+                        "error": {}
+                    },
+                    {
+                        "name": "Role_Id",
+                        "hackoladeMeta": {},
+                        "isActivated": true,
+                        "primaryKey": false,
+                        "alternateKey": false,
+                        "childType": "nvarchar",
+                        "type": "string",
+                        "compositeKey": [
+                            "compositePrimaryKey",
+                            "compositeUniqueKey"
+                        ],
+                        "compositePrimaryKey": false,
+                        "compositeUniqueKey": false,
+                        "GUID": "bc681389-d13c-4c27-a793-2b59ab204dec",
+                        "error": {}
+                    },
+                    {
+                        "GUID": "6751b634-aa64-4e1c-878c-6215b3b0209d",
+                        "name": "Monthly_Allocation",
+                        "type": "reference",
+                        "$ref": "#model/definitions/MonthlyAllocation",
+                        "refType": "model",
+                        "ref": "f75968e4-0f1c-4e1f-a2e3-dec489e18312",
+                        "refIdPath": [
+                            "f3321cfc-32e0-473e-a669-b1eb1b354577",
+                            "13bb6015-7e95-4647-82a9-fbd9bf76c181",
+                            "f75968e4-0f1c-4e1f-a2e3-dec489e18312"
+                        ],
+                        "isActivated": true,
+                        "compositeKey": [
+                            "compositePrimaryKey",
+                            "compositeUniqueKey"
+                        ],
+                        "compositePrimaryKey": false,
+                        "compositeUniqueKey": false,
+                        "primaryKey": false,
+                        "alternateKey": false,
+                        "error": {
+                            "name": false
+                        }
+                    },
+                    {
+                        "name": "Amount",
+                        "hackoladeMeta": {},
+                        "isActivated": true,
+                        "index": true,
+                        "exclusiveMinimum": false,
+                        "exclusiveMaximum": false,
+                        "primaryKey": false,
+                        "mode": "int32",
+                        "alternateKey": false,
+                        "childType": "integer",
+                        "type": "numeric",
+                        "compositeKey": [
+                            "compositePrimaryKey",
+                            "compositeUniqueKey"
+                        ],
+                        "compositePrimaryKey": false,
+                        "compositeUniqueKey": false,
+                        "GUID": "24762497-4fd4-4020-a4f6-1567e4cd2ef4",
+                        "error": {}
+                    }
+                ],
+                "additionalProperties": false,
+                "alternateKey": false,
+                "childType": "object",
+                "type": "document",
+                "compositeKey": [
+                    "compositePrimaryKey",
+                    "compositeUniqueKey"
+                ],
+                "compositePrimaryKey": false,
+                "compositeUniqueKey": false,
+                "GUID": "12034391-de6a-4a5f-bb0e-a6a4d4cd64e1",
+                "definitionRefs": [
+                    [
+                        "465ab053-9432-4c43-82ae-b0457f3c35cc",
+                        "e91d65bc-387c-4a45-a954-980ea73bb9ac",
+                        "bf149a42-62f3-423b-b276-1fbe88f73b10"
+                    ]
+                ],
+                "error": {}
+            },
+            {
+                "name": "Monthly_Allocation",
+                "hackoladeMeta": {},
+                "isActivated": true,
+                "properties": [
+                    {
+                        "hackoladeMeta": {},
+                        "isActivated": true,
+                        "index": true,
+                        "alternateKey": false,
+                        "childType": "date",
+                        "type": "string",
+                        "compositeKey": [
+                            "compositePrimaryKey",
+                            "compositeUniqueKey"
+                        ],
+                        "compositePrimaryKey": false,
+                        "compositeUniqueKey": false,
+                        "GUID": "98d298db-e7c0-4ecb-85aa-f6ecb4e2b318",
+                        "arrayItem": true,
+                        "primaryKey": false,
+                        "displayName": "year-month",
+                        "error": {}
+                    },
+                    {
+                        "hackoladeMeta": {},
+                        "isActivated": true,
+                        "exclusiveMinimum": false,
+                        "exclusiveMaximum": false,
+                        "primaryKey": false,
+                        "alternateKey": false,
+                        "childType": "float",
+                        "type": "numeric",
+                        "compositeKey": [
+                            "compositePrimaryKey",
+                            "compositeUniqueKey"
+                        ],
+                        "compositePrimaryKey": false,
+                        "compositeUniqueKey": false,
+                        "GUID": "08411e5d-08a0-40a8-a452-6fd996958603",
+                        "arrayItem": true,
+                        "displayName": "effort",
+                        "error": {}
+                    }
+                ],
+                "primaryKey": false,
+                "additionalItems": true,
+                "uniqueItems": false,
+                "alternateKey": false,
+                "childType": "tuple",
+                "type": "array",
+                "compositeKey": [
+                    "compositePrimaryKey",
+                    "compositeUniqueKey"
+                ],
+                "compositePrimaryKey": false,
+                "compositeUniqueKey": false,
+                "GUID": "f75968e4-0f1c-4e1f-a2e3-dec489e18312",
+                "definitionRefs": [
+                    [
+                        "f3321cfc-32e0-473e-a669-b1eb1b354577",
+                        "13bb6015-7e95-4647-82a9-fbd9bf76c181",
+                        "12034391-de6a-4a5f-bb0e-a6a4d4cd64e1",
+                        "6751b634-aa64-4e1c-878c-6215b3b0209d"
+                    ],
+                    [
+                        "d01f7501-dcb7-4e9b-9e3b-14a5a867fbe3",
+                        "1f9ca5a9-d667-485c-94dc-30c96a91c212"
+                    ]
+                ],
+                "description": "月別工数",
+                "error": {}
+            },
+            {
+                "name": "Customer",
+                "hackoladeMeta": {},
+                "isActivated": true,
+                "primaryKey": false,
+                "enabled": true,
+                "properties": [
+                    {
+                        "name": "Name",
+                        "hackoladeMeta": {},
+                        "isActivated": true,
+                        "primaryKey": false,
+                        "alternateKey": false,
+                        "childType": "nvarchar",
+                        "type": "string",
+                        "compositeKey": [
+                            "compositePrimaryKey",
+                            "compositeUniqueKey"
+                        ],
+                        "compositePrimaryKey": false,
+                        "compositeUniqueKey": false,
+                        "GUID": "68de3adc-2927-4a05-9368-4ee9d7a5db2d",
+                        "mode": "ntext",
+                        "error": {}
+                    }
+                ],
+                "additionalProperties": false,
+                "alternateKey": false,
+                "childType": "object",
+                "type": "document",
+                "compositeKey": [
+                    "compositePrimaryKey",
+                    "compositeUniqueKey"
+                ],
+                "compositePrimaryKey": false,
+                "compositeUniqueKey": false,
+                "GUID": "19540d19-656b-4903-b000-367731cf651d",
+                "definitionRefs": [
+                    [
+                        "b351e292-4128-4bb7-91c6-4b0c069dec74",
+                        "0607d18c-317d-49eb-aa23-7e4f75765f99"
+                    ]
+                ],
+                "error": {}
+            }
+        ],
+        "GUID": "13bb6015-7e95-4647-82a9-fbd9bf76c181"
+    },
+    "polyglotDefinitions": {
+        "type": "polyglotDefinitions",
+        "properties": [],
+        "GUID": "a7d5e430-2ae8-452f-8563-c6dd3faabca8"
+    },
+    "externalDefinitions": {
+        "type": "externalDefinitions",
+        "properties": [],
+        "GUID": "7053d200-2231-4352-bff4-1c9beade48c1"
+    },
+    "sources": [],
+    "decorativeSymbols": [],
+    "dbVendor": "Polyglot",
+    "appTarget": "Polyglot",
+    "creationTS": "2026-04-06T04:04:39.754Z",
+    "GUID": "63711589-9f6c-4963-be8b-8d1ba6ebeb4e",
+    "isLineageEnabled": false,
+    "lastModifTS": "2026-04-07T03:35:25.079Z",
+    "persistenceSchemaVersion": "6",
+    "isCreatedByPlugin": true,
+    "pluginInformation": {
+        "pluginName": "Polyglot",
+        "pluginVersion": "0.0.1",
+        "pluginEngineVersion": "1.0.0"
+    },
+    "applicationInformation": {
+        "version": "6.11.9"
+    },
+    "hackoladeMeta": {},
+    "settings": {
+        "centralPane": {
+            "dbLevel": {
+                "erd": [
+                    {
+                        "GUID": "b351e292-4128-4bb7-91c6-4b0c069dec74",
+                        "x": 755.9047619047614,
+                        "y": 1105.5238095238083,
+                        "width": 277,
+                        "height": 239,
+                        "color": {
+                            "hex": "#008a00"
+                        }
+                    },
+                    {
+                        "GUID": "465ab053-9432-4c43-82ae-b0457f3c35cc",
+                        "x": 1204.1444876783394,
+                        "y": 1066.4681489716506,
+                        "width": 392,
+                        "height": 364,
+                        "color": {
+                            "hex": "#008a00"
+                        }
+                    },
+                    {
+                        "GUID": "d01f7501-dcb7-4e9b-9e3b-14a5a867fbe3",
+                        "x": 718.9047619047662,
+                        "y": 1554.1904761904757,
+                        "width": 277,
+                        "height": 244,
+                        "color": {
+                            "hex": "#008a00"
+                        }
+                    },
+                    {
+                        "GUID": "7722533f-7242-4c5a-9535-44e7c539fb6f",
+                        "x": 1287.238095238095,
+                        "y": 1819.5238095238092,
+                        "width": 210,
+                        "height": 136,
+                        "color": {
+                            "hex": "#2196F3"
+                        }
+                    },
+                    {
+                        "GUID": "2ffada2e-93f5-4524-a1b8-5164c9f84f7e",
+                        "x": 1573.5714285714296,
+                        "y": 1653.523809523812,
+                        "width": 294,
+                        "height": 141,
+                        "color": {
+                            "hex": "#ff9801"
+                        }
+                    },
+                    {
+                        "GUID": "8e985525-5bf1-4633-945a-35054a47d5e1",
+                        "x": 1247.9047619047642,
+                        "y": 1654.5238095238094,
+                        "width": 282,
+                        "height": 103,
+                        "color": {
+                            "hex": "#2196F3"
+                        }
+                    },
+                    {
+                        "GUID": "2be3c97d-483a-474f-b219-cfbabfe4e88f",
+                        "x": 1615.2380952380952,
+                        "y": 1844.1904761904775,
+                        "width": 197,
+                        "height": 118,
+                        "color": {
+                            "hex": "#2196F3"
+                        }
+                    },
+                    {
+                        "GUID": "d3cc3aa9-6ec9-4409-b35b-01cae6352f56",
+                        "x": 1660.2397257735784,
+                        "y": 1098.944339447842,
+                        "width": 229,
+                        "height": 126,
+                        "color": {
+                            "hex": "#d80073"
+                        }
+                    },
+                    {
+                        "GUID": "83f1137b-4e38-4a42-b17d-89d969485107",
+                        "x": 1652.2397257735784,
+                        "y": 1259.944339447842,
+                        "width": 229,
+                        "height": 126,
+                        "color": {
+                            "hex": "#d80073"
+                        }
+                    },
+                    {
+                        "GUID": "44bb5641-62a0-4e43-ae99-0e3f7b0e4f7f",
+                        "x": 460.23972577357694,
+                        "y": 1120.2776727811765,
+                        "width": 229,
+                        "height": 126,
+                        "color": {
+                            "hex": "#d80073"
+                        }
+                    },
+                    {
+                        "GUID": "427cb85d-c62e-4bf3-a7f2-69cbee6f56d5",
+                        "x": 462.9063924402434,
+                        "y": 1271.944339447843,
+                        "width": 229,
+                        "height": 126,
+                        "color": {
+                            "hex": "#d80073"
+                        }
+                    },
+                    {
+                        "GUID": "b960eb07-bdd2-4298-9069-8ae51c9d735d",
+                        "x": 418.90639244024413,
+                        "y": 1566.9443394478435,
+                        "width": 229,
+                        "height": 126,
+                        "color": {
+                            "hex": "#d80073"
+                        }
+                    },
+                    {
+                        "GUID": "e86ef3e8-5f88-4613-b6ce-050fc5ae40c7",
+                        "x": 417.5730591069094,
+                        "y": 1707.9443394478426,
+                        "width": 229,
+                        "height": 126,
+                        "color": {
+                            "hex": "#d80073"
+                        }
+                    },
+                    {
+                        "GUID": "ca58d02a-a7f1-4aa8-b8a3-617b1324047f",
+                        "x": 1618.906392440243,
+                        "y": 2022.9443394478446,
+                        "width": 229,
+                        "height": 126,
+                        "color": {
+                            "hex": "#d80073"
+                        }
+                    },
+                    {
+                        "GUID": "385df7ee-e3fb-482d-8bb7-d9ac8a08d0c0",
+                        "x": 1276.0000000000007,
+                        "y": 2029.3333333333333,
+                        "width": 272,
+                        "height": 150,
+                        "color": {
+                            "hex": "#008a00"
+                        }
+                    }
+                ],
+                "erdDefinitions": {
+                    "erd": [],
+                    "rootPath": [],
+                    "entities": [],
+                    "decorativeSymbols": []
+                },
+                "buckets": [
+                    {
+                        "x": 1207.9047619047642,
+                        "y": 1588.523809523812,
+                        "GUID": "16e6b351-03a2-4495-a5cb-318758a14203"
+                    },
+                    {
+                        "x": 1164.1444876783394,
+                        "y": 1026.4681489716506,
+                        "GUID": "11479816-59ea-4786-960c-f43dc4bb45a4"
+                    },
+                    {
+                        "x": 420.23972577357694,
+                        "y": 1065.5238095238083,
+                        "GUID": "31bd3274-d6cc-4b12-b16a-bebd0547d2a7"
+                    },
+                    {
+                        "x": 377.5730591069094,
+                        "y": 1514.1904761904757,
+                        "GUID": "43b4e1fb-760a-44f1-9b62-0e1c42ee7cee"
+                    }
+                ],
+                "collapsedNodes": [],
+                "activeRelationship": "",
+                "activeRelationshipFields": {
+                    "childField": [],
+                    "parentField": []
+                },
+                "selectedCollections": [],
+                "displayColorPicker": false,
+                "graphView": {
+                    "erd": [
+                        {
+                            "GUID": "b351e292-4128-4bb7-91c6-4b0c069dec74",
+                            "size": 100,
+                            "x": 636.570517294272,
+                            "y": 446.54881754168787
+                        },
+                        {
+                            "GUID": "465ab053-9432-4c43-82ae-b0457f3c35cc",
+                            "size": 100,
+                            "x": 352,
+                            "y": 441,
+                            "isPined": true
+                        },
+                        {
+                            "GUID": "d01f7501-dcb7-4e9b-9e3b-14a5a867fbe3",
+                            "size": 100,
+                            "x": 589.6778782030306,
+                            "y": 679.1199411796325
+                        },
+                        {
+                            "GUID": "7722533f-7242-4c5a-9535-44e7c539fb6f",
+                            "size": 100,
+                            "x": 545.641368977325,
+                            "y": 747.7296562879294
+                        },
+                        {
+                            "GUID": "2ffada2e-93f5-4524-a1b8-5164c9f84f7e",
+                            "size": 100,
+                            "x": 642.4290311714831,
+                            "y": 923.4686073395336
+                        },
+                        {
+                            "GUID": "8e985525-5bf1-4633-945a-35054a47d5e1",
+                            "size": 100,
+                            "x": 822.6207676492714,
+                            "y": 735.9516900085273
+                        },
+                        {
+                            "GUID": "2be3c97d-483a-474f-b219-cfbabfe4e88f",
+                            "size": 100,
+                            "x": 933.9651513695694,
+                            "y": 1044.7486527421613
+                        },
+                        {
+                            "GUID": "d3cc3aa9-6ec9-4409-b35b-01cae6352f56",
+                            "size": 100,
+                            "x": 1918,
+                            "y": 1119
+                        },
+                        {
+                            "GUID": "83f1137b-4e38-4a42-b17d-89d969485107",
+                            "size": 100,
+                            "x": 1767.9063924402449,
+                            "y": 1096.6110061145082
+                        },
+                        {
+                            "GUID": "44bb5641-62a0-4e43-ae99-0e3f7b0e4f7f",
+                            "size": 100,
+                            "x": 1842.9063924402449,
+                            "y": 1145.6110061145082
+                        },
+                        {
+                            "GUID": "427cb85d-c62e-4bf3-a7f2-69cbee6f56d5",
+                            "size": 100,
+                            "x": 1834.9063924402449,
+                            "y": 1306.6110061145082
+                        },
+                        {
+                            "GUID": "b960eb07-bdd2-4298-9069-8ae51c9d735d",
+                            "size": 100,
+                            "x": 798.9063924402441,
+                            "y": 1109.611006114511
+                        },
+                        {
+                            "GUID": "e86ef3e8-5f88-4613-b6ce-050fc5ae40c7",
+                            "size": 100,
+                            "x": 782.906392440243,
+                            "y": 1321.277672781177
+                        },
+                        {
+                            "GUID": "ca58d02a-a7f1-4aa8-b8a3-617b1324047f",
+                            "size": 100,
+                            "x": 458.90639244024413,
+                            "y": 1606.9443394478435
+                        },
+                        {
+                            "GUID": "385df7ee-e3fb-482d-8bb7-d9ac8a08d0c0",
+                            "size": 100,
+                            "x": 1282.6666666666667,
+                            "y": 2084
+                        }
+                    ],
+                    "buckets": [
+                        {
+                            "x": 204,
+                            "y": 125,
+                            "GUID": "16e6b351-03a2-4495-a5cb-318758a14203"
+                        },
+                        {
+                            "x": 1601,
+                            "y": 1233,
+                            "GUID": "11479816-59ea-4786-960c-f43dc4bb45a4"
+                        },
+                        {
+                            "x": 723,
+                            "y": 1335,
+                            "GUID": "31bd3274-d6cc-4b12-b16a-bebd0547d2a7"
+                        },
+                        {
+                            "x": 2024,
+                            "y": 1949,
+                            "GUID": "43b4e1fb-760a-44f1-9b62-0e1c42ee7cee"
+                        }
+                    ],
+                    "decorativeSymbols": [],
+                    "forceLayout": true,
+                    "defaultLinkLength": 300
+                },
+                "diagramViews": [],
+                "decorativeSymbols": [],
+                "nestedCollectionsLayout": "horizontal",
+                "options": [
+                    {
+                        "autoWidth": false,
+                        "autoHeight": false,
+                        "GUID": "b351e292-4128-4bb7-91c6-4b0c069dec74"
+                    },
+                    {
+                        "autoWidth": false,
+                        "autoHeight": false,
+                        "GUID": "465ab053-9432-4c43-82ae-b0457f3c35cc"
+                    },
+                    {
+                        "autoWidth": false,
+                        "autoHeight": false,
+                        "GUID": "7722533f-7242-4c5a-9535-44e7c539fb6f"
+                    },
+                    {
+                        "autoWidth": false,
+                        "autoHeight": false,
+                        "GUID": "d01f7501-dcb7-4e9b-9e3b-14a5a867fbe3"
+                    },
+                    {
+                        "autoWidth": false,
+                        "autoHeight": false,
+                        "GUID": "8e985525-5bf1-4633-945a-35054a47d5e1"
+                    },
+                    {
+                        "autoWidth": false,
+                        "autoHeight": false,
+                        "GUID": "2be3c97d-483a-474f-b219-cfbabfe4e88f"
+                    },
+                    {
+                        "autoWidth": false,
+                        "autoHeight": false,
+                        "GUID": "d3cc3aa9-6ec9-4409-b35b-01cae6352f56"
+                    },
+                    {
+                        "autoWidth": false,
+                        "autoHeight": false,
+                        "GUID": "83f1137b-4e38-4a42-b17d-89d969485107"
+                    },
+                    {
+                        "autoWidth": false,
+                        "autoHeight": false,
+                        "GUID": "44bb5641-62a0-4e43-ae99-0e3f7b0e4f7f"
+                    },
+                    {
+                        "autoWidth": false,
+                        "autoHeight": false,
+                        "GUID": "427cb85d-c62e-4bf3-a7f2-69cbee6f56d5"
+                    },
+                    {
+                        "autoWidth": false,
+                        "autoHeight": false,
+                        "GUID": "b960eb07-bdd2-4298-9069-8ae51c9d735d"
+                    },
+                    {
+                        "autoWidth": false,
+                        "autoHeight": false,
+                        "GUID": "e86ef3e8-5f88-4613-b6ce-050fc5ae40c7"
+                    },
+                    {
+                        "autoWidth": false,
+                        "autoHeight": false,
+                        "GUID": "ca58d02a-a7f1-4aa8-b8a3-617b1324047f"
+                    },
+                    {
+                        "autoWidth": false,
+                        "autoHeight": false,
+                        "GUID": "385df7ee-e3fb-482d-8bb7-d9ac8a08d0c0"
+                    }
+                ],
+                "relationshipUpdateDisabled": false
+            },
+            "collectionLevel": {},
+            "changed": false
+        },
+        "dtDiagram": {
+            "collapsedNodes": [],
+            "shouldDistributeCollections": false
+        }
+    }
+}
