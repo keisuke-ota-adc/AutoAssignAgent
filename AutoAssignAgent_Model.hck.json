@@ -4,9 +4,11 @@
         {
             "collectionName": "WorkAssignment",
             "type": "object",
+            "description": "Transaction（Tr）。予約が大分類・確定待ちかつ小分類・予約完了に達したあとに生成される稼働コミット。本流は稼働待ちから稼働終了待ち、稼働終了へ進み、無効へ分岐しうる（docs/work-assignment-status.md、docs/data-model-flowchart.md）。プロジェクト・予約・スタッフと関連する。",
             "properties": [
                 {
                     "name": "Id",
+                    "description": "識別子。稼働割当レコードの主キー（UUID）。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "primaryKey": true,
@@ -27,6 +29,7 @@
                 },
                 {
                     "name": "StaffingOrder_Id",
+                    "description": "元予約ID。生成元となった StaffingOrder（予約Tr）への外部キー。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "primaryKey": false,
@@ -51,6 +54,7 @@
                 },
                 {
                     "name": "Project_Id",
+                    "description": "プロジェクトID。稼働先の案件（Project）への外部キー。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "primaryKey": false,
@@ -75,6 +79,7 @@
                 },
                 {
                     "name": "Staff_Id",
+                    "description": "スタッフID。割当先要員（社員またはBPの共通 Staff）への参照。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "primaryKey": false,
@@ -95,6 +100,7 @@
                 },
                 {
                     "name": "Main_Status_Id",
+                    "description": "ステータス大分類ID。稼働待ち・稼働終了待ち・稼働終了・無効のいずれかを表すマスタ参照（docs/work-assignment-status.md）。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "primaryKey": false,
@@ -121,6 +127,7 @@
                 },
                 {
                     "name": "Sub_Status_Id",
+                    "description": "ステータス小分類ID。各大分類内の詳細（例: 開始日待ち・準備中・稼働中・更新確認中・途中離脱 等）を表すマスタ参照。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "primaryKey": false,
@@ -147,6 +154,7 @@
                 },
                 {
                     "name": "Period_Start",
+                    "description": "稼働期間開始日。検索・集計用にインデックスを付与しうる。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "index": true,
@@ -165,6 +173,7 @@
                 },
                 {
                     "name": "Period_End",
+                    "description": "稼働期間終了日。検索・集計用にインデックスを付与しうる。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "index": true,
@@ -195,9 +204,11 @@
         {
             "collectionName": "WorkAssignmentMonthlyAllocation",
             "type": "object",
+            "description": "稼働割当の月別工数内訳。親 WorkAssignment の期間に沿って、年月ごとの effort を保持する。",
             "properties": [
                 {
                     "name": "Work_Assignment_Id",
+                    "description": "稼働割当ID。親 WorkAssignment への外部キー（複合主キーの一部）。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "primaryKey": false,
@@ -223,6 +234,7 @@
                 },
                 {
                     "name": "Year_Month",
+                    "description": "対象年月。日付型で月を表す（その月の代表日など、実装で正規化）。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "index": true,
@@ -242,6 +254,7 @@
                 },
                 {
                     "name": "Effort",
+                    "description": "工数。当該年月に配分した稼働量（実数）。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "exclusiveMinimum": false,
@@ -274,9 +287,11 @@
         {
             "collectionName": "Project",
             "type": "object",
+            "description": "Transaction（Tr）。案件（プロジェクト）。大分類は受注・要因確定待ち・完了待ち・クローズ待ちの粗い帯で進行しうる（docs/project-status.md、docs/data-model-flowchart.md）。予約・稼働割当・顧客と接続する。",
             "properties": [
                 {
                     "name": "Id",
+                    "description": "識別子。プロジェクトの主キー（UUID）。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "primaryKey": true,
@@ -312,6 +327,7 @@
                     "compositeUniqueKey": false,
                     "GUID": "36b2569b-bfb3-41d0-ae9f-76afa7a2e51f",
                     "name": "Sales_Employee_Id",
+                    "description": "営業担当社員ID。案件を持つ営業（Employee）への参照。Role 営業と整合。",
                     "error": {},
                     "relationshipType": "Foreign Key",
                     "foreignCollection": "7722533f-7242-4c5a-9535-44e7c539fb6f",
@@ -323,6 +339,7 @@
                 },
                 {
                     "name": "Description",
+                    "description": "案件説明。概要・備考など自由記述。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "primaryKey": false,
@@ -353,10 +370,12 @@
                     "compositeUniqueKey": false,
                     "GUID": "aac40d18-0693-4f94-b16b-207b1f53b68d",
                     "name": "Attachments",
+                    "description": "添付ファイル。見積・契約書などバイナリを格納しうる。",
                     "error": {}
                 },
                 {
                     "name": "Main_Status_Id",
+                    "description": "ステータス大分類ID。受注・要因確定待ち・完了待ち・クローズ待ちのいずれか（docs/project-status.md）。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "primaryKey": false,
@@ -383,6 +402,7 @@
                 },
                 {
                     "name": "Sub_Status_Id",
+                    "description": "ステータス小分類ID。各大分類内の詳細（要員予約待ち・稼働中 等、案・運用で拡張）を表すマスタ参照。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "primaryKey": false,
@@ -409,6 +429,7 @@
                 },
                 {
                     "name": "Customer_Name",
+                    "description": "顧客名。案件に紐づく顧客の表示名（Acter 顧客のラベルに相当）。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "primaryKey": false,
@@ -427,6 +448,7 @@
                 },
                 {
                     "name": "Period_Start",
+                    "description": "案件期間開始日。インデックス対象。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "index": true,
@@ -445,6 +467,7 @@
                 },
                 {
                     "name": "Period_End",
+                    "description": "案件期間終了日。インデックス対象。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "index": true,
@@ -475,9 +498,11 @@
         {
             "collectionName": "StaffingOrder",
             "type": "object",
+            "description": "Transaction（Tr）。予約。プロジェクトに紐づき、要員・期間など同種の内包情報を StaffingOrderStaffResource で複数行保持する。大分類・確定待ちかつ小分類・予約完了に至ったタイミングで稼働割当（WorkAssignment）を生成するトリガとなる（docs/reservation-status.md、docs/data-model-flowchart.md）。申請時点から大分類は確定待ち（ドラフトは小分類・作成中）。",
             "properties": [
                 {
                     "name": "Id",
+                    "description": "識別子。予約レコードの主キー（UUID）。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "primaryKey": true,
@@ -513,6 +538,7 @@
                     "GUID": "4de736bf-1223-4782-9e49-3e6fbd6f92a5",
                     "required": true,
                     "name": "Project_Id",
+                    "description": "プロジェクトID。予約が紐づく案件への外部キー。",
                     "foreignCollection": "b351e292-4128-4bb7-91c6-4b0c069dec74",
                     "foreignField": [
                         "b351e292-4128-4bb7-91c6-4b0c069dec74",
@@ -524,6 +550,7 @@
                 },
                 {
                     "name": "Description",
+                    "description": "予約説明・備考。申請内容の補足や社内メモ。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "primaryKey": false,
@@ -554,10 +581,12 @@
                     "compositeUniqueKey": false,
                     "GUID": "63ccf12f-a83a-4358-8926-7b52c511094a",
                     "name": "Attachments",
+                    "description": "添付ファイル。承認資料などバイナリを格納しうる。",
                     "error": {}
                 },
                 {
                     "name": "Total_Amount",
+                    "description": "合計金額（予約）。インデックス対象。整数で保持（通貨単位は運用で定義）。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "index": true,
@@ -579,6 +608,7 @@
                 },
                 {
                     "name": "Main_Status_Id",
+                    "description": "ステータス大分類ID。確定待ち・確定済み・不成立済みのいずれか（docs/reservation-status.md）。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "primaryKey": false,
@@ -600,6 +630,7 @@
                 },
                 {
                     "name": "Sub_Status_Id",
+                    "description": "ステータス小分類ID。各大分類内の詳細（作成中・承認待ち・予約完了・解放・却下 等）を表すマスタ参照。予約完了は稼働割当生成のトリガ。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "primaryKey": false,
@@ -621,6 +652,7 @@
                 },
                 {
                     "name": "Period_Start",
+                    "description": "予約期間開始日。申請時点で把握する「いつから」の起点。インデックス対象。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "index": true,
@@ -639,6 +671,7 @@
                 },
                 {
                     "name": "Period_End",
+                    "description": "予約期間終了日。申請時点で把握する「いつまで」の終端。インデックス対象。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "index": true,
@@ -671,6 +704,7 @@
                         "compositePrimaryKey": false,
                         "compositeUniqueKey": false,
                         "name": "Status",
+                        "description": "ステータス（定義用プレースホルダ）。実体は Main_Status / Sub_Status のマスタ参照で表す。",
                         "isActivated": true,
                         "GUID": "99713080-b02a-4feb-af8f-3554cc4f06f1",
                         "sampleName": "",
@@ -687,16 +721,17 @@
             "GUID": "465ab053-9432-4c43-82ae-b0457f3c35cc",
             "polyglotOnly": false,
             "bucketId": "11479816-59ea-4786-960c-f43dc4bb45a4",
-            "description": "予約",
             "primaryKey": [],
             "childCollection": []
         },
         {
             "collectionName": "StaffingOrderStaffResource",
             "type": "object",
+            "description": "予約（StaffingOrder）に内包する要員リソース明細。誰（Staff）をどのロールでどの工数（Amount）で押さえるかを複数行で保持し、予約完了時に稼働割当生成の元になる（docs/reservation-status.md）。",
             "properties": [
                 {
                     "name": "Staffing_Order_Id",
+                    "description": "予約ID。親 StaffingOrder への外部キー（複合主キーの一部）。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "primaryKey": false,
@@ -725,6 +760,7 @@
                 },
                 {
                     "name": "Staff_Id",
+                    "description": "スタッフID。予約対象の要員（複合主キーの一部）。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "primaryKey": false,
@@ -753,6 +789,7 @@
                 },
                 {
                     "name": "Role_Id",
+                    "description": "ロールID。PS技術者など、その枠での役割（Role マスタ）。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "primaryKey": false,
@@ -778,6 +815,7 @@
                 },
                 {
                     "name": "Amount",
+                    "description": "工数・数量。当該スタッフ行の押さえ量（整数、単位は運用で定義）。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "index": true,
@@ -811,9 +849,11 @@
         {
             "collectionName": "StaffingOrderStaffResourceMonthlyAllocation",
             "type": "object",
+            "description": "予約リソース行の月別工数分解。StaffingOrderStaffResource と同じキーで親子となり、年月ごとの effort を保持する。",
             "properties": [
                 {
                     "name": "Staffing_Order_Id",
+                    "description": "予約ID。親リソース行と同一の StaffingOrder（複合主キーの一部）。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "primaryKey": false,
@@ -839,6 +879,7 @@
                 },
                 {
                     "name": "Staff_Id",
+                    "description": "スタッフID。親リソース行と同一の Staff（複合主キーの一部）。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "primaryKey": false,
@@ -864,6 +905,7 @@
                 },
                 {
                     "name": "Year_Month",
+                    "description": "対象年月。日付型で月を表す。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "index": true,
@@ -883,6 +925,7 @@
                 },
                 {
                     "name": "Effort",
+                    "description": "工数。当該年月の配分（実数）。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "exclusiveMinimum": false,
@@ -915,9 +958,11 @@
         {
             "collectionName": "Employee",
             "type": "object",
+            "description": "Acter（Ac）。社員。共通 Staff にぶら下がり、案件の営業担当や予約の文脈で参照される。起用可否の大分類・詳細は StaffStatus と Status_Staff で履歴管理し、稼働の余地は予約・稼働割当から算出する（docs/employee-status.md、docs/data-model-flowchart.md）。",
             "properties": [
                 {
                     "name": "Id",
+                    "description": "識別子。社員レコードの主キー（UUID）。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "primaryKey": true,
@@ -938,6 +983,7 @@
                 },
                 {
                     "name": "Staff_Id",
+                    "description": "スタッフID。Employee と Staff を1対1で結ぶ。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "primaryKey": false,
@@ -962,6 +1008,7 @@
                 },
                 {
                     "name": "Name",
+                    "description": "氏名。社員の表示用名称。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "primaryKey": false,
@@ -996,10 +1043,12 @@
                     "compositeUniqueKey": false,
                     "GUID": "e48edbfc-464f-4dde-b596-7d73cdc30ff8",
                     "name": "Number",
+                    "description": "社員番号。検索用インデックスを付与しうる。",
                     "error": {}
                 },
                 {
                     "name": "Grade",
+                    "description": "等級。人事区分のラベル。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "primaryKey": false,
@@ -1017,6 +1066,7 @@
                 },
                 {
                     "name": "Role_Id",
+                    "description": "ロールID。社員がシステム上担う役割（例: 営業）のマスタ参照。Staff のロールと揃える想定。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "primaryKey": false,
@@ -1054,6 +1104,7 @@
         {
             "collectionName": "Role",
             "type": "object",
+            "description": "Role。営業・PS技術者などアプリ上の役割マスタ。Staff・Employee・Business_Partner・予約明細から参照され、data-model-flowchart の橙系ノードに相当。",
             "properties": [
                 {
                     "type": "choice",
@@ -1107,6 +1158,7 @@
                 },
                 {
                     "name": "Name",
+                    "description": "ロール名。画面表示用の役割ラベル。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "primaryKey": false,
@@ -1125,6 +1177,7 @@
                 },
                 {
                     "name": "Id",
+                    "description": "識別子。ロールマスタの主キー（UUID）。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "primaryKey": true,
@@ -1164,9 +1217,11 @@
         {
             "collectionName": "Staff",
             "type": "object",
+            "description": "社員と BP の共通スタッフ行。Employee / Business_Partner が Staff_Id で参照し、予約明細・稼働割当の「誰」は本 Id を指す（docs/data-model-flowchart.md）。",
             "properties": [
                 {
                     "name": "Id",
+                    "description": "識別子。スタッフの主キー（UUID）。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "primaryKey": true,
@@ -1190,6 +1245,7 @@
                 },
                 {
                     "name": "Display_Name",
+                    "description": "表示名。一覧・選択肢で用いるラベル。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "primaryKey": false,
@@ -1208,6 +1264,7 @@
                 },
                 {
                     "name": "Role_Id",
+                    "description": "ロールID。このスタッフが担う役割（PS技術者など）のマスタ参照。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "primaryKey": false,
@@ -1232,6 +1289,7 @@
                 },
                 {
                     "name": "Staff_Category",
+                    "description": "スタッフ区分。Employee（社員）または Business_Partner（BP）のいずれか。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "required": true,
@@ -1267,9 +1325,11 @@
         {
             "collectionName": "Business_Partner",
             "type": "object",
+            "description": "Acter（Ac）。BP（ビジネスパートナー）。Staff を介して PS ロール等とプロジェクト・稼働に接続し、契約待ちの予約フローとも関係しうる（docs/data-model-flowchart.md、reservation-status.md）。",
             "properties": [
                 {
                     "name": "Id",
+                    "description": "識別子。BP レコードの主キー（UUID）。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "primaryKey": true,
@@ -1290,6 +1350,7 @@
                 },
                 {
                     "name": "Staff_Id",
+                    "description": "スタッフID。BP と Staff を1対1で結ぶ。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "primaryKey": false,
@@ -1314,6 +1375,7 @@
                 },
                 {
                     "name": "Name",
+                    "description": "名称。BP の表示名。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "primaryKey": false,
@@ -1349,12 +1411,14 @@
                     "compositeUniqueKey": false,
                     "GUID": "c12810f0-11ca-4ac5-ad66-8c019af71dd0",
                     "name": "Number",
+                    "description": "取引先番号。検索用インデックスを付与しうる。",
                     "error": {},
                     "foreignCollection": "",
                     "foreignField": []
                 },
                 {
                     "name": "Role_Id",
+                    "description": "ロールID。BP が担う役割のマスタ参照。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "primaryKey": false,
@@ -1391,9 +1455,11 @@
         {
             "collectionName": "Main_Status_StaffingOrder",
             "type": "object",
+            "description": "予約（StaffingOrder）のステータス大分類マスタ。確定待ち・確定済み・不成立済みなど一覧の粗い帯（docs/reservation-status.md）。",
             "properties": [
                 {
                     "name": "Id",
+                    "description": "識別子。大分類マスタ行の主キー（UUID）。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "primaryKey": true,
@@ -1434,11 +1500,13 @@
                     "compositeUniqueKey": false,
                     "GUID": "730520b7-6ca1-461d-ae03-43d49d6939f5",
                     "name": "Name",
+                    "description": "表示名。大分類のラベル（例: 確定待ち）。",
                     "mode": "ntext",
                     "error": {}
                 },
                 {
                     "name": "Sort_Order",
+                    "description": "表示順。一覧やドロップダウンでの並びに使用。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "index": true,
@@ -1472,9 +1540,11 @@
         {
             "collectionName": "Sub_Status_StaffingOrder",
             "type": "object",
+            "description": "予約のステータス小分類マスタ。各大分類に属する詳細（作成中・承認待ち・予約完了・解放・却下 等、docs/reservation-status.md）。",
             "properties": [
                 {
                     "name": "Id",
+                    "description": "識別子。小分類マスタ行の主キー（UUID）。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "primaryKey": true,
@@ -1499,6 +1569,7 @@
                 },
                 {
                     "name": "Main_Status_Id",
+                    "description": "大分類ID。属する Main_Status_StaffingOrder への外部キー。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "primaryKey": false,
@@ -1536,6 +1607,7 @@
                     "compositeUniqueKey": false,
                     "GUID": "0d601bb9-b4e0-40de-8a05-f837df5dc414",
                     "name": "Name",
+                    "description": "表示名。小分類のラベル。",
                     "mode": "ntext",
                     "error": {},
                     "foreignCollection": "",
@@ -1543,6 +1615,7 @@
                 },
                 {
                     "name": "Sort_Order",
+                    "description": "表示順。同一主分類内での並び。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "index": true,
@@ -1578,9 +1651,11 @@
         {
             "collectionName": "Main_Status_Project",
             "type": "object",
+            "description": "プロジェクトのステータス大分類マスタ。受注・要因確定待ち・完了待ち・クローズ待ちの粗い帯（docs/project-status.md）。",
             "properties": [
                 {
                     "name": "Id",
+                    "description": "識別子。大分類マスタ行の主キー（UUID）。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "primaryKey": true,
@@ -1621,6 +1696,7 @@
                     "compositeUniqueKey": false,
                     "GUID": "45a5bac6-3b5e-4bc6-9704-36463b2c6fba",
                     "name": "Name",
+                    "description": "表示名。プロジェクト大分類のラベル。",
                     "mode": "ntext",
                     "error": {},
                     "foreignCollection": "",
@@ -1628,6 +1704,7 @@
                 },
                 {
                     "name": "Sort_Order",
+                    "description": "表示順。一覧や選択肢での並び。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "index": true,
@@ -1663,9 +1740,11 @@
         {
             "collectionName": "Sub_Status_Project",
             "type": "object",
+            "description": "プロジェクトのステータス小分類マスタ。各大分類に属する詳細（要員予約待ち・稼働中 等、案は docs/project-status.md）。",
             "properties": [
                 {
                     "name": "Id",
+                    "description": "識別子。小分類マスタ行の主キー（UUID）。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "primaryKey": true,
@@ -1690,6 +1769,7 @@
                 },
                 {
                     "name": "Main_Status_Id",
+                    "description": "大分類ID。属する Main_Status_Project への外部キー。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "primaryKey": false,
@@ -1727,6 +1807,7 @@
                     "compositeUniqueKey": false,
                     "GUID": "5359d1b8-6f09-4ee6-9205-3c1b70346932",
                     "name": "Name",
+                    "description": "表示名。プロジェクト小分類のラベル。",
                     "mode": "ntext",
                     "error": {},
                     "foreignCollection": "",
@@ -1734,6 +1815,7 @@
                 },
                 {
                     "name": "Sort_Order",
+                    "description": "表示順。同一主分類内での並び。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "index": true,
@@ -1769,9 +1851,11 @@
         {
             "collectionName": "Main_Status_WorkAssignment",
             "type": "object",
+            "description": "稼働割当のステータス大分類マスタ。稼働待ち・稼働終了待ち・稼働終了・無効（docs/work-assignment-status.md）。",
             "properties": [
                 {
                     "name": "Id",
+                    "description": "識別子。大分類マスタ行の主キー（UUID）。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "primaryKey": true,
@@ -1812,6 +1896,7 @@
                     "compositeUniqueKey": false,
                     "GUID": "cbe2c1fb-626b-4e5c-85c8-9241cd53548d",
                     "name": "Name",
+                    "description": "表示名。稼働割当の大分類ラベル。",
                     "mode": "ntext",
                     "error": {},
                     "foreignCollection": "",
@@ -1819,6 +1904,7 @@
                 },
                 {
                     "name": "Sort_Order",
+                    "description": "表示順。一覧や選択肢での並び。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "index": true,
@@ -1854,9 +1940,11 @@
         {
             "collectionName": "Sub_Status_WorkAssignment",
             "type": "object",
+            "description": "稼働割当のステータス小分類マスタ。各大分類に属する詳細（開始日待ち・準備中・稼働中 等、docs/work-assignment-status.md §3.5）。",
             "properties": [
                 {
                     "name": "Id",
+                    "description": "識別子。小分類マスタ行の主キー（UUID）。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "primaryKey": true,
@@ -1881,6 +1969,7 @@
                 },
                 {
                     "name": "Main_Status_Id",
+                    "description": "大分類ID。属する Main_Status_WorkAssignment への外部キー。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "primaryKey": false,
@@ -1918,6 +2007,7 @@
                     "compositeUniqueKey": false,
                     "GUID": "18721fd0-090b-4ca4-bd39-48a216b7382d",
                     "name": "Name",
+                    "description": "表示名。稼働割当の小分類ラベル。",
                     "mode": "ntext",
                     "error": {},
                     "foreignCollection": "",
@@ -1925,6 +2015,7 @@
                 },
                 {
                     "name": "Sort_Order",
+                    "description": "表示順。同一主分類内での並び。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "index": true,
@@ -1960,9 +2051,11 @@
         {
             "collectionName": "Status_Staff",
             "type": "object",
+            "description": "スタッフ状態マスタ。社員の起用可否の詳細区分（起用前・在職中・休職中・退職済 等）を定義し、StaffStatus から参照する（docs/employee-status.md）。大分類 Active/Inactive はマスタ設計または別列で表現。",
             "properties": [
                 {
                     "name": "Id",
+                    "description": "識別子。状態マスタ行の主キー（UUID）。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "primaryKey": true,
@@ -1996,6 +2089,7 @@
                     "compositeUniqueKey": false,
                     "GUID": "9faf22da-441d-4d36-8bdb-5a651d50b39b",
                     "name": "Name",
+                    "description": "表示名。起用可否詳細のラベル（例: 在職中）。",
                     "mode": "ntext",
                     "error": {},
                     "foreignCollection": "",
@@ -2003,6 +2097,7 @@
                 },
                 {
                     "name": "Sort_Order",
+                    "description": "表示順。一覧や選択肢での並び。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "index": true,
@@ -2038,9 +2133,11 @@
         {
             "collectionName": "StaffStatus",
             "type": "object",
+            "description": "スタッフごとの状態履歴。いつからいつまでどの Status_Staff だったかを保持し、人事イベントで区間が切り替わる想定（docs/employee-status.md）。",
             "properties": [
                 {
                     "name": "Id",
+                    "description": "識別子。状態履歴行の主キー（UUID）。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "primaryKey": true,
@@ -2058,6 +2155,7 @@
                 },
                 {
                     "name": "Staff_Id",
+                    "description": "スタッフID。履歴の対象となる Staff。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "primaryKey": false,
@@ -2082,6 +2180,7 @@
                 },
                 {
                     "name": "Status_Id",
+                    "description": "状態マスタID。Status_Staff の詳細区分（起用前・在職中 等）への参照。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "primaryKey": false,
@@ -2106,6 +2205,7 @@
                 },
                 {
                     "name": "Status_Period_Start",
+                    "description": "状態期間開始日。人事上の状態が始まる日（業務定義に従う）。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "index": true,
@@ -2124,6 +2224,7 @@
                 },
                 {
                     "name": "Status_Period_End",
+                    "description": "状態期間終了日。人事上の状態が終わる日（未設定は現在有効など運用で解釈）。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "index": true,
@@ -2142,6 +2243,7 @@
                 },
                 {
                     "name": "Status_Valid_Period_Start",
+                    "description": "状態の有効開始日。システム上この履歴をいつから適用するか。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "index": true,
@@ -2160,6 +2262,7 @@
                 },
                 {
                     "name": "Status_Valid_Period_End",
+                    "description": "状態の有効終了日。システム上この履歴の適用をいつまでとするか。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "index": true,
@@ -3834,7 +3937,7 @@
                 "compositeUniqueKey": false,
                 "GUID": "5be6c733-b357-4f55-be6d-03e9bcad7997",
                 "definitionRefs": [],
-                "description": "期間　年/月　から　年/月",
+                "description": "期間タプル。開始日・終了日のペアで年月レンジを表す（Polyglot 定義）。",
                 "error": {}
             },
             {
@@ -3973,7 +4076,7 @@
                 "compositeUniqueKey": false,
                 "GUID": "f75968e4-0f1c-4e1f-a2e3-dec489e18312",
                 "definitionRefs": [],
-                "description": "月別工数",
+                "description": "月別工数タプル。年月と effort のペア配列（Polyglot 定義）。",
                 "error": {}
             },
             {
