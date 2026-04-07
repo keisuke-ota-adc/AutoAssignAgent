@@ -47,7 +47,7 @@
                     "parentRelationship": "5f2cb9b8-7e99-406b-8c82-ea1f95e89138"
                 },
                 {
-                    "name": "Poject_Id",
+                    "name": "Project_Id",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "primaryKey": false,
@@ -2263,7 +2263,7 @@
             }
         },
         {
-            "name": "fk WorkAssignment.Poject_Id to Project.Id",
+            "name": "fk WorkAssignment.Project_Id to Project.Id",
             "relationshipType": "Foreign Key",
             "parentField": [
                 [
@@ -3279,8 +3279,8 @@
         "7f58d1b6-2468-42b5-be05-48e875c1ba17": "fk Employee.Role_Id to Role.Id",
         "f417f3c6-3e20-434e-bbf3-9d694e205c3b": "fk StaffingOrder.Staff_List..Staff.Role_Id to Role.Id",
         "b966757a-fb69-4337-9872-f8dca42cc313": "StaffingOrder_Id",
-        "5a5db95c-dc04-42a2-a274-2ca272bb37b3": "Poject_Id",
-        "2c4204af-454c-4326-83d1-0b69bf11ef43": "fk WorkAssignment.Poject_Id to Project.Id",
+        "5a5db95c-dc04-42a2-a274-2ca272bb37b3": "Project_Id",
+        "2c4204af-454c-4326-83d1-0b69bf11ef43": "fk WorkAssignment.Project_Id to Project.Id",
         "36b2569b-bfb3-41d0-ae9f-76afa7a2e51f": "Sales_Employee_Id",
         "c43cfbf6-3fe1-4a58-bde7-44eaed0f69ac": "Description",
         "8e985525-5bf1-4633-945a-35054a47d5e1": "Staff",
