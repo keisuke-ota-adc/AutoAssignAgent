@@ -1,6 +1,6 @@
-# PostgreSQL スキーマ ER 図（`rdb-schema-postgresql.sql`）
+# PostgreSQL スキーマ ER 図（[db/rdb-schema-postgresql.sql](../db/rdb-schema-postgresql.sql)）
 
-GitHub や VS Code の Mermaid プレビュー、HackMD などで表示できます。
+物理 DDL の正はリポジトリ直下の `db/rdb-schema-postgresql.sql` にあります。GitHub や VS Code の Mermaid プレビュー、HackMD などで表示できます。
 
 ## 全体（テーブルと外部キー）
 

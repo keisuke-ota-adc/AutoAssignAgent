@@ -1,8 +1,8 @@
--- AutoAssignAgent データモデル（Hackolade）に基づく PostgreSQL 物理スキーマ案
+-- AutoAssignAgent: Supabase 初期スキーマ（db/rdb-schema-postgresql.sql と同一 DDL。拡張のみ extensions スキーマ）
 -- 前提: UUID 主キー・FK、期間は親の period_start / period_end、月別工数は子テーブル、
 --       ステータスはマスタ Id を FK で参照、添付は BYTEA
 
-CREATE EXTENSION IF NOT EXISTS pgcrypto;
+CREATE EXTENSION IF NOT EXISTS pgcrypto WITH SCHEMA extensions;
 
 -- ---------------------------------------------------------------------------
 -- ロール
@@ -188,7 +188,7 @@ CREATE TABLE work_assignment (
     period_start         DATE,
     period_end           DATE,
     main_status_id       UUID NOT NULL REFERENCES main_status_work_assignment (id),
-    sub_status_id        UUID NOT NULL REFERENCES sub_status_work_assignment (id)
+    sub_status_id        UUID NOT NULL REFERENCES main_status_work_assignment (id)
 );
 
 CREATE INDEX idx_work_assignment_staffing_order ON work_assignment (staffing_order_id);
