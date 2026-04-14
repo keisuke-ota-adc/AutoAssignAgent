@@ -188,7 +188,7 @@ CREATE TABLE work_assignment (
     period_start         DATE,
     period_end           DATE,
     main_status_id       UUID NOT NULL REFERENCES main_status_work_assignment (id),
-    sub_status_id        UUID NOT NULL REFERENCES main_status_work_assignment (id)
+    sub_status_id        UUID NOT NULL REFERENCES sub_status_work_assignment (id)
 );
 
 CREATE INDEX idx_work_assignment_staffing_order ON work_assignment (staffing_order_id);

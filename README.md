@@ -1,114 +1,101 @@
 # AutoAssignAgent
 
-ドメインモデルと PostgreSQL 物理スキーマ、Supabase を使った仮実装（DB・Edge Functions）を置いています。
+ドメインモデルと PostgreSQL 物理スキーマ、Supabase を使った仮実装（DB・Edge Functions）を置いています。開発は **ローカル Docker** 上の Supabase を前提とします。
 
 ## レイアウト
 
 | パス | 内容 |
 |------|------|
-| [db/rdb-schema-postgresql.sql](db/rdb-schema-postgresql.sql) | DDL の単一ソース（汎用 PostgreSQL） |
-| [supabase/migrations/](supabase/migrations/) | Supabase 向けマイグレーション（`pgcrypto` は `extensions` スキーマ） |
-| [supabase/seed.sql](supabase/seed.sql) | 開発用シード（固定 UUID のマスタと role / staff / employee） |
-| [supabase/functions/](supabase/functions/) | Edge Functions（`health`, `projects`） |
+| [db/rdb-schema-postgresql.sql](db/rdb-schema-postgresql.sql) | DDL の参照用（汎用 PostgreSQL）。**適用の正はマイグレーション** |
+| [autoassign-supabase-cli/migrations/](autoassign-supabase-cli/migrations/) | Supabase CLI 向けマイグレーション（`pgcrypto` は `extensions` スキーマ） |
+| [autoassign-supabase-cli/config.toml](autoassign-supabase-cli/config.toml) | CLI ローカル stack のポートや [db.seed] の `sql_paths` |
+| [autoassign-supabase-cli/seed.sql](autoassign-supabase-cli/seed.sql) | 開発用シード（マスタ・role / staff / employee） |
+| [autoassign-supabase-cli/seed_simulation.sql](autoassign-supabase-cli/seed_simulation.sql) | トランザクション系のシミュレーション用 INSERT |
+| [autoassign-supabase-cli/verify_seed.sql](autoassign-supabase-cli/verify_seed.sql) | 件数・JOIN の検証用 SQL（任意） |
+| [autoassign-supabase-cli/functions/](autoassign-supabase-cli/functions/) | Edge Functions（`health`, `projects`） |
+| [supabase-selfhost/](supabase-selfhost/) | 公式 [Self-Hosting with Docker](https://supabase.com/docs/guides/self-hosting/docker) の Compose 一式（CLI 用の `autoassign-supabase-cli/` とは別スタック） |
+| [supabase-selfhost/SETUP.ja.md](supabase-selfhost/SETUP.ja.md) | self-hosting 用メモ（起動・Windows の改行対策） |
+| [scripts/fix-supabase-selfhost-lf.ps1](scripts/fix-supabase-selfhost-lf.ps1) | self-host 用シェル類の CRLF を LF に直す（任意） |
+
+**Supabase CLI とフォルダ名**: CLI はリポジトリ直下の **`supabase/config.toml`** だけを探す実装のため、マイグレーション等の実体は **`autoassign-supabase-cli/`** に置き、作業前に [scripts/link-supabase-cli-junction.ps1](scripts/link-supabase-cli-junction.ps1)（Windows）または [scripts/link-supabase-cli-symlink.sh](scripts/link-supabase-cli-symlink.sh)（macOS / Linux）で `supabase` への junction / symlink を作成する。
 
 ## 前提
 
+- [Docker Desktop](https://docs.docker.com/desktop/install/windows-install/)（推奨）または Docker 互換ランタイム
 - [Supabase CLI](https://supabase.com/docs/guides/cli)（`npx supabase` でも可）
-- ローカルで `supabase start` または `supabase db reset` を使う場合は Docker
 
-## Docker なしでクラウドのみ（新規プロジェクトと DB 作成）
+## ローカル環境の選び方
 
-このリポジトリの DB を作るだけなら **Docker Desktop は不要**です。手順は次のとおりです。
+| 方式 | 用途の目安 |
+|------|------------|
+| [supabase-selfhost/](supabase-selfhost/)（Compose） | 本リポジトリではこちらを主に利用。Kong の **8000** 番台、マイグレーションは `docker exec` + `psql` や Studio の SQL Editor で適用（[SETUP.ja.md](supabase-selfhost/SETUP.ja.md)） |
+| `npx supabase start`（CLI） | 公式の軽量ローカル stack。API **54321** / DB **54322** / Studio **54323**。`npx supabase db reset` でマイグレーションと seed を一括適用 |
 
-1. [Supabase](https://supabase.com/dashboard) にアクセスし、**New project** で新規プロジェクトを作成する（組織・リージョン・データベースのパスワードを設定）。
-2. プロジェクトが作成されると、ホスト上の PostgreSQL（マネージド）が用意されます。ローカルは使わない。
-3. このリポジトリで CLI をログインし、リモートにリンクする。
+## 新規 PC でリポジトリをクローンしたとき（例: CLI ローカル）
 
-```powershell
-cd c:\Users\keisuke-ota\Documents\AutoAssignAgent
-npx supabase login
-npx supabase link --project-ref YOUR_PROJECT_REF
-```
+1. Docker Desktop を起動する。
+2. リポジトリをクローンし、ルートに移動する。
+3. Supabase CLI 用に `supabase` への junction / symlink を作る（上記スクリプト。未作成だと `npx supabase` がプロジェクトを認識しない）。
+4. `npx supabase start` を実行する（初回はイメージの pull に時間がかかる）。
+5. `npx supabase db reset` でマイグレーションと [config.toml](autoassign-supabase-cli/config.toml) の `sql_paths`（`seed.sql` → `seed_simulation.sql`）を適用する。
+6. `npx supabase status` で API URL とキーを確認する。
 
-4. `YOUR_PROJECT_REF` は **Project Settings > General** の **Reference ID**（Project URL の `https://xxxx.supabase.co` の `xxxx` 部分）。
+`autoassign-supabase-cli/` が含まれるため **`supabase init` は不要**です。
 
-5. マイグレーションをリモートに適用する（Docker なしで API 経由で実行される）。
+## CLI ローカル（Docker Desktop）
 
-```powershell
-npx supabase db push
-```
+- 初回 `start` ではコンテナイメージの **pull**（目安で約 1GB 前後）があり、数分から十数分かかることがある。
+- 停止: `npx supabase stop`（データ保持）、`npx supabase stop --no-backup`（データ破棄）。
+- トラブル時は [CLI ドキュメント](https://supabase.com/docs/guides/cli/getting-started) を参照。
 
-6. 開発用シードを流す（任意）。CLI のリモート実行を使う。
+## Self-hosting Docker（supabase-selfhost）
 
-```powershell
-npx supabase db query --linked -f supabase/seed.sql
-```
+Kong・Auth・Storage などフル構成は [supabase-selfhost/](supabase-selfhost/) を使います。ゲートウェイは通常 **8000**。マイグレーション適用・シード・トラブルシュートは [supabase-selfhost/SETUP.ja.md](supabase-selfhost/SETUP.ja.md) を参照。
 
-シードを手で実行したい場合は、ダッシュボードの **SQL Editor** に `supabase/seed.sql` の内容を貼り付けて実行しても同じです。
+## スキーマの適用（マイグレーションと seed）
 
-7. 拡張のエラーが出た場合のみ、**Database > Extensions** で `pgcrypto` を有効にしてからマイグレーションを再実行する。
+**CLI ローカル**: `npx supabase db reset` が定番。`--no-seed` で seed のみスキップ。
 
-## DB の適用（補足）
+**self-host**: Compose 内の Postgres に、`autoassign-supabase-cli/migrations/*.sql` と `seed.sql` / `seed_simulation.sql` を手順どおり適用する（SETUP に合わせる）。
 
-- **クラウドだけ使う場合**: 手順は「Docker なしでクラウドのみ」を参照（`db push` と `db query --linked -f supabase/seed.sql`）。
-- **ローカルで Postgres を動かす場合**（Docker を使う場合のみ）:
+- [autoassign-supabase-cli/verify_seed.sql](autoassign-supabase-cli/verify_seed.sql) は任意。
+- [db/rdb-schema-postgresql.sql](db/rdb-schema-postgresql.sql) は参照用。変更はマイグレーションに追加する。
 
-```powershell
-npx supabase start
-npx supabase db reset
-```
+## Edge Functions のシークレット（ローカル）
 
-## Edge Functions のシークレット
-
-Functions は `SUPABASE_SERVICE_ROLE_KEY` で DB に接続します。リモートでは次で登録します。
-
-```powershell
-npx supabase secrets set SUPABASE_SERVICE_ROLE_KEY=your-service-role-key --project-ref YOUR_PROJECT_REF
-```
-
-`SUPABASE_URL` はホスト側で自動注入されることが多いですが、エラーになる場合は同様に `secrets set` で設定してください。
-
-ローカル実行ではリポジトリ直下に `.env` を用意します（`.env.example` をコピー）。
+Functions は `SUPABASE_URL` と `SUPABASE_SERVICE_ROLE_KEY` で DB に接続します。
 
 ```powershell
 copy .env.example .env
 ```
 
-`.env` に `SUPABASE_URL` と `SUPABASE_SERVICE_ROLE_KEY` を記入したうえで:
-
-```powershell
-npx supabase functions serve --env-file ..\\.env
-```
-
-作業ディレクトリは `supabase` 配下になる場合があるため、パスは環境に合わせて調整してください。プロジェクトルートから:
+`.env` を編集したうえで:
 
 ```powershell
 npx supabase functions serve --env-file .env
 ```
 
-## デプロイ
+- **CLI ローカル**: `SUPABASE_URL` は `npx supabase status` の API URL（例: `http://127.0.0.1:54321`）。キーは `service_role`。
+- **self-host**: `http://127.0.0.1:8000` と [supabase-selfhost/.env](supabase-selfhost/.env) の `SERVICE_ROLE_KEY`（ローカル専用。共有しないこと）。
+
+## 動作確認（curl・ローカルのみ）
+
+CLI ローカル起動後（`supabase status` の URL に合わせる）:
 
 ```powershell
-npx supabase functions deploy health
-npx supabase functions deploy projects
+curl -s http://127.0.0.1:54321/functions/v1/health
+curl -s http://127.0.0.1:54321/functions/v1/projects
 ```
 
-## 動作確認（curl）
-
-デプロイ後の URL は `https://YOUR_PROJECT_REF.supabase.co/functions/v1/health` 形式です。
+案件作成の例（[autoassign-supabase-cli/seed.sql](autoassign-supabase-cli/seed.sql) のマスタ UUID。実際の DB に合わせて置き換える）:
 
 ```powershell
-curl -s https://YOUR_PROJECT_REF.supabase.co/functions/v1/health
-curl -s https://YOUR_PROJECT_REF.supabase.co/functions/v1/projects
+curl -s -X POST http://127.0.0.1:54321/functions/v1/projects -H "Content-Type: application/json" -d "{\"main_status_id\":\"22222222-2222-4222-8222-222222220001\",\"sub_status_id\":\"22222222-2222-4222-8222-222222221011\",\"customer_name\":\"Demo\"}"
 ```
 
-案件の作成（シードのステータス UUID を使用）:
-
-```powershell
-curl -s -X POST https://YOUR_PROJECT_REF.supabase.co/functions/v1/projects -H "Content-Type: application/json" -d "{\"main_status_id\":\"22222222-2222-4222-8222-222222222201\",\"sub_status_id\":\"22222222-2222-4222-8222-222222222202\",\"customer_name\":\"Demo\"}"
-```
+self-host で Kong 経由にする場合は、上記のホストとポートを `http://127.0.0.1:8000` に読み替える。
 
 ## セキュリティメモ
 
 - Edge Functions の `verify_jwt` は仮実装のため無効化しています。本番前に認可を必ず設計してください。
-- サービスロールキーはクライアントに埋め込まないでください。ブラウザからは anon key のみを想定し、API は Functions 経由に限定してください。
+- サービスロールキーはクライアントに埋め込まないでください。

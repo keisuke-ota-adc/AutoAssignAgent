@@ -2,3 +2,10 @@
 .env.local
 .env.*.local
 node_modules/
+
+# 公式リポジトリの sparse clone（self-hosting 用ファイルは supabase-selfhost にコピー済み）
+_supabase-src/
+
+# Supabase CLI はリポジトリ直下の supabase/config.toml のみを探す。実体は autoassign-supabase-cli/ にあり、
+# クローン後に scripts/link-supabase-cli-junction.ps1 または link-supabase-cli-symlink.sh で junction / symlink を作る。
+/supabase
