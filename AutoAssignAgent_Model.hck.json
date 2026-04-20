@@ -44,13 +44,9 @@
                     "compositeUniqueKey": false,
                     "GUID": "b966757a-fb69-4337-9872-f8dca42cc313",
                     "error": {},
-                    "relationshipType": "Foreign Key",
-                    "foreignCollection": "465ab053-9432-4c43-82ae-b0457f3c35cc",
-                    "foreignField": [
-                        "465ab053-9432-4c43-82ae-b0457f3c35cc",
-                        "97fabd89-bdc3-419a-8094-fb4f5a7d9c21"
-                    ],
-                    "parentRelationship": "5f2cb9b8-7e99-406b-8c82-ea1f95e89138"
+                    "childRelationships": [
+                        "af7ddaf5-bc84-43d7-ad3d-d12272ff97dc"
+                    ]
                 },
                 {
                     "name": "Project_Id",
@@ -69,13 +65,9 @@
                     "compositeUniqueKey": false,
                     "GUID": "5a5db95c-dc04-42a2-a274-2ca272bb37b3",
                     "error": {},
-                    "relationshipType": "Foreign Key",
-                    "foreignCollection": "b351e292-4128-4bb7-91c6-4b0c069dec74",
-                    "foreignField": [
-                        "b351e292-4128-4bb7-91c6-4b0c069dec74",
-                        "697788b9-0c45-4fe7-92ac-deb3663ef79b"
-                    ],
-                    "parentRelationship": "2c4204af-454c-4326-83d1-0b69bf11ef43"
+                    "childRelationships": [
+                        "8fe1e7e3-9353-42ea-b76c-1aba9dbb3ac0"
+                    ]
                 },
                 {
                     "name": "Staff_Id",
@@ -95,7 +87,7 @@
                     "GUID": "39b52248-d4d0-42fd-a147-913db77730e1",
                     "error": {},
                     "childRelationships": [
-                        "2343d276-8a20-43ff-8c4a-2b94d2835be6"
+                        "c9fcd9af-3253-4837-bed3-d5c71abb1a1a"
                     ]
                 },
                 {
@@ -202,7 +194,7 @@
             "bucketId": "43b4e1fb-760a-44f1-9b62-0e1c42ee7cee"
         },
         {
-            "collectionName": "WorkAssignmentMonthlyAllocation",
+            "collectionName": "WorkAssignmentItem",
             "type": "object",
             "description": "稼働割当の月別工数内訳。親 WorkAssignment の期間に沿って、年月ごとの effort を保持する。",
             "properties": [
@@ -306,10 +298,6 @@
                     "compositeUniqueKey": false,
                     "GUID": "697788b9-0c45-4fe7-92ac-deb3663ef79b",
                     "required": true,
-                    "childRelationships": [
-                        "dcca2278-19b4-4f37-a024-4261a85c6705",
-                        "2c4204af-454c-4326-83d1-0b69bf11ef43"
-                    ],
                     "error": {}
                 },
                 {
@@ -329,13 +317,27 @@
                     "name": "Sales_Employee_Id",
                     "description": "営業担当社員ID。案件を持つ営業（Employee）への参照。Role 営業と整合。",
                     "error": {},
-                    "relationshipType": "Foreign Key",
-                    "foreignCollection": "7722533f-7242-4c5a-9535-44e7c539fb6f",
-                    "foreignField": [
-                        "7722533f-7242-4c5a-9535-44e7c539fb6f",
-                        "df0adbb7-d544-413b-aded-7b7cc055d0f6"
+                    "childRelationships": [
+                        "35065994-d902-4d73-a5e1-f1bb0e58e3f6"
+                    ]
+                },
+                {
+                    "name": "Name",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
                     ],
-                    "parentRelationship": "d707681d-a84e-4cd5-8873-e1560995d533"
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "1fe136de-fd36-4955-a80f-d313ab103b4d",
+                    "mode": "ntext",
+                    "error": {}
                 },
                 {
                     "name": "Description",
@@ -444,7 +446,10 @@
                     "compositeUniqueKey": false,
                     "GUID": "a1b2c3d4-e5f6-4789-a012-345678901071",
                     "mode": "ntext",
-                    "error": {}
+                    "error": {},
+                    "childRelationships": [
+                        "cf442636-542e-496b-8113-9229bf6d78a8"
+                    ]
                 },
                 {
                     "name": "Period_Start",
@@ -518,8 +523,8 @@
                     "GUID": "97fabd89-bdc3-419a-8094-fb4f5a7d9c21",
                     "error": {},
                     "childRelationships": [
-                        "5f2cb9b8-7e99-406b-8c82-ea1f95e89138",
-                        "cb69c639-3bd9-499d-9c3f-7444b2e41497"
+                        "cb69c639-3bd9-499d-9c3f-7444b2e41497",
+                        "6c2cfc26-1a4d-4e26-ac2a-145c18716a93"
                     ]
                 },
                 {
@@ -565,23 +570,6 @@
                     "compositeUniqueKey": false,
                     "GUID": "3d7a4ea8-c32c-4cd6-bb1c-e4d30aa42b58",
                     "mode": "ntext",
-                    "error": {}
-                },
-                {
-                    "hackoladeMeta": {},
-                    "isActivated": true,
-                    "alternateKey": false,
-                    "childType": "binary",
-                    "type": "binary",
-                    "compositeKey": [
-                        "compositePrimaryKey",
-                        "compositeUniqueKey"
-                    ],
-                    "compositePrimaryKey": false,
-                    "compositeUniqueKey": false,
-                    "GUID": "63ccf12f-a83a-4358-8926-7b52c511094a",
-                    "name": "Attachments",
-                    "description": "添付ファイル。承認資料などバイナリを格納しうる。",
                     "error": {}
                 },
                 {
@@ -652,7 +640,7 @@
                 },
                 {
                     "name": "Period_Start",
-                    "description": "予約期間開始日。申請時点で把握する「いつから」の起点。インデックス対象。",
+                    "description": "要員依頼期間開始日。申請時点で把握する「いつから」の起点。インデックス対象。",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "index": true,
@@ -665,9 +653,9 @@
                     ],
                     "compositePrimaryKey": false,
                     "compositeUniqueKey": false,
-                    "error": {},
                     "GUID": "a1b2c3d4-e5f6-4789-a012-345678901081",
-                    "primaryKey": false
+                    "primaryKey": false,
+                    "error": {}
                 },
                 {
                     "name": "Period_End",
@@ -725,7 +713,7 @@
             "childCollection": []
         },
         {
-            "collectionName": "StaffingOrderStaffResource",
+            "collectionName": "StaffingOrderItem",
             "type": "object",
             "description": "予約（StaffingOrder）に内包する要員リソース明細。誰（Staff）をどのロールでどの工数（Amount）で押さえるかを複数行で保持し、予約完了時に稼働割当生成の元になる（docs/reservation-status.md）。",
             "properties": [
@@ -753,10 +741,7 @@
                         "97fabd89-bdc3-419a-8094-fb4f5a7d9c21"
                     ],
                     "parentRelationship": "cb69c639-3bd9-499d-9c3f-7444b2e41497",
-                    "required": true,
-                    "childRelationships": [
-                        "c5899a2d-b315-4251-920c-b1541157e358"
-                    ]
+                    "required": true
                 },
                 {
                     "name": "Staff_Id",
@@ -774,17 +759,10 @@
                     "compositePrimaryKey": false,
                     "compositeUniqueKey": false,
                     "GUID": "a1b2c3d4-e5f6-4789-a012-345678901012",
-                    "error": {},
-                    "relationshipType": "Foreign Key",
-                    "foreignCollection": "8e985525-5bf1-4633-945a-35054a47d5e1",
-                    "foreignField": [
-                        "8e985525-5bf1-4633-945a-35054a47d5e1",
-                        "692ca41a-893a-4498-aaec-7001ad6e7e81"
-                    ],
-                    "parentRelationship": "7cbf0d28-68ab-45b7-81b0-a47b614bc005",
                     "required": true,
+                    "error": {},
                     "childRelationships": [
-                        "d0104edb-36b7-4c24-af38-1d6e73585c4a"
+                        "09b781d9-5085-440a-aa04-89947c54fc10"
                     ]
                 },
                 {
@@ -803,15 +781,59 @@
                     "compositePrimaryKey": false,
                     "compositeUniqueKey": false,
                     "GUID": "a1b2c3d4-e5f6-4789-a012-345678901013",
-                    "error": {},
-                    "relationshipType": "Foreign Key",
-                    "foreignCollection": "2ffada2e-93f5-4524-a1b8-5164c9f84f7e",
-                    "foreignField": [
-                        "2ffada2e-93f5-4524-a1b8-5164c9f84f7e",
-                        "02d54cc6-6dda-47b6-bc9d-69a66873770d"
+                    "required": true,
+                    "error": {}
+                },
+                {
+                    "name": "Year_Month",
+                    "description": "対象年月。日付型で月を表す。",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "index": true,
+                    "alternateKey": false,
+                    "childType": "date",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
                     ],
-                    "parentRelationship": "04b74808-1488-49ad-a0d9-cba4873b6b92",
-                    "required": true
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "error": {
+                        "name": false,
+                        "code": false
+                    },
+                    "GUID": "32715142-a691-4097-aa8d-845a409a91f5",
+                    "primaryKey": false,
+                    "required": true,
+                    "foreignCollection": "",
+                    "foreignField": []
+                },
+                {
+                    "name": "Effort",
+                    "description": "工数。当該年月の配分（実数）。",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "exclusiveMinimum": false,
+                    "exclusiveMaximum": false,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "childType": "float",
+                    "type": "numeric",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "f43a8fda-bcbb-4726-8a74-f869d4dbed8e",
+                    "error": {
+                        "name": false,
+                        "code": false
+                    },
+                    "required": true,
+                    "foreignCollection": "",
+                    "foreignField": []
                 },
                 {
                     "name": "Amount",
@@ -847,115 +869,6 @@
             "bucketId": "11479816-59ea-4786-960c-f43dc4bb45a4"
         },
         {
-            "collectionName": "StaffingOrderStaffResourceMonthlyAllocation",
-            "type": "object",
-            "description": "予約リソース行の月別工数分解。StaffingOrderStaffResource と同じキーで親子となり、年月ごとの effort を保持する。",
-            "properties": [
-                {
-                    "name": "Staffing_Order_Id",
-                    "description": "予約ID。親リソース行と同一の StaffingOrder（複合主キーの一部）。",
-                    "hackoladeMeta": {},
-                    "isActivated": true,
-                    "primaryKey": false,
-                    "alternateKey": false,
-                    "childType": "nvarchar",
-                    "type": "string",
-                    "compositeKey": [
-                        "compositePrimaryKey",
-                        "compositeUniqueKey"
-                    ],
-                    "compositePrimaryKey": false,
-                    "compositeUniqueKey": false,
-                    "GUID": "a1b2c3d4-e5f6-4789-a012-345678901031",
-                    "error": {},
-                    "relationshipType": "Foreign Key",
-                    "foreignCollection": "a1b2c3d4-e5f6-4789-a012-345678901001",
-                    "foreignField": [
-                        "a1b2c3d4-e5f6-4789-a012-345678901001",
-                        "a1b2c3d4-e5f6-4789-a012-345678901011"
-                    ],
-                    "parentRelationship": "c5899a2d-b315-4251-920c-b1541157e358",
-                    "required": true
-                },
-                {
-                    "name": "Staff_Id",
-                    "description": "スタッフID。親リソース行と同一の Staff（複合主キーの一部）。",
-                    "hackoladeMeta": {},
-                    "isActivated": true,
-                    "primaryKey": false,
-                    "alternateKey": false,
-                    "childType": "nvarchar",
-                    "type": "string",
-                    "compositeKey": [
-                        "compositePrimaryKey",
-                        "compositeUniqueKey"
-                    ],
-                    "compositePrimaryKey": false,
-                    "compositeUniqueKey": false,
-                    "GUID": "a1b2c3d4-e5f6-4789-a012-345678901032",
-                    "error": {},
-                    "relationshipType": "Foreign Key",
-                    "foreignCollection": "a1b2c3d4-e5f6-4789-a012-345678901001",
-                    "foreignField": [
-                        "a1b2c3d4-e5f6-4789-a012-345678901001",
-                        "a1b2c3d4-e5f6-4789-a012-345678901012"
-                    ],
-                    "parentRelationship": "d0104edb-36b7-4c24-af38-1d6e73585c4a",
-                    "required": true
-                },
-                {
-                    "name": "Year_Month",
-                    "description": "対象年月。日付型で月を表す。",
-                    "hackoladeMeta": {},
-                    "isActivated": true,
-                    "index": true,
-                    "alternateKey": false,
-                    "childType": "date",
-                    "type": "string",
-                    "compositeKey": [
-                        "compositePrimaryKey",
-                        "compositeUniqueKey"
-                    ],
-                    "compositePrimaryKey": false,
-                    "compositeUniqueKey": false,
-                    "error": {},
-                    "GUID": "a1b2c3d4-e5f6-4789-a012-345678901033",
-                    "primaryKey": false,
-                    "required": true
-                },
-                {
-                    "name": "Effort",
-                    "description": "工数。当該年月の配分（実数）。",
-                    "hackoladeMeta": {},
-                    "isActivated": true,
-                    "exclusiveMinimum": false,
-                    "exclusiveMaximum": false,
-                    "primaryKey": false,
-                    "alternateKey": false,
-                    "childType": "float",
-                    "type": "numeric",
-                    "compositeKey": [
-                        "compositePrimaryKey",
-                        "compositeUniqueKey"
-                    ],
-                    "compositePrimaryKey": false,
-                    "compositeUniqueKey": false,
-                    "GUID": "a1b2c3d4-e5f6-4789-a012-345678901034",
-                    "error": {},
-                    "required": true
-                }
-            ],
-            "definitions": {
-                "type": "definitions",
-                "properties": [],
-                "GUID": "c5f772ab-4959-4346-acc9-f3a15545fd26"
-            },
-            "isActivated": true,
-            "additionalProperties": false,
-            "GUID": "a1b2c3d4-e5f6-4789-a012-345678901021",
-            "bucketId": "11479816-59ea-4786-960c-f43dc4bb45a4"
-        },
-        {
             "collectionName": "Employee",
             "type": "object",
             "description": "Acter（Ac）。社員。共通 Staff にぶら下がり、案件の営業担当や予約の文脈で参照される。起用可否の大分類・詳細は StaffStatus と Status_Staff で履歴管理し、稼働の余地は予約・稼働割当から算出する（docs/employee-status.md、docs/data-model-flowchart.md）。",
@@ -976,9 +889,6 @@
                     "compositePrimaryKey": false,
                     "compositeUniqueKey": false,
                     "GUID": "df0adbb7-d544-413b-aded-7b7cc055d0f6",
-                    "childRelationships": [
-                        "d707681d-a84e-4cd5-8873-e1560995d533"
-                    ],
                     "error": {}
                 },
                 {
@@ -1107,58 +1017,8 @@
             "description": "Role。営業・PS技術者などアプリ上の役割マスタ。Staff・Employee・Business_Partner・予約明細から参照され、data-model-flowchart の橙系ノードに相当。",
             "properties": [
                 {
-                    "type": "choice",
-                    "properties": [
-                        {
-                            "subschema": true,
-                            "isActivated": true,
-                            "type": "document",
-                            "GUID": "fa64ec6a-9460-473e-8a6c-f10d4599cba8",
-                            "childType": "object",
-                            "properties": [],
-                            "additionalProperties": true,
-                            "displayName": "Sales",
-                            "error": {}
-                        },
-                        {
-                            "subschema": true,
-                            "isActivated": true,
-                            "type": "document",
-                            "GUID": "fb4aa03f-5dd3-490a-9fb7-961bfbbc4077",
-                            "childType": "object",
-                            "properties": [],
-                            "additionalProperties": true,
-                            "displayName": "PS_Engineer",
-                            "error": {}
-                        },
-                        {
-                            "subschema": true,
-                            "isActivated": true,
-                            "type": "document",
-                            "GUID": "0db60759-10d6-4afc-8f85-e81adb0a872f",
-                            "childType": "object",
-                            "properties": [],
-                            "displayName": "PS_BusinessAchitect",
-                            "error": {}
-                        },
-                        {
-                            "subschema": true,
-                            "isActivated": true,
-                            "type": "document",
-                            "GUID": "e84f01a5-a891-4628-9776-089caaf14445",
-                            "childType": "object",
-                            "properties": [],
-                            "displayName": "PS_PojectManager",
-                            "error": {}
-                        }
-                    ],
-                    "isActivated": true,
-                    "choice": "anyOf",
-                    "GUID": "47c1727d-b77a-4827-b30a-4f194f156821"
-                },
-                {
                     "name": "Name",
-                    "description": "ロール名。画面表示用の役割ラベル。",
+                    "description": "ロール名。画面表示用の役割ラベル。\nSales, PS_Engineer, PS_BuisinessArchitect, PS_ProjectManager",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "primaryKey": false,
@@ -1172,8 +1032,8 @@
                     "compositePrimaryKey": false,
                     "compositeUniqueKey": false,
                     "GUID": "a1b2c3d4-e5f6-4789-a012-345678901061",
-                    "error": {},
-                    "required": true
+                    "required": true,
+                    "error": {}
                 },
                 {
                     "name": "Id",
@@ -1195,8 +1055,7 @@
                     "childRelationships": [
                         "7f58d1b6-2468-42b5-be05-48e875c1ba17",
                         "4f06ee06-921e-4c86-b96f-8a97ab8023bb",
-                        "9d315ea1-5b60-4f4d-b542-dc80d60de36c",
-                        "04b74808-1488-49ad-a0d9-cba4873b6b92"
+                        "9d315ea1-5b60-4f4d-b542-dc80d60de36c"
                     ]
                 }
             ],
@@ -1235,13 +1094,12 @@
                     "compositePrimaryKey": false,
                     "compositeUniqueKey": false,
                     "GUID": "692ca41a-893a-4498-aaec-7001ad6e7e81",
-                    "error": {},
                     "childRelationships": [
                         "5fb50e3a-7ee8-40af-b725-c39f266d22a2",
                         "898b0089-d41a-47a7-84f6-fc3473741671",
-                        "4fb17ddc-f925-4f11-96cb-0faec57bb0d8",
-                        "7cbf0d28-68ab-45b7-81b0-a47b614bc005"
-                    ]
+                        "4fb17ddc-f925-4f11-96cb-0faec57bb0d8"
+                    ],
+                    "error": {}
                 },
                 {
                     "name": "Display_Name",
@@ -2289,6 +2147,799 @@
             "additionalProperties": false,
             "GUID": "385df7ee-e3fb-482d-8bb7-d9ac8a08d0c0",
             "bucketId": "16e6b351-03a2-4495-a5cb-318758a14203"
+        },
+        {
+            "collectionName": "ACL_Project",
+            "type": "object",
+            "properties": [
+                {
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "93ac08de-f717-420e-9306-b37b9812a80d",
+                    "required": true,
+                    "name": "Project_Id",
+                    "description": "プロジェクトID。予約が紐づく案件への外部キー。",
+                    "foreignCollection": "465ab053-9432-4c43-82ae-b0457f3c35cc",
+                    "foreignField": [
+                        "465ab053-9432-4c43-82ae-b0457f3c35cc",
+                        "97fabd89-bdc3-419a-8094-fb4f5a7d9c21"
+                    ],
+                    "relationshipType": "Foreign Key",
+                    "parentRelationship": "6c2cfc26-1a4d-4e26-ac2a-145c18716a93",
+                    "error": {
+                        "name": false,
+                        "code": false
+                    }
+                },
+                {
+                    "name": "Project_Name",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "a0de81f9-5889-4289-8573-b0b0224ca1a3",
+                    "mode": "ntext",
+                    "foreignCollection": "",
+                    "foreignField": [],
+                    "error": {}
+                },
+                {
+                    "name": "Project_Description",
+                    "description": "案件説明。概要・備考など自由記述。",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "d32fb2f4-8159-4de8-b5ec-25b712bad5a0",
+                    "mode": "ntext",
+                    "foreignCollection": "",
+                    "foreignField": [],
+                    "error": {}
+                },
+                {
+                    "name": "Project_Customer_Name",
+                    "description": "顧客名。案件に紐づく顧客の表示名（Acter 顧客のラベルに相当）。",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "44fed8ce-f173-437c-bd3c-59384fa1cf00",
+                    "mode": "ntext",
+                    "foreignCollection": "",
+                    "foreignField": [],
+                    "error": {}
+                },
+                {
+                    "name": "Project_Period_Start",
+                    "description": "案件期間開始日。インデックス対象。",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "index": true,
+                    "alternateKey": false,
+                    "childType": "date",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "f2455294-afd5-4c18-bbce-9345b222cf42",
+                    "primaryKey": false,
+                    "foreignCollection": "",
+                    "foreignField": [],
+                    "error": {}
+                },
+                {
+                    "name": "Project_Period_End",
+                    "description": "案件期間終了日。インデックス対象。",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "index": true,
+                    "alternateKey": false,
+                    "childType": "date",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "20b35e5c-47fa-4933-9bb4-b36f674e5244",
+                    "primaryKey": false,
+                    "foreignCollection": "",
+                    "foreignField": [],
+                    "error": {}
+                },
+                {
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "alternateKey": false,
+                    "childType": "binary",
+                    "type": "binary",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "a6bbc9fb-9774-4abf-85ee-d50af5adfed6",
+                    "name": "Project_Attachments",
+                    "description": "添付ファイル。見積・契約書などバイナリを格納しうる。",
+                    "foreignCollection": "",
+                    "foreignField": [],
+                    "error": {}
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "feb4e85e-6ab0-4ec6-8065-38b4edfa441a"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "GUID": "eda9fbda-f98f-4e32-ad02-0afa73127bee",
+            "polyglotOnly": true,
+            "bucketId": "11479816-59ea-4786-960c-f43dc4bb45a4"
+        },
+        {
+            "collectionName": "ACL_Staff",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "Id",
+                    "description": "識別子。スタッフの主キー（UUID）。",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "dced45eb-b26a-49f5-97dd-9ee5d5579115",
+                    "error": {
+                        "name": false,
+                        "code": false
+                    },
+                    "childRelationships": [],
+                    "foreignCollection": "a1b2c3d4-e5f6-4789-a012-345678901001",
+                    "foreignField": [
+                        "a1b2c3d4-e5f6-4789-a012-345678901001",
+                        "a1b2c3d4-e5f6-4789-a012-345678901012"
+                    ],
+                    "relationshipType": "Foreign Key",
+                    "parentRelationship": "09b781d9-5085-440a-aa04-89947c54fc10"
+                },
+                {
+                    "name": "Display_Name",
+                    "description": "表示名。一覧・選択肢で用いるラベル。",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "2f8359b0-5d2f-4c71-926a-0a8dacb57c37",
+                    "mode": "ntext",
+                    "error": {
+                        "name": false,
+                        "code": false
+                    },
+                    "foreignCollection": "",
+                    "foreignField": []
+                },
+                {
+                    "name": "Role_Id",
+                    "description": "ロールID。このスタッフが担う役割（PS技術者など）のマスタ参照。",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "ae56b4ee-a7b5-4685-a964-3ed4a237a133",
+                    "error": {
+                        "name": false,
+                        "code": false
+                    },
+                    "relationshipType": "Foreign Key",
+                    "foreignCollection": "2ffada2e-93f5-4524-a1b8-5164c9f84f7e",
+                    "foreignField": [
+                        "2ffada2e-93f5-4524-a1b8-5164c9f84f7e",
+                        "02d54cc6-6dda-47b6-bc9d-69a66873770d"
+                    ],
+                    "parentRelationship": "4f06ee06-921e-4c86-b96f-8a97ab8023bb",
+                    "childRelationships": [
+                        "fa0bf978-f77a-4627-84e6-8e7a48b6de23"
+                    ]
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "4ad57557-e9f9-45e5-9c3c-b7f96bdb4380"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "GUID": "85b89a3b-6e49-4b46-9ba9-c03817459fe4",
+            "polyglotOnly": true,
+            "bucketId": "11479816-59ea-4786-960c-f43dc4bb45a4"
+        },
+        {
+            "collectionName": "ACL_StaffingOrder",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "StaffingOrder_Id",
+                    "description": "元予約ID。生成元となった StaffingOrder（予約Tr）への外部キー。",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "26bf061c-2276-4c70-989a-4d7c3e89077b",
+                    "error": {
+                        "name": false,
+                        "code": false
+                    },
+                    "relationshipType": "Foreign Key",
+                    "foreignCollection": "d01f7501-dcb7-4e9b-9e3b-14a5a867fbe3",
+                    "foreignField": [
+                        "d01f7501-dcb7-4e9b-9e3b-14a5a867fbe3",
+                        "b966757a-fb69-4337-9872-f8dca42cc313"
+                    ],
+                    "parentRelationship": "af7ddaf5-bc84-43d7-ad3d-d12272ff97dc"
+                },
+                {
+                    "name": "Period_Start",
+                    "description": "要員依頼期間開始日。申請時点で把握する「いつから」の起点。インデックス対象。",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "index": true,
+                    "alternateKey": false,
+                    "childType": "date",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "51c696aa-ad57-4c79-9a73-8326020709dd",
+                    "primaryKey": false,
+                    "error": {
+                        "name": false,
+                        "code": false
+                    },
+                    "foreignCollection": "",
+                    "foreignField": []
+                },
+                {
+                    "name": "Period_End",
+                    "description": "予約期間終了日。申請時点で把握する「いつまで」の終端。インデックス対象。",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "index": true,
+                    "alternateKey": false,
+                    "childType": "date",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "error": {
+                        "name": false,
+                        "code": false
+                    },
+                    "GUID": "6c947c46-68f7-4f5a-a786-099e2b45a7ef",
+                    "primaryKey": false,
+                    "foreignCollection": "",
+                    "foreignField": []
+                },
+                {
+                    "name": "Description",
+                    "description": "予約説明・備考。申請内容の補足や社内メモ。",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "b81b8763-4852-4ef7-b222-19f4ce97a0b4",
+                    "mode": "ntext",
+                    "error": {
+                        "name": false,
+                        "code": false
+                    },
+                    "foreignCollection": "",
+                    "foreignField": []
+                },
+                {
+                    "name": "Total_Amount",
+                    "description": "合計金額（予約）。インデックス対象。整数で保持（通貨単位は運用で定義）。",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "index": true,
+                    "exclusiveMinimum": false,
+                    "exclusiveMaximum": false,
+                    "primaryKey": false,
+                    "mode": "int32",
+                    "alternateKey": false,
+                    "childType": "integer",
+                    "type": "numeric",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "649ea048-e035-44c5-927e-cd94781a7548",
+                    "error": {
+                        "name": false,
+                        "code": false
+                    },
+                    "foreignCollection": "",
+                    "foreignField": []
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "357ae48f-e7d4-43a0-a57b-2f1e4213eeb6"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "GUID": "2bb1c07f-96f8-4d2b-816e-3a8ae14fee59",
+            "bucketId": "43b4e1fb-760a-44f1-9b62-0e1c42ee7cee"
+        },
+        {
+            "collectionName": "ACL_Project",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "Project_Id",
+                    "description": "プロジェクトID。稼働先の案件（Project）への外部キー。",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "ee037d45-400c-4bb3-8f40-f7cdc6d507eb",
+                    "error": {
+                        "name": false,
+                        "code": false
+                    },
+                    "relationshipType": "Foreign Key",
+                    "foreignCollection": "d01f7501-dcb7-4e9b-9e3b-14a5a867fbe3",
+                    "foreignField": [
+                        "d01f7501-dcb7-4e9b-9e3b-14a5a867fbe3",
+                        "5a5db95c-dc04-42a2-a274-2ca272bb37b3"
+                    ],
+                    "parentRelationship": "8fe1e7e3-9353-42ea-b76c-1aba9dbb3ac0"
+                },
+                {
+                    "name": "Name",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "6e61a656-8264-4159-8269-6ddee3d342b4",
+                    "mode": "ntext",
+                    "error": {
+                        "name": false,
+                        "code": false
+                    },
+                    "foreignCollection": "",
+                    "foreignField": []
+                },
+                {
+                    "name": "Description",
+                    "description": "案件説明。概要・備考など自由記述。",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "e9eefbc5-6cc1-476b-af14-9f5d378b4087",
+                    "mode": "ntext",
+                    "error": {
+                        "name": false,
+                        "code": false
+                    },
+                    "foreignCollection": "",
+                    "foreignField": []
+                },
+                {
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "alternateKey": false,
+                    "childType": "binary",
+                    "type": "binary",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "a497f994-7a11-4aa6-b64b-b77f1afbd2a6",
+                    "name": "Attachments",
+                    "description": "添付ファイル。見積・契約書などバイナリを格納しうる。",
+                    "error": {
+                        "name": false,
+                        "code": false
+                    },
+                    "foreignCollection": "",
+                    "foreignField": []
+                },
+                {
+                    "name": "Period_End",
+                    "description": "案件期間終了日。インデックス対象。",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "index": true,
+                    "alternateKey": false,
+                    "childType": "date",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "error": {
+                        "name": false,
+                        "code": false
+                    },
+                    "GUID": "31cd8ee0-d3c6-4a06-9a5e-9273ae49e903",
+                    "primaryKey": false,
+                    "foreignCollection": "",
+                    "foreignField": []
+                },
+                {
+                    "name": "Period_Start",
+                    "description": "案件期間開始日。インデックス対象。",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "index": true,
+                    "alternateKey": false,
+                    "childType": "date",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "error": {
+                        "name": false,
+                        "code": false
+                    },
+                    "GUID": "d5bc6d7f-c55a-4b66-b71b-134b05469f61",
+                    "primaryKey": false,
+                    "foreignCollection": "",
+                    "foreignField": []
+                },
+                {
+                    "name": "Customer_Name",
+                    "description": "顧客名。案件に紐づく顧客の表示名（Acter 顧客のラベルに相当）。",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "2a4ce1b3-ced6-4a02-95f5-e77145fdce14",
+                    "mode": "ntext",
+                    "error": {
+                        "name": false,
+                        "code": false
+                    },
+                    "foreignCollection": "",
+                    "foreignField": []
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "5baad168-9564-4714-9235-4b040bbfcab7"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "GUID": "b703a6db-d155-4564-aadb-8b8be1474cb6",
+            "bucketId": "43b4e1fb-760a-44f1-9b62-0e1c42ee7cee"
+        },
+        {
+            "collectionName": "ACL_Staff",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "Staff_Id",
+                    "description": "識別子。スタッフの主キー（UUID）。",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "2ec53fde-d555-4317-aaf5-ff7d74cca1f2",
+                    "childRelationships": [],
+                    "error": {},
+                    "relationshipType": "Foreign Key",
+                    "foreignCollection": "d01f7501-dcb7-4e9b-9e3b-14a5a867fbe3",
+                    "foreignField": [
+                        "d01f7501-dcb7-4e9b-9e3b-14a5a867fbe3",
+                        "39b52248-d4d0-42fd-a147-913db77730e1"
+                    ],
+                    "parentRelationship": "c9fcd9af-3253-4837-bed3-d5c71abb1a1a"
+                },
+                {
+                    "name": "Display_Name",
+                    "description": "表示名。一覧・選択肢で用いるラベル。",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "044a9f99-df4d-4420-aa32-cd25154d1d3c",
+                    "mode": "ntext",
+                    "error": {
+                        "name": false,
+                        "code": false
+                    },
+                    "foreignCollection": "",
+                    "foreignField": []
+                },
+                {
+                    "name": "Role_Id",
+                    "description": "ロールID。このスタッフが担う役割（PS技術者など）のマスタ参照。",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "60bc29c8-8928-4e4d-aa73-02faa88b631c",
+                    "error": {
+                        "name": false,
+                        "code": false
+                    },
+                    "relationshipType": "Foreign Key",
+                    "foreignCollection": "2ffada2e-93f5-4524-a1b8-5164c9f84f7e",
+                    "foreignField": [
+                        "2ffada2e-93f5-4524-a1b8-5164c9f84f7e",
+                        "02d54cc6-6dda-47b6-bc9d-69a66873770d"
+                    ],
+                    "parentRelationship": "4f06ee06-921e-4c86-b96f-8a97ab8023bb",
+                    "childRelationships": []
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "66a5d879-5663-452c-b0a8-65170296b07f"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "GUID": "4f0bada1-30d7-4ceb-9ca9-e3c7562b20ea",
+            "polyglotOnly": true,
+            "bucketId": "43b4e1fb-760a-44f1-9b62-0e1c42ee7cee"
+        },
+        {
+            "collectionName": "ACL_Employee_Sales",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "Employee_Id",
+                    "description": "識別子。社員レコードの主キー（UUID）。",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "b3c378c9-3ada-494a-b8c2-5b18c0ec27a1",
+                    "childRelationships": [],
+                    "foreignCollection": "b351e292-4128-4bb7-91c6-4b0c069dec74",
+                    "foreignField": [
+                        "b351e292-4128-4bb7-91c6-4b0c069dec74",
+                        "36b2569b-bfb3-41d0-ae9f-76afa7a2e51f"
+                    ],
+                    "relationshipType": "Foreign Key",
+                    "parentRelationship": "35065994-d902-4d73-a5e1-f1bb0e58e3f6",
+                    "error": {}
+                },
+                {
+                    "name": "Name",
+                    "description": "氏名。社員の表示用名称。",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "childType": "varchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "2b9481af-8b89-4cf2-9ea3-e536eeb3de56",
+                    "error": {
+                        "name": false,
+                        "code": false
+                    },
+                    "foreignCollection": "",
+                    "foreignField": []
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "a09e4c93-a56d-4839-a62f-279f1d17772c"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "GUID": "7c58c329-5c2a-41b5-b63a-aab0b641c752",
+            "bucketId": "31bd3274-d6cc-4b12-b16a-bebd0547d2a7"
+        },
+        {
+            "collectionName": "ACL_Customer",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "Customer_Name",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "alternateKey": false,
+                    "childType": "nvarchar",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePrimaryKey",
+                        "compositeUniqueKey"
+                    ],
+                    "compositePrimaryKey": false,
+                    "compositeUniqueKey": false,
+                    "GUID": "77eaef30-3d16-4255-9a75-779920d4e931",
+                    "mode": "ntext",
+                    "error": {},
+                    "relationshipType": "Foreign Key",
+                    "foreignCollection": "b351e292-4128-4bb7-91c6-4b0c069dec74",
+                    "foreignField": [
+                        "b351e292-4128-4bb7-91c6-4b0c069dec74",
+                        "a1b2c3d4-e5f6-4789-a012-345678901071"
+                    ],
+                    "parentRelationship": "cf442636-542e-496b-8113-9229bf6d78a8"
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "25890b39-3074-49bc-94ea-92ad5d264a8e"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "GUID": "f8677afd-7435-43c7-9fad-25909df3cf25",
+            "bucketId": "31bd3274-d6cc-4b12-b16a-bebd0547d2a7"
         }
     ],
     "buckets": [
@@ -2312,18 +2963,18 @@
             "show": true,
             "isActivated": true,
             "indexes": [],
-            "GUID": "16e6b351-03a2-4495-a5cb-318758a14203",
-            "description": "# 社内アサイン予約アプリのメインデータモデル"
+            "GUID": "16e6b351-03a2-4495-a5cb-318758a14203"
         },
         {
-            "name": "予約",
+            "name": "要員依頼",
             "type": "bucket",
             "collectionIds": [
                 "465ab053-9432-4c43-82ae-b0457f3c35cc",
                 "d3cc3aa9-6ec9-4409-b35b-01cae6352f56",
                 "83f1137b-4e38-4a42-b17d-89d969485107",
                 "a1b2c3d4-e5f6-4789-a012-345678901001",
-                "a1b2c3d4-e5f6-4789-a012-345678901021"
+                "eda9fbda-f98f-4e32-ad02-0afa73127bee",
+                "85b89a3b-6e49-4b46-9ba9-c03817459fe4"
             ],
             "backgroundColor": {
                 "r": 0,
@@ -2342,7 +2993,9 @@
             "collectionIds": [
                 "b351e292-4128-4bb7-91c6-4b0c069dec74",
                 "44bb5641-62a0-4e43-ae99-0e3f7b0e4f7f",
-                "427cb85d-c62e-4bf3-a7f2-69cbee6f56d5"
+                "427cb85d-c62e-4bf3-a7f2-69cbee6f56d5",
+                "7c58c329-5c2a-41b5-b63a-aab0b641c752",
+                "f8677afd-7435-43c7-9fad-25909df3cf25"
             ],
             "backgroundColor": {
                 "r": 0,
@@ -2362,7 +3015,10 @@
                 "d01f7501-dcb7-4e9b-9e3b-14a5a867fbe3",
                 "b960eb07-bdd2-4298-9069-8ae51c9d735d",
                 "e86ef3e8-5f88-4613-b6ce-050fc5ae40c7",
-                "a1b2c3d4-e5f6-4789-a012-345678901041"
+                "a1b2c3d4-e5f6-4789-a012-345678901041",
+                "2bb1c07f-96f8-4d2b-816e-3a8ae14fee59",
+                "b703a6db-d155-4564-aadb-8b8be1474cb6",
+                "4f0bada1-30d7-4ceb-9ca9-e3c7562b20ea"
             ],
             "backgroundColor": {
                 "r": 3,
@@ -2378,167 +3034,6 @@
     ],
     "views": [],
     "relationships": [
-        {
-            "name": "fk StaffingOrder.ProjectId to Project.Id",
-            "relationshipType": "Foreign Key",
-            "parentField": [
-                [
-                    "b351e292-4128-4bb7-91c6-4b0c069dec74",
-                    "697788b9-0c45-4fe7-92ac-deb3663ef79b"
-                ]
-            ],
-            "parentCardinality": "1",
-            "childField": [
-                [
-                    "465ab053-9432-4c43-82ae-b0457f3c35cc",
-                    "4de736bf-1223-4782-9e49-3e6fbd6f92a5"
-                ]
-            ],
-            "isActivated": true,
-            "childCardinality": "1",
-            "GUID": "dcca2278-19b4-4f37-a024-4261a85c6705",
-            "parentCollection": "b351e292-4128-4bb7-91c6-4b0c069dec74",
-            "childCollection": "465ab053-9432-4c43-82ae-b0457f3c35cc",
-            "level": "field",
-            "hackoladeStyles": {
-                "GUID": "14b26f51-4504-4176-8d07-68750dd68386",
-                "autoPositioning": true,
-                "type": "Orthogonal",
-                "thickness": 2,
-                "color": "#79c4ff",
-                "dataType": "",
-                "shape": [
-                    {
-                        "x": 1204.1444876783394,
-                        "y": 1248.4681489716506
-                    },
-                    {
-                        "x": 1118.5246247915504,
-                        "y": 1248.4681489716506
-                    },
-                    {
-                        "x": 1118.5246247915504,
-                        "y": 1185.190476190475
-                    },
-                    {
-                        "x": 1032.9047619047615,
-                        "y": 1185.190476190475
-                    }
-                ],
-                "sides": [
-                    "left",
-                    "right"
-                ]
-            }
-        },
-        {
-            "name": "fk Project.Sales_Employee_Id to Employee.Id",
-            "relationshipType": "Foreign Key",
-            "parentField": [
-                [
-                    "7722533f-7242-4c5a-9535-44e7c539fb6f",
-                    "df0adbb7-d544-413b-aded-7b7cc055d0f6"
-                ]
-            ],
-            "parentCardinality": "1",
-            "childField": [
-                [
-                    "b351e292-4128-4bb7-91c6-4b0c069dec74",
-                    "36b2569b-bfb3-41d0-ae9f-76afa7a2e51f"
-                ]
-            ],
-            "isActivated": true,
-            "childCardinality": "1",
-            "parentCollection": "7722533f-7242-4c5a-9535-44e7c539fb6f",
-            "childCollection": "b351e292-4128-4bb7-91c6-4b0c069dec74",
-            "GUID": "d707681d-a84e-4cd5-8873-e1560995d533",
-            "level": "field",
-            "lineSize": 2,
-            "hackoladeStyles": {
-                "GUID": "3179b8e2-c1d9-411d-95ff-a98817cbfd2b",
-                "autoPositioning": true,
-                "type": "Orthogonal",
-                "thickness": 2,
-                "color": "#79c4ff",
-                "dataType": "",
-                "shape": [
-                    {
-                        "x": 1032.9047619047615,
-                        "y": 1264.8571428571415
-                    },
-                    {
-                        "x": 1160.0714285714282,
-                        "y": 1264.8571428571415
-                    },
-                    {
-                        "x": 1160.0714285714282,
-                        "y": 1887.5238095238092
-                    },
-                    {
-                        "x": 1287.238095238095,
-                        "y": 1887.5238095238092
-                    }
-                ],
-                "sides": [
-                    "right",
-                    "left"
-                ]
-            }
-        },
-        {
-            "name": "fk WorkAssignment.StaffingOrder_Id to StaffingOrder.Id",
-            "relationshipType": "Foreign Key",
-            "parentField": [
-                [
-                    "465ab053-9432-4c43-82ae-b0457f3c35cc",
-                    "97fabd89-bdc3-419a-8094-fb4f5a7d9c21"
-                ]
-            ],
-            "parentCardinality": "1",
-            "childField": [
-                [
-                    "d01f7501-dcb7-4e9b-9e3b-14a5a867fbe3",
-                    "b966757a-fb69-4337-9872-f8dca42cc313"
-                ]
-            ],
-            "isActivated": true,
-            "childCardinality": "1",
-            "parentCollection": "465ab053-9432-4c43-82ae-b0457f3c35cc",
-            "childCollection": "d01f7501-dcb7-4e9b-9e3b-14a5a867fbe3",
-            "GUID": "5f2cb9b8-7e99-406b-8c82-ea1f95e89138",
-            "level": "field",
-            "lineSize": 2,
-            "hackoladeStyles": {
-                "GUID": "002c1b0d-f09c-4304-9bda-afdc0703dac2",
-                "autoPositioning": true,
-                "type": "Orthogonal",
-                "thickness": 2,
-                "color": "#79c4ff",
-                "dataType": "",
-                "shape": [
-                    {
-                        "x": 995.9047619047662,
-                        "y": 1635.523809523809
-                    },
-                    {
-                        "x": 1100.024624791553,
-                        "y": 1635.523809523809
-                    },
-                    {
-                        "x": 1100.024624791553,
-                        "y": 1309.1348156383174
-                    },
-                    {
-                        "x": 1204.1444876783394,
-                        "y": 1309.1348156383174
-                    }
-                ],
-                "sides": [
-                    "right",
-                    "left"
-                ]
-            }
-        },
         {
             "name": "fk Employee.Role_Id to Role.Id",
             "relationshipType": "Foreign Key",
@@ -2571,79 +3066,25 @@
                 "dataType": "",
                 "shape": [
                     {
-                        "x": 1497.238095238095,
-                        "y": 1887.5238095238092
+                        "x": 1726.333333333333,
+                        "y": 1737.0000000000005
                     },
                     {
-                        "x": 1535.4047619047624,
-                        "y": 1887.5238095238092
+                        "x": 1797.833333333333,
+                        "y": 1737.0000000000005
                     },
                     {
-                        "x": 1535.4047619047624,
-                        "y": 1724.023809523812
+                        "x": 1797.833333333333,
+                        "y": 1690.0000000000005
                     },
                     {
-                        "x": 1573.5714285714296,
-                        "y": 1724.023809523812
+                        "x": 1869.333333333333,
+                        "y": 1690.0000000000005
                     }
                 ],
                 "sides": [
                     "right",
                     "left"
-                ]
-            }
-        },
-        {
-            "name": "fk WorkAssignment.Project_Id to Project.Id",
-            "relationshipType": "Foreign Key",
-            "parentField": [
-                [
-                    "b351e292-4128-4bb7-91c6-4b0c069dec74",
-                    "697788b9-0c45-4fe7-92ac-deb3663ef79b"
-                ]
-            ],
-            "parentCardinality": "1",
-            "childField": [
-                [
-                    "d01f7501-dcb7-4e9b-9e3b-14a5a867fbe3",
-                    "5a5db95c-dc04-42a2-a274-2ca272bb37b3"
-                ]
-            ],
-            "isActivated": true,
-            "childCardinality": "1",
-            "parentCollection": "b351e292-4128-4bb7-91c6-4b0c069dec74",
-            "childCollection": "d01f7501-dcb7-4e9b-9e3b-14a5a867fbe3",
-            "GUID": "2c4204af-454c-4326-83d1-0b69bf11ef43",
-            "level": "field",
-            "lineSize": 2,
-            "hackoladeStyles": {
-                "GUID": "cfecf027-414c-4a8e-860b-d4e260326b35",
-                "autoPositioning": true,
-                "type": "Orthogonal",
-                "thickness": 2,
-                "color": "#79c4ff",
-                "dataType": "",
-                "shape": [
-                    {
-                        "x": 857.4047619047662,
-                        "y": 1554.1904761904757
-                    },
-                    {
-                        "x": 857.4047619047662,
-                        "y": 1449.357142857142
-                    },
-                    {
-                        "x": 894.4047619047614,
-                        "y": 1449.357142857142
-                    },
-                    {
-                        "x": 894.4047619047614,
-                        "y": 1344.5238095238083
-                    }
-                ],
-                "sides": [
-                    "top",
-                    "bottom"
                 ]
             }
         },
@@ -2679,25 +3120,25 @@
                 "dataType": "",
                 "shape": [
                     {
-                        "x": 1435.9047619047642,
-                        "y": 1654.5238095238094
+                        "x": 1800.333333333333,
+                        "y": 1890.0000000000005
                     },
                     {
-                        "x": 1435.9047619047642,
-                        "y": 1628.523809523812
+                        "x": 1834.833333333333,
+                        "y": 1890.0000000000005
                     },
                     {
-                        "x": 1671.5714285714296,
-                        "y": 1628.523809523812
+                        "x": 1834.833333333333,
+                        "y": 1712.0000000000005
                     },
                     {
-                        "x": 1671.5714285714296,
-                        "y": 1653.523809523812
+                        "x": 1869.333333333333,
+                        "y": 1712.0000000000005
                     }
                 ],
                 "sides": [
-                    "top",
-                    "top"
+                    "right",
+                    "left"
                 ]
             }
         },
@@ -2729,29 +3170,29 @@
                 "autoPositioning": true,
                 "type": "Orthogonal",
                 "thickness": 2,
-                "color": "#a73939",
+                "color": "#79c4ff",
                 "dataType": "",
                 "shape": [
                     {
-                        "x": 1392.238095238095,
-                        "y": 1819.5238095238092
+                        "x": 1635.333333333333,
+                        "y": 1806.0000000000005
                     },
                     {
-                        "x": 1392.238095238095,
-                        "y": 1788.5238095238092
+                        "x": 1635.333333333333,
+                        "y": 1831.0000000000005
                     },
                     {
-                        "x": 1341.9047619047642,
-                        "y": 1788.5238095238092
+                        "x": 1672.333333333333,
+                        "y": 1831.0000000000005
                     },
                     {
-                        "x": 1341.9047619047642,
-                        "y": 1757.5238095238094
+                        "x": 1672.333333333333,
+                        "y": 1856.0000000000005
                     }
                 ],
                 "sides": [
-                    "top",
-                    "bottom"
+                    "bottom",
+                    "top"
                 ]
             }
         },
@@ -2787,25 +3228,25 @@
                 "dataType": "",
                 "shape": [
                     {
-                        "x": 1812.2380952380952,
-                        "y": 1903.1904761904775
+                        "x": 1979.333333333333,
+                        "y": 1856.0000000000005
                     },
                     {
-                        "x": 1892.5714285714296,
-                        "y": 1903.1904761904775
+                        "x": 1979.333333333333,
+                        "y": 1795.0000000000005
                     },
                     {
-                        "x": 1892.5714285714296,
-                        "y": 1724.023809523812
+                        "x": 1965.833333333333,
+                        "y": 1795.0000000000005
                     },
                     {
-                        "x": 1867.5714285714296,
-                        "y": 1724.023809523812
+                        "x": 1965.833333333333,
+                        "y": 1734.0000000000005
                     }
                 ],
                 "sides": [
-                    "right",
-                    "right"
+                    "top",
+                    "bottom"
                 ]
             }
         },
@@ -2834,60 +3275,6 @@
             "lineSize": 2,
             "hackoladeStyles": {
                 "GUID": "b2b9d6c8-ae08-40b5-9896-577b1f8e8a2e",
-                "autoPositioning": false,
-                "type": "Orthogonal",
-                "thickness": 2,
-                "color": "#a73939",
-                "dataType": "",
-                "shape": [
-                    {
-                        "x": 1615.2380952380952,
-                        "y": 1903.1904761904775
-                    },
-                    {
-                        "x": 1553.904761904763,
-                        "y": 1903.1904761904775
-                    },
-                    {
-                        "x": 1553.904761904763,
-                        "y": 1706.0238095238094
-                    },
-                    {
-                        "x": 1529.9047619047642,
-                        "y": 1706.0238095238094
-                    }
-                ],
-                "sides": [
-                    "left",
-                    "right"
-                ]
-            }
-        },
-        {
-            "name": "fk Staff.Id to WorkAssignment.Staff_Id",
-            "relationshipType": "Foreign Key",
-            "parentField": [
-                [
-                    "d01f7501-dcb7-4e9b-9e3b-14a5a867fbe3",
-                    "39b52248-d4d0-42fd-a147-913db77730e1"
-                ]
-            ],
-            "parentCardinality": "1",
-            "childField": [
-                [
-                    "8e985525-5bf1-4633-945a-35054a47d5e1",
-                    "692ca41a-893a-4498-aaec-7001ad6e7e81"
-                ]
-            ],
-            "isActivated": true,
-            "childCardinality": "1",
-            "parentCollection": "d01f7501-dcb7-4e9b-9e3b-14a5a867fbe3",
-            "childCollection": "8e985525-5bf1-4633-945a-35054a47d5e1",
-            "GUID": "2343d276-8a20-43ff-8c4a-2b94d2835be6",
-            "level": "field",
-            "lineSize": 2,
-            "hackoladeStyles": {
-                "GUID": "6f1fee64-0b34-4903-9383-5c3cb2bc306b",
                 "autoPositioning": true,
                 "type": "Orthogonal",
                 "thickness": 2,
@@ -2895,20 +3282,20 @@
                 "dataType": "",
                 "shape": [
                     {
-                        "x": 1247.9047619047642,
-                        "y": 1706.0238095238094
+                        "x": 1869.333333333333,
+                        "y": 1916.0000000000005
                     },
                     {
-                        "x": 1121.904761904765,
-                        "y": 1706.0238095238094
+                        "x": 1834.833333333333,
+                        "y": 1916.0000000000005
                     },
                     {
-                        "x": 1121.904761904765,
-                        "y": 1716.8571428571424
+                        "x": 1834.833333333333,
+                        "y": 1924.0000000000005
                     },
                     {
-                        "x": 995.9047619047662,
-                        "y": 1716.8571428571424
+                        "x": 1800.333333333333,
+                        "y": 1924.0000000000005
                     }
                 ],
                 "sides": [
@@ -2949,20 +3336,20 @@
                 "dataType": "",
                 "shape": [
                     {
-                        "x": 1881.2397257735784,
-                        "y": 1322.944339447842
+                        "x": 2050.4,
+                        "y": 1073
                     },
                     {
-                        "x": 1914.2397257735784,
-                        "y": 1322.944339447842
+                        "x": 2081.4,
+                        "y": 1073
                     },
                     {
-                        "x": 1914.2397257735784,
-                        "y": 1161.944339447842
+                        "x": 2081.4,
+                        "y": 1215
                     },
                     {
-                        "x": 1889.2397257735784,
-                        "y": 1161.944339447842
+                        "x": 2056.4,
+                        "y": 1215
                     }
                 ],
                 "sides": [
@@ -3003,20 +3390,20 @@
                 "dataType": "",
                 "shape": [
                     {
-                        "x": 1660.2397257735784,
-                        "y": 1161.944339447842
+                        "x": 1784.4,
+                        "y": 1215
                     },
                     {
-                        "x": 1628.1921067259589,
-                        "y": 1161.944339447842
+                        "x": 1691.9,
+                        "y": 1215
                     },
                     {
-                        "x": 1628.1921067259589,
-                        "y": 1187.801482304984
+                        "x": 1691.9,
+                        "y": 1269
                     },
                     {
-                        "x": 1596.1444876783394,
-                        "y": 1187.801482304984
+                        "x": 1599.4,
+                        "y": 1269
                     }
                 ],
                 "sides": [
@@ -3057,20 +3444,20 @@
                 "dataType": "",
                 "shape": [
                     {
-                        "x": 1652.2397257735784,
-                        "y": 1322.944339447842
+                        "x": 1784.4,
+                        "y": 1073
                     },
                     {
-                        "x": 1624.1921067259589,
-                        "y": 1322.944339447842
+                        "x": 1691.9,
+                        "y": 1073
                     },
                     {
-                        "x": 1624.1921067259589,
-                        "y": 1309.1348156383174
+                        "x": 1691.9,
+                        "y": 1221
                     },
                     {
-                        "x": 1596.1444876783394,
-                        "y": 1309.1348156383174
+                        "x": 1599.4,
+                        "y": 1221
                     }
                 ],
                 "sides": [
@@ -3111,25 +3498,25 @@
                 "dataType": "",
                 "shape": [
                     {
-                        "x": 689.239725773577,
-                        "y": 1183.2776727811765
+                        "x": 2567,
+                        "y": 1668
                     },
                     {
-                        "x": 722.5722438391692,
-                        "y": 1183.2776727811765
+                        "x": 2542,
+                        "y": 1668
                     },
                     {
-                        "x": 722.5722438391692,
-                        "y": 1185.190476190475
+                        "x": 2542,
+                        "y": 1690
                     },
                     {
-                        "x": 755.9047619047614,
-                        "y": 1185.190476190475
+                        "x": 2517,
+                        "y": 1690
                     }
                 ],
                 "sides": [
-                    "right",
-                    "left"
+                    "left",
+                    "right"
                 ]
             }
         },
@@ -3165,25 +3552,25 @@
                 "dataType": "",
                 "shape": [
                     {
-                        "x": 691.9063924402434,
-                        "y": 1334.944339447843
+                        "x": 2571,
+                        "y": 1817.6666666666667
                     },
                     {
-                        "x": 723.9055771725024,
-                        "y": 1334.944339447843
+                        "x": 2544,
+                        "y": 1817.6666666666667
                     },
                     {
-                        "x": 723.9055771725024,
-                        "y": 1264.8571428571415
+                        "x": 2544,
+                        "y": 1754
                     },
                     {
-                        "x": 755.9047619047614,
-                        "y": 1264.8571428571415
+                        "x": 2517,
+                        "y": 1754
                     }
                 ],
                 "sides": [
-                    "right",
-                    "left"
+                    "left",
+                    "right"
                 ]
             }
         },
@@ -3219,25 +3606,25 @@
                 "dataType": "",
                 "shape": [
                     {
-                        "x": 691.9063924402434,
-                        "y": 1313.944339447843
+                        "x": 2685.5,
+                        "y": 1766.6666666666667
                     },
                     {
-                        "x": 716.9063924402434,
-                        "y": 1313.944339447843
+                        "x": 2685.5,
+                        "y": 1738.3333333333335
                     },
                     {
-                        "x": 716.9063924402434,
-                        "y": 1204.2776727811765
+                        "x": 2685,
+                        "y": 1738.3333333333335
                     },
                     {
-                        "x": 689.239725773577,
-                        "y": 1204.2776727811765
+                        "x": 2685,
+                        "y": 1710
                     }
                 ],
                 "sides": [
-                    "right",
-                    "right"
+                    "top",
+                    "bottom"
                 ]
             }
         },
@@ -3266,32 +3653,28 @@
             "lineSize": 2,
             "hackoladeStyles": {
                 "GUID": "3e65f442-631a-49cb-a97f-8fe0b1cee83f",
-                "autoPositioning": true,
+                "autoPositioning": false,
                 "type": "Orthogonal",
                 "thickness": 2,
                 "color": "#79c4ff",
                 "dataType": "",
                 "shape": [
                     {
-                        "x": 647.9063924402442,
-                        "y": 1629.9443394478435
+                        "x": 2953.666666666666,
+                        "y": 1270.9999999999989
                     },
                     {
-                        "x": 683.4055771725052,
-                        "y": 1629.9443394478435
+                        "x": 2953.666666666666,
+                        "y": 1226.333333333334
                     },
                     {
-                        "x": 683.4055771725052,
-                        "y": 1635.523809523809
-                    },
-                    {
-                        "x": 718.9047619047662,
-                        "y": 1635.523809523809
+                        "x": 2769,
+                        "y": 1226.333333333334
                     }
                 ],
                 "sides": [
-                    "right",
-                    "left"
+                    "top",
+                    "right"
                 ]
             }
         },
@@ -3327,25 +3710,25 @@
                 "dataType": "",
                 "shape": [
                     {
-                        "x": 646.5730591069093,
-                        "y": 1770.9443394478426
+                        "x": 2959.5000000000027,
+                        "y": 1402.3333333333333
                     },
                     {
-                        "x": 682.7389105058378,
-                        "y": 1770.9443394478426
+                        "x": 2959.5000000000027,
+                        "y": 1375.166666666667
                     },
                     {
-                        "x": 682.7389105058378,
-                        "y": 1716.8571428571424
+                        "x": 2643.5,
+                        "y": 1375.166666666667
                     },
                     {
-                        "x": 718.9047619047662,
-                        "y": 1716.8571428571424
+                        "x": 2643.5,
+                        "y": 1348.0000000000005
                     }
                 ],
                 "sides": [
-                    "right",
-                    "left"
+                    "top",
+                    "bottom"
                 ]
             }
         },
@@ -3381,20 +3764,20 @@
                 "dataType": "",
                 "shape": [
                     {
-                        "x": 646.5730591069093,
-                        "y": 1749.9443394478426
+                        "x": 3102.0000000000027,
+                        "y": 1453.3333333333333
                     },
                     {
-                        "x": 672.9063924402442,
-                        "y": 1749.9443394478426
+                        "x": 3127.0000000000027,
+                        "y": 1453.3333333333333
                     },
                     {
-                        "x": 672.9063924402442,
-                        "y": 1650.9443394478435
+                        "x": 3127.0000000000027,
+                        "y": 1312.9999999999989
                     },
                     {
-                        "x": 647.9063924402442,
-                        "y": 1650.9443394478435
+                        "x": 3099.666666666666,
+                        "y": 1312.9999999999989
                     }
                 ],
                 "sides": [
@@ -3435,25 +3818,25 @@
                 "dataType": "",
                 "shape": [
                     {
-                        "x": 1412.0000000000007,
-                        "y": 2029.3333333333333
+                        "x": 1494.333333333333,
+                        "y": 1934.0000000000005
                     },
                     {
-                        "x": 1412.0000000000007,
-                        "y": 1893.4285714285713
+                        "x": 1519.333333333333,
+                        "y": 1934.0000000000005
                     },
                     {
-                        "x": 1435.9047619047642,
-                        "y": 1893.4285714285713
+                        "x": 1519.333333333333,
+                        "y": 1907.0000000000005
                     },
                     {
-                        "x": 1435.9047619047642,
-                        "y": 1757.5238095238094
+                        "x": 1544.333333333333,
+                        "y": 1907.0000000000005
                     }
                 ],
                 "sides": [
-                    "top",
-                    "bottom"
+                    "right",
+                    "left"
                 ]
             }
         },
@@ -3489,25 +3872,25 @@
                 "dataType": "",
                 "shape": [
                     {
-                        "x": 1548.0000000000007,
-                        "y": 2104.333333333333
+                        "x": 1356.833333333333,
+                        "y": 1856.0000000000005
                     },
                     {
-                        "x": 1583.4531962201218,
-                        "y": 2104.333333333333
+                        "x": 1356.833333333333,
+                        "y": 1804.0000000000005
                     },
                     {
-                        "x": 1583.4531962201218,
-                        "y": 2085.944339447845
+                        "x": 1317.833333333333,
+                        "y": 1804.0000000000005
                     },
                     {
-                        "x": 1618.906392440243,
-                        "y": 2085.944339447845
+                        "x": 1317.833333333333,
+                        "y": 1752.0000000000005
                     }
                 ],
                 "sides": [
-                    "right",
-                    "left"
+                    "top",
+                    "bottom"
                 ]
             }
         },
@@ -3540,154 +3923,27 @@
                 "thickness": 2,
                 "color": "#79c4ff",
                 "dataType": "",
-                "shape": [],
+                "shape": [
+                    {
+                        "x": 1191.4,
+                        "y": 1243.5
+                    },
+                    {
+                        "x": 1273.9,
+                        "y": 1243.5
+                    },
+                    {
+                        "x": 1273.9,
+                        "y": 1269
+                    },
+                    {
+                        "x": 1356.4,
+                        "y": 1269
+                    }
+                ],
                 "sides": [
-                    "left",
-                    "right"
-                ]
-            }
-        },
-        {
-            "name": "fk StaffingOrderStaffResource.Staff_Id to Staff.Id",
-            "relationshipType": "Foreign Key",
-            "parentField": [
-                [
-                    "8e985525-5bf1-4633-945a-35054a47d5e1",
-                    "692ca41a-893a-4498-aaec-7001ad6e7e81"
-                ]
-            ],
-            "parentCardinality": "1",
-            "childField": [
-                [
-                    "a1b2c3d4-e5f6-4789-a012-345678901001",
-                    "a1b2c3d4-e5f6-4789-a012-345678901012"
-                ]
-            ],
-            "isActivated": true,
-            "childCardinality": "1",
-            "GUID": "7cbf0d28-68ab-45b7-81b0-a47b614bc005",
-            "parentCollection": "8e985525-5bf1-4633-945a-35054a47d5e1",
-            "childCollection": "a1b2c3d4-e5f6-4789-a012-345678901001",
-            "level": "field",
-            "hackoladeStyles": {
-                "GUID": "af096446-8af0-4491-a9f7-99894e414f28",
-                "autoPositioning": true,
-                "type": "Orthogonal",
-                "thickness": 2,
-                "color": "#79c4ff",
-                "dataType": "",
-                "shape": [],
-                "sides": [
-                    "left",
-                    "right"
-                ]
-            }
-        },
-        {
-            "name": "fk StaffingOrderStaffResource.Role_Id to Role.Id",
-            "relationshipType": "Foreign Key",
-            "parentField": [
-                [
-                    "2ffada2e-93f5-4524-a1b8-5164c9f84f7e",
-                    "02d54cc6-6dda-47b6-bc9d-69a66873770d"
-                ]
-            ],
-            "parentCardinality": "1",
-            "childField": [
-                [
-                    "a1b2c3d4-e5f6-4789-a012-345678901001",
-                    "a1b2c3d4-e5f6-4789-a012-345678901013"
-                ]
-            ],
-            "isActivated": true,
-            "childCardinality": "1",
-            "GUID": "04b74808-1488-49ad-a0d9-cba4873b6b92",
-            "parentCollection": "2ffada2e-93f5-4524-a1b8-5164c9f84f7e",
-            "childCollection": "a1b2c3d4-e5f6-4789-a012-345678901001",
-            "level": "field",
-            "hackoladeStyles": {
-                "GUID": "c0f8953e-882e-4c94-a149-8d02681f7d92",
-                "autoPositioning": true,
-                "type": "Orthogonal",
-                "thickness": 2,
-                "color": "#79c4ff",
-                "dataType": "",
-                "shape": [],
-                "sides": [
-                    "left",
-                    "right"
-                ]
-            }
-        },
-        {
-            "name": "fk SOSRMonthlyAllocation.Staffing_Order_Id to StaffingOrderStaffResource.Staffing_Order_Id",
-            "relationshipType": "Foreign Key",
-            "parentField": [
-                [
-                    "a1b2c3d4-e5f6-4789-a012-345678901001",
-                    "a1b2c3d4-e5f6-4789-a012-345678901011"
-                ]
-            ],
-            "parentCardinality": "1",
-            "childField": [
-                [
-                    "a1b2c3d4-e5f6-4789-a012-345678901021",
-                    "a1b2c3d4-e5f6-4789-a012-345678901031"
-                ]
-            ],
-            "isActivated": true,
-            "childCardinality": "1",
-            "GUID": "c5899a2d-b315-4251-920c-b1541157e358",
-            "parentCollection": "a1b2c3d4-e5f6-4789-a012-345678901001",
-            "childCollection": "a1b2c3d4-e5f6-4789-a012-345678901021",
-            "level": "field",
-            "hackoladeStyles": {
-                "GUID": "6d77a209-ff1d-4ec8-b2f2-5d27b285449f",
-                "autoPositioning": true,
-                "type": "Orthogonal",
-                "thickness": 2,
-                "color": "#79c4ff",
-                "dataType": "",
-                "shape": [],
-                "sides": [
-                    "left",
-                    "right"
-                ]
-            }
-        },
-        {
-            "name": "fk SOSRMonthlyAllocation.Staff_Id to StaffingOrderStaffResource.Staff_Id",
-            "relationshipType": "Foreign Key",
-            "parentField": [
-                [
-                    "a1b2c3d4-e5f6-4789-a012-345678901001",
-                    "a1b2c3d4-e5f6-4789-a012-345678901012"
-                ]
-            ],
-            "parentCardinality": "1",
-            "childField": [
-                [
-                    "a1b2c3d4-e5f6-4789-a012-345678901021",
-                    "a1b2c3d4-e5f6-4789-a012-345678901032"
-                ]
-            ],
-            "isActivated": true,
-            "childCardinality": "1",
-            "GUID": "d0104edb-36b7-4c24-af38-1d6e73585c4a",
-            "parentCollection": "a1b2c3d4-e5f6-4789-a012-345678901001",
-            "childCollection": "a1b2c3d4-e5f6-4789-a012-345678901021",
-            "level": "field",
-            "hackoladeStyles": {
-                "GUID": "f87e595c-21ba-4181-8f6c-6c12d9045e49",
-                "autoPositioning": true,
-                "type": "Orthogonal",
-                "thickness": 2,
-                "color": "#79c4ff",
-                "dataType": "",
-                "shape": [],
-                "sides": [
-                    "left",
-                    "right"
+                    "right",
+                    "left"
                 ]
             }
         },
@@ -3720,10 +3976,459 @@
                 "thickness": 2,
                 "color": "#79c4ff",
                 "dataType": "",
-                "shape": [],
+                "shape": [
+                    {
+                        "x": 2767.999999999997,
+                        "y": 1119.6666666666667
+                    },
+                    {
+                        "x": 2767.999999999997,
+                        "y": 1146.8333333333335
+                    },
+                    {
+                        "x": 2643.5,
+                        "y": 1146.8333333333335
+                    },
+                    {
+                        "x": 2643.5,
+                        "y": 1174.0000000000005
+                    }
+                ],
+                "sides": [
+                    "bottom",
+                    "top"
+                ]
+            }
+        },
+        {
+            "name": "fk ACL_Staff.Id to StaffingOrderItem.Staff_Id",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "a1b2c3d4-e5f6-4789-a012-345678901001",
+                    "a1b2c3d4-e5f6-4789-a012-345678901012"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "85b89a3b-6e49-4b46-9ba9-c03817459fe4",
+                    "dced45eb-b26a-49f5-97dd-9ee5d5579115"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "1",
+            "parentCollection": "a1b2c3d4-e5f6-4789-a012-345678901001",
+            "childCollection": "85b89a3b-6e49-4b46-9ba9-c03817459fe4",
+            "GUID": "09b781d9-5085-440a-aa04-89947c54fc10",
+            "level": "field",
+            "lineSize": 2,
+            "hackoladeStyles": {
+                "GUID": "3137e5aa-fbbf-44a7-ae28-998690cf3eed",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 1033.4000000000028,
+                        "y": 1426.4000000000017
+                    },
+                    {
+                        "x": 1033.4000000000028,
+                        "y": 1370.2000000000007
+                    },
+                    {
+                        "x": 1016.0666666666668,
+                        "y": 1370.2000000000007
+                    },
+                    {
+                        "x": 1016.0666666666668,
+                        "y": 1314
+                    }
+                ],
+                "sides": [
+                    "top",
+                    "bottom"
+                ]
+            }
+        },
+        {
+            "name": "fk StaffingOrderItem.Role_Id to ACL_Staff.Role_Id",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "85b89a3b-6e49-4b46-9ba9-c03817459fe4",
+                    "ae56b4ee-a7b5-4685-a964-3ed4a237a133"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "a1b2c3d4-e5f6-4789-a012-345678901001",
+                    "a1b2c3d4-e5f6-4789-a012-345678901013"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "1",
+            "parentCollection": "85b89a3b-6e49-4b46-9ba9-c03817459fe4",
+            "childCollection": "a1b2c3d4-e5f6-4789-a012-345678901001",
+            "GUID": "fa0bf978-f77a-4627-84e6-8e7a48b6de23",
+            "level": "field",
+            "lineSize": 2,
+            "hackoladeStyles": {
+                "GUID": "8d14d48c-7d70-4b67-b0df-ca5708d7d5c3",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 1103.7333333333336,
+                        "y": 1314
+                    },
+                    {
+                        "x": 1103.7333333333336,
+                        "y": 1370.2000000000007
+                    },
+                    {
+                        "x": 1107.0666666666693,
+                        "y": 1370.2000000000007
+                    },
+                    {
+                        "x": 1107.0666666666693,
+                        "y": 1426.4000000000017
+                    }
+                ],
+                "sides": [
+                    "bottom",
+                    "top"
+                ]
+            }
+        },
+        {
+            "name": "fk ACL_Project.Project_Id to StaffingOrder.Id",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "465ab053-9432-4c43-82ae-b0457f3c35cc",
+                    "97fabd89-bdc3-419a-8094-fb4f5a7d9c21"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "eda9fbda-f98f-4e32-ad02-0afa73127bee",
+                    "93ac08de-f717-420e-9306-b37b9812a80d"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "1",
+            "parentCollection": "465ab053-9432-4c43-82ae-b0457f3c35cc",
+            "childCollection": "eda9fbda-f98f-4e32-ad02-0afa73127bee",
+            "GUID": "6c2cfc26-1a4d-4e26-ac2a-145c18716a93",
+            "level": "field",
+            "lineSize": 2,
+            "hackoladeStyles": {
+                "GUID": "3d8b3e48-87b4-4808-a943-17106c7a680a",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 1714.8666666666677,
+                        "y": 1459.6333333333337
+                    },
+                    {
+                        "x": 1657.133333333334,
+                        "y": 1459.6333333333337
+                    },
+                    {
+                        "x": 1657.133333333334,
+                        "y": 1317
+                    },
+                    {
+                        "x": 1599.4,
+                        "y": 1317
+                    }
+                ],
                 "sides": [
                     "left",
                     "right"
+                ]
+            }
+        },
+        {
+            "name": "fk ACL_StaffingOrder.StaffingOrder_Id to WorkAssignment.StaffingOrder_Id",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "d01f7501-dcb7-4e9b-9e3b-14a5a867fbe3",
+                    "b966757a-fb69-4337-9872-f8dca42cc313"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "2bb1c07f-96f8-4d2b-816e-3a8ae14fee59",
+                    "26bf061c-2276-4c70-989a-4d7c3e89077b"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "1",
+            "parentCollection": "d01f7501-dcb7-4e9b-9e3b-14a5a867fbe3",
+            "childCollection": "2bb1c07f-96f8-4d2b-816e-3a8ae14fee59",
+            "GUID": "af7ddaf5-bc84-43d7-ad3d-d12272ff97dc",
+            "level": "field",
+            "lineSize": 2,
+            "hackoladeStyles": {
+                "GUID": "7c74a660-98dd-41ed-8869-d9b741f46e45",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 2444.9999999999977,
+                        "y": 1232.1666666666692
+                    },
+                    {
+                        "x": 2481.499999999999,
+                        "y": 1232.1666666666692
+                    },
+                    {
+                        "x": 2481.499999999999,
+                        "y": 1261.0000000000005
+                    },
+                    {
+                        "x": 2518,
+                        "y": 1261.0000000000005
+                    }
+                ],
+                "sides": [
+                    "right",
+                    "left"
+                ]
+            }
+        },
+        {
+            "name": "fk ACL_Staff.Staff_Id to WorkAssignment.Staff_Id",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "d01f7501-dcb7-4e9b-9e3b-14a5a867fbe3",
+                    "39b52248-d4d0-42fd-a147-913db77730e1"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "4f0bada1-30d7-4ceb-9ca9-e3c7562b20ea",
+                    "2ec53fde-d555-4317-aaf5-ff7d74cca1f2"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "1",
+            "parentCollection": "d01f7501-dcb7-4e9b-9e3b-14a5a867fbe3",
+            "childCollection": "4f0bada1-30d7-4ceb-9ca9-e3c7562b20ea",
+            "GUID": "c9fcd9af-3253-4837-bed3-d5c71abb1a1a",
+            "level": "field",
+            "lineSize": 2,
+            "hackoladeStyles": {
+                "GUID": "16a8fecc-fe7a-402b-be72-71f330e8bf02",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 2443.400000000003,
+                        "y": 1109.9000000000017
+                    },
+                    {
+                        "x": 2480.7000000000016,
+                        "y": 1109.9000000000017
+                    },
+                    {
+                        "x": 2480.7000000000016,
+                        "y": 1217.5000000000005
+                    },
+                    {
+                        "x": 2518,
+                        "y": 1217.5000000000005
+                    }
+                ],
+                "sides": [
+                    "right",
+                    "left"
+                ]
+            }
+        },
+        {
+            "name": "fk ACL_Employee_Sales.Id to Project.Sales_Employee_Id",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "b351e292-4128-4bb7-91c6-4b0c069dec74",
+                    "36b2569b-bfb3-41d0-ae9f-76afa7a2e51f"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "7c58c329-5c2a-41b5-b63a-aab0b641c752",
+                    "b3c378c9-3ada-494a-b8c2-5b18c0ec27a1"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "1",
+            "parentCollection": "b351e292-4128-4bb7-91c6-4b0c069dec74",
+            "childCollection": "7c58c329-5c2a-41b5-b63a-aab0b641c752",
+            "GUID": "35065994-d902-4d73-a5e1-f1bb0e58e3f6",
+            "level": "field",
+            "lineSize": 2,
+            "hackoladeStyles": {
+                "GUID": "0c9967f3-7b2e-45f0-8a1e-6fbc806ccf6e",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 2334.4999999999995,
+                        "y": 1877.3333333333335
+                    },
+                    {
+                        "x": 2334.4999999999995,
+                        "y": 1847.6666666666667
+                    },
+                    {
+                        "x": 2341,
+                        "y": 1847.6666666666667
+                    },
+                    {
+                        "x": 2341,
+                        "y": 1818
+                    }
+                ],
+                "sides": [
+                    "top",
+                    "bottom"
+                ]
+            }
+        },
+        {
+            "name": "fk ACL_Project.Project_Id to WorkAssignment.Project_Id",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "d01f7501-dcb7-4e9b-9e3b-14a5a867fbe3",
+                    "5a5db95c-dc04-42a2-a274-2ca272bb37b3"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "b703a6db-d155-4564-aadb-8b8be1474cb6",
+                    "ee037d45-400c-4bb3-8f40-f7cdc6d507eb"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "1",
+            "parentCollection": "d01f7501-dcb7-4e9b-9e3b-14a5a867fbe3",
+            "childCollection": "b703a6db-d155-4564-aadb-8b8be1474cb6",
+            "GUID": "8fe1e7e3-9353-42ea-b76c-1aba9dbb3ac0",
+            "level": "field",
+            "lineSize": 2,
+            "hackoladeStyles": {
+                "GUID": "6bfe0283-e2a8-483f-88d5-c5950222e349",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 2460.33333333333,
+                        "y": 1424.8333333333321
+                    },
+                    {
+                        "x": 2489.166666666665,
+                        "y": 1424.8333333333321
+                    },
+                    {
+                        "x": 2489.166666666665,
+                        "y": 1304.5000000000005
+                    },
+                    {
+                        "x": 2518,
+                        "y": 1304.5000000000005
+                    }
+                ],
+                "sides": [
+                    "right",
+                    "left"
+                ]
+            }
+        },
+        {
+            "name": "fk ACL_Customer.Customer_Name to Project.Customer_Name",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "b351e292-4128-4bb7-91c6-4b0c069dec74",
+                    "a1b2c3d4-e5f6-4789-a012-345678901071"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "f8677afd-7435-43c7-9fad-25909df3cf25",
+                    "77eaef30-3d16-4255-9a75-779920d4e931"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "1",
+            "parentCollection": "b351e292-4128-4bb7-91c6-4b0c069dec74",
+            "childCollection": "f8677afd-7435-43c7-9fad-25909df3cf25",
+            "GUID": "cf442636-542e-496b-8113-9229bf6d78a8",
+            "level": "field",
+            "lineSize": 2,
+            "hackoladeStyles": {
+                "GUID": "464a5c82-574f-490c-b937-2f178ce1768e",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 2624.499999999998,
+                        "y": 1919.3333333333337
+                    },
+                    {
+                        "x": 2624.499999999998,
+                        "y": 1868.666666666667
+                    },
+                    {
+                        "x": 2429,
+                        "y": 1868.666666666667
+                    },
+                    {
+                        "x": 2429,
+                        "y": 1818
+                    }
+                ],
+                "sides": [
+                    "top",
+                    "bottom"
                 ]
             }
         }
@@ -3738,14 +4443,12 @@
         "97fabd89-bdc3-419a-8094-fb4f5a7d9c21": "Id",
         "697788b9-0c45-4fe7-92ac-deb3663ef79b": "Id",
         "4de736bf-1223-4782-9e49-3e6fbd6f92a5": "Project_Id",
-        "dcca2278-19b4-4f37-a024-4261a85c6705": "fk StaffingOrder.ProjectId to Project.Id",
         "3d7a4ea8-c32c-4cd6-bb1c-e4d30aa42b58": "Description",
         "5be6c733-b357-4f55-be6d-03e9bcad7997": "Period",
         "f75968e4-0f1c-4e1f-a2e3-dec489e18312": "Monthly_Allocation",
         "93494a4f-cfbe-4954-8af0-f834b4d4d9fe": "Period",
         "12034391-de6a-4a5f-bb0e-a6a4d4cd64e1": "Staff",
         "24762497-4fd4-4020-a4f6-1567e4cd2ef4": "Amount",
-        "63ccf12f-a83a-4358-8926-7b52c511094a": "Attachments",
         "07bb8a43-04af-4198-b4f1-7d927ac0ec97": "Total_Amount",
         "bc681389-d13c-4c27-a793-2b59ab204dec": "Role_Id",
         "6751b634-aa64-4e1c-878c-6215b3b0209d": "Monthly_Allocation",
@@ -3756,15 +4459,12 @@
         "39b52248-d4d0-42fd-a147-913db77730e1": "Staff_Id",
         "68de3adc-2927-4a05-9368-4ee9d7a5db2d": "Name",
         "0a5d3022-f4b8-4759-a502-7badcb464432": "Period",
-        "d707681d-a84e-4cd5-8873-e1560995d533": "fk Project.Sales_Employee_Id to Employee.Id",
         "aac40d18-0693-4f94-b16b-207b1f53b68d": "Attachments",
-        "5f2cb9b8-7e99-406b-8c82-ea1f95e89138": "fk WorkAssignment.StaffingOrder_Id to StaffingOrder.Id",
         "2ffada2e-93f5-4524-a1b8-5164c9f84f7e": "Role",
         "02d54cc6-6dda-47b6-bc9d-69a66873770d": "Id",
         "7f58d1b6-2468-42b5-be05-48e875c1ba17": "fk Employee.Role_Id to Role.Id",
         "b966757a-fb69-4337-9872-f8dca42cc313": "StaffingOrder_Id",
         "5a5db95c-dc04-42a2-a274-2ca272bb37b3": "Project_Id",
-        "2c4204af-454c-4326-83d1-0b69bf11ef43": "fk WorkAssignment.Project_Id to Project.Id",
         "36b2569b-bfb3-41d0-ae9f-76afa7a2e51f": "Sales_Employee_Id",
         "c43cfbf6-3fe1-4a58-bde7-44eaed0f69ac": "Description",
         "8e985525-5bf1-4633-945a-35054a47d5e1": "Staff",
@@ -3787,10 +4487,9 @@
         "fbf73a6f-8e0e-401e-a9da-0a10e934c83a": "Staff_Id",
         "d0f62abe-3b22-42ff-8e1c-7ff147bc195b": "Staff_Id",
         "2340c430-c063-4904-ba8d-c2dadbe7f83d": "Staff_Id",
-        "2343d276-8a20-43ff-8c4a-2b94d2835be6": "fk Staff.Id to WorkAssignment.Staff_Id",
         "99713080-b02a-4feb-af8f-3554cc4f06f1": "Status",
         "719b6b39-9b73-4bc8-9526-daa6c8a939ea": "Main_Status_Id",
-        "11479816-59ea-4786-960c-f43dc4bb45a4": "予約",
+        "11479816-59ea-4786-960c-f43dc4bb45a4": "要員依頼",
         "d3cc3aa9-6ec9-4409-b35b-01cae6352f56": "Main_Status_StaffingOrder",
         "8686734e-d824-4979-b5e9-d5b9d8fd5d98": "Id",
         "730520b7-6ca1-461d-ae03-43d49d6939f5": "Name",
@@ -3844,17 +4543,11 @@
         "2c91d609-6ee4-4892-91cd-be9d04279863": "Status_Id",
         "4fb17ddc-f925-4f11-96cb-0faec57bb0d8": "fk StaffStatus.Staff_Id to Staff.Id",
         "e0cc55e4-a3e8-42e2-941b-5bc2b5cc5183": "fk StaffStatus.Status_Id to Status_Staff.Id",
-        "a1b2c3d4-e5f6-4789-a012-345678901001": "StaffingOrderStaffResource",
+        "a1b2c3d4-e5f6-4789-a012-345678901001": "StaffingOrderItem",
         "a1b2c3d4-e5f6-4789-a012-345678901011": "Staffing_Order_Id",
         "a1b2c3d4-e5f6-4789-a012-345678901012": "Staff_Id",
         "a1b2c3d4-e5f6-4789-a012-345678901013": "Role_Id",
-        "a1b2c3d4-e5f6-4789-a012-345678901014": "Amount",
-        "a1b2c3d4-e5f6-4789-a012-345678901021": "StaffingOrderStaffResourceMonthlyAllocation",
-        "a1b2c3d4-e5f6-4789-a012-345678901031": "Staffing_Order_Id",
-        "a1b2c3d4-e5f6-4789-a012-345678901032": "Staff_Id",
-        "a1b2c3d4-e5f6-4789-a012-345678901033": "Year_Month",
-        "a1b2c3d4-e5f6-4789-a012-345678901034": "Effort",
-        "a1b2c3d4-e5f6-4789-a012-345678901041": "WorkAssignmentMonthlyAllocation",
+        "a1b2c3d4-e5f6-4789-a012-345678901041": "WorkAssignmentItem",
         "a1b2c3d4-e5f6-4789-a012-345678901051": "Work_Assignment_Id",
         "a1b2c3d4-e5f6-4789-a012-345678901052": "Year_Month",
         "a1b2c3d4-e5f6-4789-a012-345678901053": "Effort",
@@ -3871,11 +4564,54 @@
         "a1b2c3d4-e5f6-4789-a012-345678901103": "Status_Valid_Period_Start",
         "a1b2c3d4-e5f6-4789-a012-345678901104": "Status_Valid_Period_End",
         "cb69c639-3bd9-499d-9c3f-7444b2e41497": "fk StaffingOrderStaffResource.Staffing_Order_Id to StaffingOrder.Id",
-        "7cbf0d28-68ab-45b7-81b0-a47b614bc005": "fk StaffingOrderStaffResource.Staff_Id to Staff.Id",
-        "04b74808-1488-49ad-a0d9-cba4873b6b92": "fk StaffingOrderStaffResource.Role_Id to Role.Id",
-        "c5899a2d-b315-4251-920c-b1541157e358": "fk SOSRMonthlyAllocation.Staffing_Order_Id to StaffingOrderStaffResource",
-        "d0104edb-36b7-4c24-af38-1d6e73585c4a": "fk SOSRMonthlyAllocation.Staff_Id to StaffingOrderStaffResource",
-        "bd9b0c49-e002-4ae4-be05-9b0de7ac64f7": "fk WorkAssignmentMonthlyAllocation.Work_Assignment_Id to WorkAssignment.Id"
+        "bd9b0c49-e002-4ae4-be05-9b0de7ac64f7": "fk WorkAssignmentMonthlyAllocation.Work_Assignment_Id to WorkAssignment.Id",
+        "1fe136de-fd36-4955-a80f-d313ab103b4d": "Name",
+        "eda9fbda-f98f-4e32-ad02-0afa73127bee": "ACL_Project",
+        "93ac08de-f717-420e-9306-b37b9812a80d": "Project_Id",
+        "a0de81f9-5889-4289-8573-b0b0224ca1a3": "Project_Name",
+        "32715142-a691-4097-aa8d-845a409a91f5": "Year_Month",
+        "f43a8fda-bcbb-4726-8a74-f869d4dbed8e": "Effort",
+        "a1b2c3d4-e5f6-4789-a012-345678901014": "Amount",
+        "85b89a3b-6e49-4b46-9ba9-c03817459fe4": "ACL_Staff",
+        "dced45eb-b26a-49f5-97dd-9ee5d5579115": "Id",
+        "2f8359b0-5d2f-4c71-926a-0a8dacb57c37": "Display_Name",
+        "ae56b4ee-a7b5-4685-a964-3ed4a237a133": "Role_Id",
+        "09b781d9-5085-440a-aa04-89947c54fc10": "fk ACL_Staff.Id to StaffingOrderItem.Staff_Id",
+        "fa0bf978-f77a-4627-84e6-8e7a48b6de23": "fk StaffingOrderItem.Role_Id to ACL_Staff.Role_Id",
+        "d32fb2f4-8159-4de8-b5ec-25b712bad5a0": "Project_Description",
+        "44fed8ce-f173-437c-bd3c-59384fa1cf00": "Project_Customer_Name",
+        "f2455294-afd5-4c18-bbce-9345b222cf42": "Project_Period_Start",
+        "20b35e5c-47fa-4933-9bb4-b36f674e5244": "Project_Period_End",
+        "6c2cfc26-1a4d-4e26-ac2a-145c18716a93": "fk ACL_Project.Project_Id to StaffingOrder.Id",
+        "2bb1c07f-96f8-4d2b-816e-3a8ae14fee59": "ACL_StaffingOrder",
+        "26bf061c-2276-4c70-989a-4d7c3e89077b": "StaffingOrder_Id",
+        "a6bbc9fb-9774-4abf-85ee-d50af5adfed6": "Project_Attachments",
+        "51c696aa-ad57-4c79-9a73-8326020709dd": "Period_Start",
+        "6c947c46-68f7-4f5a-a786-099e2b45a7ef": "Period_End",
+        "b81b8763-4852-4ef7-b222-19f4ce97a0b4": "Description",
+        "649ea048-e035-44c5-927e-cd94781a7548": "Total_Amount",
+        "af7ddaf5-bc84-43d7-ad3d-d12272ff97dc": "fk ACL_StaffingOrder.StaffingOrder_Id to WorkAssignment.StaffingOrder_Id",
+        "b703a6db-d155-4564-aadb-8b8be1474cb6": "ACL_Project",
+        "ee037d45-400c-4bb3-8f40-f7cdc6d507eb": "Project_Id",
+        "2ec53fde-d555-4317-aaf5-ff7d74cca1f2": "Staff_Id",
+        "044a9f99-df4d-4420-aa32-cd25154d1d3c": "Display_Name",
+        "60bc29c8-8928-4e4d-aa73-02faa88b631c": "Role_Id",
+        "4f0bada1-30d7-4ceb-9ca9-e3c7562b20ea": "ACL_Staff",
+        "6e61a656-8264-4159-8269-6ddee3d342b4": "Name",
+        "e9eefbc5-6cc1-476b-af14-9f5d378b4087": "Description",
+        "a497f994-7a11-4aa6-b64b-b77f1afbd2a6": "Attachments",
+        "31cd8ee0-d3c6-4a06-9a5e-9273ae49e903": "Period_End",
+        "d5bc6d7f-c55a-4b66-b71b-134b05469f61": "Period_Start",
+        "2a4ce1b3-ced6-4a02-95f5-e77145fdce14": "Customer_Name",
+        "c9fcd9af-3253-4837-bed3-d5c71abb1a1a": "fk ACL_Staff.Staff_Id to WorkAssignment.Staff_Id",
+        "7c58c329-5c2a-41b5-b63a-aab0b641c752": "ACL_Employee_Sales",
+        "b3c378c9-3ada-494a-b8c2-5b18c0ec27a1": "Employee_Id",
+        "2b9481af-8b89-4cf2-9ea3-e536eeb3de56": "Name",
+        "f8677afd-7435-43c7-9fad-25909df3cf25": "ACL_Customer",
+        "35065994-d902-4d73-a5e1-f1bb0e58e3f6": "fk ACL_Employee_Sales.Id to Project.Sales_Employee_Id",
+        "8fe1e7e3-9353-42ea-b76c-1aba9dbb3ac0": "fk ACL_Project.Project_Id to WorkAssignment.Project_Id",
+        "77eaef30-3d16-4255-9a75-779920d4e931": "Customer_Name",
+        "cf442636-542e-496b-8113-9229bf6d78a8": "fk ACL_Customer.Customer_Name to Project.Customer_Name"
     },
     "definitions": {
         "type": "definitions",
@@ -4138,13 +4874,21 @@
         "GUID": "7053d200-2231-4352-bff4-1c9beade48c1"
     },
     "sources": [],
-    "decorativeSymbols": [],
+    "decorativeSymbols": [
+        {
+            "GUID": "2085967c-07af-40e7-b8f2-9f0bf62420b3",
+            "name": "New annotation(1)",
+            "type": "annotation",
+            "disableInitialFocus": true,
+            "value": "# エンティティの色分けについて\n\n- 青：動的マスタデータ\n- 赤：静的マスタデータ\n- 緑：トランザクション\n- 紫：腐敗防止層\n\n\n\n---\nマスタデータはアプリが動く前に用意しておくべきデータ\n"
+        }
+    ],
     "dbVendor": "Polyglot",
     "appTarget": "Polyglot",
     "creationTS": "2026-04-06T04:04:39.754Z",
     "GUID": "63711589-9f6c-4963-be8b-8d1ba6ebeb4e",
     "isLineageEnabled": false,
-    "lastModifTS": "2026-04-07T03:35:25.079Z",
+    "lastModifTS": "2026-04-20T01:52:41.026Z",
     "persistenceSchemaVersion": "6",
     "isCreatedByPlugin": true,
     "pluginInformation": {
@@ -4162,182 +4906,242 @@
                 "erd": [
                     {
                         "GUID": "b351e292-4128-4bb7-91c6-4b0c069dec74",
-                        "x": 755.9047619047614,
-                        "y": 1105.5238095238083,
-                        "width": 277,
-                        "height": 239,
+                        "x": 2253,
+                        "y": 1626,
+                        "width": 264,
+                        "height": 192,
                         "color": {
                             "hex": "#008a00"
                         }
                     },
                     {
                         "GUID": "465ab053-9432-4c43-82ae-b0457f3c35cc",
-                        "x": 1204.1444876783394,
-                        "y": 1066.4681489716506,
-                        "width": 392,
-                        "height": 364,
+                        "x": 1356.4,
+                        "y": 1173,
+                        "width": 243,
+                        "height": 192,
                         "color": {
                             "hex": "#008a00"
                         }
                     },
                     {
                         "GUID": "d01f7501-dcb7-4e9b-9e3b-14a5a867fbe3",
-                        "x": 718.9047619047662,
-                        "y": 1554.1904761904757,
-                        "width": 277,
-                        "height": 244,
+                        "x": 2518,
+                        "y": 1174.0000000000005,
+                        "width": 251,
+                        "height": 174,
                         "color": {
                             "hex": "#008a00"
                         }
                     },
                     {
                         "GUID": "7722533f-7242-4c5a-9535-44e7c539fb6f",
-                        "x": 1287.238095238095,
-                        "y": 1819.5238095238092,
-                        "width": 210,
-                        "height": 136,
+                        "x": 1545.6666666666663,
+                        "y": 1668.0000000000005,
+                        "width": 182,
+                        "height": 138,
                         "color": {
                             "hex": "#2196F3"
                         }
                     },
                     {
                         "GUID": "2ffada2e-93f5-4524-a1b8-5164c9f84f7e",
-                        "x": 1573.5714285714296,
-                        "y": 1653.523809523812,
-                        "width": 294,
-                        "height": 141,
+                        "x": 1870.6666666666663,
+                        "y": 1668.0000000000005,
+                        "width": 193,
+                        "height": 66,
                         "color": {
-                            "hex": "#ff9801"
+                            "hex": "#d80073"
                         }
                     },
                     {
                         "GUID": "8e985525-5bf1-4633-945a-35054a47d5e1",
-                        "x": 1247.9047619047642,
-                        "y": 1654.5238095238094,
-                        "width": 282,
-                        "height": 103,
+                        "x": 1545.6666666666663,
+                        "y": 1856.0000000000005,
+                        "width": 256,
+                        "height": 102,
                         "color": {
                             "hex": "#2196F3"
                         }
                     },
                     {
                         "GUID": "2be3c97d-483a-474f-b219-cfbabfe4e88f",
-                        "x": 1615.2380952380952,
-                        "y": 1844.1904761904775,
-                        "width": 197,
-                        "height": 118,
+                        "x": 1870.6666666666663,
+                        "y": 1856.0000000000005,
+                        "width": 220,
+                        "height": 120,
                         "color": {
                             "hex": "#2196F3"
                         }
                     },
                     {
                         "GUID": "d3cc3aa9-6ec9-4409-b35b-01cae6352f56",
-                        "x": 1660.2397257735784,
-                        "y": 1098.944339447842,
-                        "width": 229,
-                        "height": 126,
+                        "x": 1784.4,
+                        "y": 1173,
+                        "width": 272,
+                        "height": 84,
                         "color": {
                             "hex": "#d80073"
                         }
                     },
                     {
                         "GUID": "83f1137b-4e38-4a42-b17d-89d969485107",
-                        "x": 1652.2397257735784,
-                        "y": 1259.944339447842,
-                        "width": 229,
-                        "height": 126,
+                        "x": 1784.4,
+                        "y": 1022.0000000000001,
+                        "width": 266,
+                        "height": 102,
                         "color": {
                             "hex": "#d80073"
                         }
                     },
                     {
                         "GUID": "44bb5641-62a0-4e43-ae99-0e3f7b0e4f7f",
-                        "x": 460.23972577357694,
-                        "y": 1120.2776727811765,
-                        "width": 229,
-                        "height": 126,
+                        "x": 2567,
+                        "y": 1626,
+                        "width": 236,
+                        "height": 84,
                         "color": {
                             "hex": "#d80073"
                         }
                     },
                     {
                         "GUID": "427cb85d-c62e-4bf3-a7f2-69cbee6f56d5",
-                        "x": 462.9063924402434,
-                        "y": 1271.944339447843,
+                        "x": 2571,
+                        "y": 1766.6666666666667,
                         "width": 229,
-                        "height": 126,
+                        "height": 102,
                         "color": {
                             "hex": "#d80073"
                         }
                     },
                     {
                         "GUID": "b960eb07-bdd2-4298-9069-8ae51c9d735d",
-                        "x": 418.90639244024413,
-                        "y": 1566.9443394478435,
-                        "width": 229,
-                        "height": 126,
+                        "x": 2807.666666666666,
+                        "y": 1270.9999999999989,
+                        "width": 292,
+                        "height": 84,
                         "color": {
                             "hex": "#d80073"
                         }
                     },
                     {
                         "GUID": "e86ef3e8-5f88-4613-b6ce-050fc5ae40c7",
-                        "x": 417.5730591069094,
-                        "y": 1707.9443394478426,
-                        "width": 229,
-                        "height": 126,
+                        "x": 2817.0000000000027,
+                        "y": 1402.3333333333333,
+                        "width": 285,
+                        "height": 102,
                         "color": {
                             "hex": "#d80073"
                         }
                     },
                     {
                         "GUID": "ca58d02a-a7f1-4aa8-b8a3-617b1324047f",
-                        "x": 1618.906392440243,
-                        "y": 2022.9443394478446,
-                        "width": 229,
-                        "height": 126,
+                        "x": 1220.6666666666663,
+                        "y": 1668.0000000000005,
+                        "width": 197,
+                        "height": 84,
                         "color": {
                             "hex": "#d80073"
                         }
                     },
                     {
                         "GUID": "385df7ee-e3fb-482d-8bb7-d9ac8a08d0c0",
-                        "x": 1276.0000000000007,
-                        "y": 2029.3333333333333,
-                        "width": 272,
-                        "height": 150,
+                        "x": 1220.6666666666663,
+                        "y": 1856.0000000000005,
+                        "width": 275,
+                        "height": 156,
                         "color": {
                             "hex": "#008a00"
                         }
                     },
                     {
                         "GUID": "a1b2c3d4-e5f6-4789-a012-345678901001",
-                        "x": 1350,
-                        "y": 800,
-                        "width": 280,
-                        "height": 140,
-                        "color": {
-                            "hex": "#008a00"
-                        }
-                    },
-                    {
-                        "GUID": "a1b2c3d4-e5f6-4789-a012-345678901021",
-                        "x": 1390,
-                        "y": 850,
-                        "width": 320,
-                        "height": 120,
+                        "x": 928.4000000000002,
+                        "y": 1173,
+                        "width": 263,
+                        "height": 141,
                         "color": {
                             "hex": "#008a00"
                         }
                     },
                     {
                         "GUID": "a1b2c3d4-e5f6-4789-a012-345678901041",
-                        "x": 1430,
-                        "y": 900,
-                        "width": 260,
-                        "height": 100,
+                        "x": 2626.999999999997,
+                        "y": 1036.6666666666667,
+                        "width": 282,
+                        "height": 83,
                         "color": {
                             "hex": "#008a00"
+                        }
+                    },
+                    {
+                        "GUID": "eda9fbda-f98f-4e32-ad02-0afa73127bee",
+                        "x": 1714.8666666666677,
+                        "y": 1380.1333333333337,
+                        "width": 304,
+                        "height": 159,
+                        "color": {
+                            "hex": "#673bb7"
+                        }
+                    },
+                    {
+                        "GUID": "85b89a3b-6e49-4b46-9ba9-c03817459fe4",
+                        "x": 959.7333333333361,
+                        "y": 1426.4000000000017,
+                        "width": 221,
+                        "height": 87,
+                        "color": {
+                            "hex": "#673bb7"
+                        }
+                    },
+                    {
+                        "GUID": "2bb1c07f-96f8-4d2b-816e-3a8ae14fee59",
+                        "x": 2211.9999999999977,
+                        "y": 1170.6666666666692,
+                        "width": 233,
+                        "height": 123,
+                        "color": {
+                            "hex": "#673bb7"
+                        }
+                    },
+                    {
+                        "GUID": "b703a6db-d155-4564-aadb-8b8be1474cb6",
+                        "x": 2225.33333333333,
+                        "y": 1345.3333333333321,
+                        "width": 235,
+                        "height": 159,
+                        "color": {
+                            "hex": "#673bb7"
+                        }
+                    },
+                    {
+                        "GUID": "4f0bada1-30d7-4ceb-9ca9-e3c7562b20ea",
+                        "x": 2222.400000000003,
+                        "y": 1066.4000000000017,
+                        "width": 221,
+                        "height": 87,
+                        "color": {
+                            "hex": "#673bb7"
+                        }
+                    },
+                    {
+                        "GUID": "7c58c329-5c2a-41b5-b63a-aab0b641c752",
+                        "x": 2215.9999999999995,
+                        "y": 1877.3333333333335,
+                        "width": 237,
+                        "height": 69,
+                        "color": {
+                            "hex": "#673bb7"
+                        }
+                    },
+                    {
+                        "GUID": "f8677afd-7435-43c7-9fad-25909df3cf25",
+                        "x": 2511.999999999998,
+                        "y": 1919.3333333333337,
+                        "width": 225,
+                        "height": 51,
+                        "color": {
+                            "hex": "#673bb7"
                         }
                     }
                 ],
@@ -4349,23 +5153,23 @@
                 },
                 "buckets": [
                     {
-                        "x": 1207.9047619047642,
-                        "y": 1588.523809523812,
+                        "x": 1180.6666666666663,
+                        "y": 1628.0000000000005,
                         "GUID": "16e6b351-03a2-4495-a5cb-318758a14203"
                     },
                     {
-                        "x": 1164.1444876783394,
-                        "y": 1026.4681489716506,
+                        "x": 888.4000000000002,
+                        "y": 982.0000000000001,
                         "GUID": "11479816-59ea-4786-960c-f43dc4bb45a4"
                     },
                     {
-                        "x": 420.23972577357694,
-                        "y": 1065.5238095238083,
+                        "x": 2175.9999999999995,
+                        "y": 1586,
                         "GUID": "31bd3274-d6cc-4b12-b16a-bebd0547d2a7"
                     },
                     {
-                        "x": 377.5730591069094,
-                        "y": 1514.1904761904757,
+                        "x": 2171.9999999999977,
+                        "y": 996.6666666666667,
                         "GUID": "43b4e1fb-760a-44f1-9b62-0e1c42ee7cee"
                     }
                 ],
@@ -4469,6 +5273,60 @@
                             "size": 100,
                             "x": 1282.6666666666667,
                             "y": 2084
+                        },
+                        {
+                            "GUID": "a1b2c3d4-e5f6-4789-a012-345678901041",
+                            "x": 2124,
+                            "y": 2049,
+                            "size": 100
+                        },
+                        {
+                            "GUID": "a1b2c3d4-e5f6-4789-a012-345678901001",
+                            "x": 1801,
+                            "y": 1433,
+                            "size": 100
+                        },
+                        {
+                            "GUID": "eda9fbda-f98f-4e32-ad02-0afa73127bee",
+                            "size": 100,
+                            "x": 1888,
+                            "y": 777.3333333333334
+                        },
+                        {
+                            "GUID": "85b89a3b-6e49-4b46-9ba9-c03817459fe4",
+                            "size": 100,
+                            "x": 1685.8666666666677,
+                            "y": 1378.1333333333337
+                        },
+                        {
+                            "GUID": "2bb1c07f-96f8-4d2b-816e-3a8ae14fee59",
+                            "size": 100,
+                            "x": 1433.3333333333333,
+                            "y": 629.3333333333334
+                        },
+                        {
+                            "GUID": "b703a6db-d155-4564-aadb-8b8be1474cb6",
+                            "size": 100,
+                            "x": 1376,
+                            "y": 797.3333333333334
+                        },
+                        {
+                            "GUID": "4f0bada1-30d7-4ceb-9ca9-e3c7562b20ea",
+                            "size": 100,
+                            "x": 1249.0666666666696,
+                            "y": 1483.733333333335
+                        },
+                        {
+                            "GUID": "7c58c329-5c2a-41b5-b63a-aab0b641c752",
+                            "size": 100,
+                            "x": 1253.3333333333333,
+                            "y": 789.3333333333334
+                        },
+                        {
+                            "GUID": "f8677afd-7435-43c7-9fad-25909df3cf25",
+                            "size": 100,
+                            "x": 2215.9999999999995,
+                            "y": 1626
                         }
                     ],
                     "buckets": [
@@ -4493,12 +5351,28 @@
                             "GUID": "43b4e1fb-760a-44f1-9b62-0e1c42ee7cee"
                         }
                     ],
-                    "decorativeSymbols": [],
+                    "decorativeSymbols": [
+                        {
+                            "GUID": "2085967c-07af-40e7-b8f2-9f0bf62420b3",
+                            "x": 1029.3333333333333,
+                            "y": 578.6666666666666,
+                            "height": 150,
+                            "width": 300
+                        }
+                    ],
                     "forceLayout": true,
                     "defaultLinkLength": 300
                 },
                 "diagramViews": [],
-                "decorativeSymbols": [],
+                "decorativeSymbols": [
+                    {
+                        "GUID": "2085967c-07af-40e7-b8f2-9f0bf62420b3",
+                        "x": 1029.3333333333333,
+                        "y": 578.6666666666666,
+                        "height": 220,
+                        "width": 425
+                    }
+                ],
                 "nestedCollectionsLayout": "horizontal",
                 "options": [
                     {
@@ -4570,6 +5444,17 @@
                         "autoWidth": false,
                         "autoHeight": false,
                         "GUID": "385df7ee-e3fb-482d-8bb7-d9ac8a08d0c0"
+                    },
+                    {
+                        "autoWidth": false,
+                        "autoHeight": false,
+                        "GUID": "2ffada2e-93f5-4524-a1b8-5164c9f84f7e"
+                    },
+                    {
+                        "GUID": "85b89a3b-6e49-4b46-9ba9-c03817459fe4"
+                    },
+                    {
+                        "GUID": "4f0bada1-30d7-4ceb-9ca9-e3c7562b20ea"
                     }
                 ],
                 "relationshipUpdateDisabled": false
