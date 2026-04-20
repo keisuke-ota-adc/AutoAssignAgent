@@ -7,6 +7,8 @@ const corsHeaders: Record<string, string> = {
 };
 
 type CreateProjectBody = {
+  name: string;
+  customer_id?: string | null;
   customer_name?: string | null;
   description?: string | null;
   main_status_id: string;
@@ -33,7 +35,11 @@ Deno.serve(async (req) => {
   const supabase = createClient(url, key);
 
   if (req.method === "GET") {
-    const { data, error } = await supabase.from("project").select("*").order("id");
+    const { data, error } = await supabase
+      .schema("project")
+      .from("project_with_customer_name")
+      .select("*")
+      .order("id");
     if (error) {
       return new Response(JSON.stringify({ error: error.message }), {
         status: 500,
@@ -56,8 +62,31 @@ Deno.serve(async (req) => {
       });
     }
 
-    if (!body.main_status_id || !body.sub_status_id) {
-      return new Response(JSON.stringify({ error: "main_status_id and sub_status_id are required" }), {
+    if (!body.name || !body.main_status_id || !body.sub_status_id) {
+      return new Response(JSON.stringify({ error: "name, main_status_id and sub_status_id are required" }), {
+        status: 400,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+
+    let customerId = body.customer_id ?? null;
+    if (!customerId && body.customer_name) {
+      const newCustomerId = crypto.randomUUID();
+      const { error: customerErr } = await supabase
+        .schema("project")
+        .from("customer")
+        .insert({ id: newCustomerId, name: body.customer_name });
+      if (customerErr) {
+        return new Response(JSON.stringify({ error: customerErr.message }), {
+          status: 400,
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+        });
+      }
+      customerId = newCustomerId;
+    }
+
+    if (!customerId) {
+      return new Response(JSON.stringify({ error: "customer_id or customer_name is required" }), {
         status: 400,
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
@@ -66,7 +95,8 @@ Deno.serve(async (req) => {
     const id = crypto.randomUUID();
     const row = {
       id,
-      customer_name: body.customer_name ?? null,
+      name: body.name,
+      customer_id: customerId,
       description: body.description ?? null,
       main_status_id: body.main_status_id,
       sub_status_id: body.sub_status_id,
@@ -75,7 +105,12 @@ Deno.serve(async (req) => {
       period_end: body.period_end ?? null,
     };
 
-    const { data, error } = await supabase.from("project").insert(row).select().single();
+    const { data, error } = await supabase
+      .schema("project")
+      .from("project")
+      .insert(row)
+      .select()
+      .single();
     if (error) {
       return new Response(JSON.stringify({ error: error.message }), {
         status: 400,

@@ -1,0 +1,4 @@
+-- Archived public-schema reference DDL.
+-- This file was moved to archive on 2026-04-20.
+-- Active reference DDL is:
+--   db/rdb-schema-postgresql.sql

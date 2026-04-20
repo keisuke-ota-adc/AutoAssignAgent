@@ -7,19 +7,20 @@
 -- ---------------------------------------------------------------------------
 -- 取引先担当（Business_Partner）サンプル
 -- ---------------------------------------------------------------------------
-INSERT INTO staff (id, display_name, role_id, staff_category) VALUES
+INSERT INTO hr.staff (id, display_name, role_id, staff_category) VALUES
     ('11111111-1111-4111-8111-111111110203', 'シードBP', '11111111-1111-4111-8111-111111110103', 'Business_Partner');
 
-INSERT INTO business_partner (id, staff_id, name, number, role_id) VALUES
+INSERT INTO hr.business_partner (id, staff_id, name, number, role_id) VALUES
     ('11111111-1111-4111-8111-111111110401', '11111111-1111-4111-8111-111111110203', '外注太郎', 9001, '11111111-1111-4111-8111-111111110103');
 
 -- ---------------------------------------------------------------------------
 -- プロジェクト
 -- ---------------------------------------------------------------------------
-INSERT INTO project (
+INSERT INTO project.project (
     id,
+    name,
     sales_employee_id,
-    customer_name,
+    customer_id,
     description,
     period_start,
     period_end,
@@ -28,8 +29,9 @@ INSERT INTO project (
     sub_status_id
 ) VALUES (
     '66666666-6666-4666-8666-666666660001',
+    'シミュレーション案件A',
     '11111111-1111-4111-8111-111111110301',
-    '顧客A株式会社',
+    '77777777-7777-4777-8777-777777770101',
     'シミュレーション用: 受注・要因確定待ち／要員予約待ち',
     '2026-04-01',
     '2026-12-31',
@@ -41,7 +43,7 @@ INSERT INTO project (
 -- ---------------------------------------------------------------------------
 -- 予約 StaffingOrder
 -- ---------------------------------------------------------------------------
-INSERT INTO staffing_order (
+INSERT INTO staffing_request.staffing_order (
     id,
     project_id,
     period_start,
@@ -89,11 +91,11 @@ INSERT INTO staffing_order (
 -- ---------------------------------------------------------------------------
 -- 予約リソース（要員・ロール）と月次
 -- ---------------------------------------------------------------------------
-INSERT INTO staffing_order_staff_resource (staffing_order_id, staff_id, role_id, amount) VALUES
+INSERT INTO staffing_request.staffing_order_item (staffing_order_id, staff_id, role_id, amount) VALUES
     ('66666666-6666-4666-8666-666666661001', '11111111-1111-4111-8111-111111110202', '11111111-1111-4111-8111-111111110102', 80),
     ('66666666-6666-4666-8666-666666661003', '11111111-1111-4111-8111-111111110202', '11111111-1111-4111-8111-111111110102', 40);
 
-INSERT INTO staffing_order_staff_resource_monthly_allocation (staffing_order_id, staff_id, year_month, effort) VALUES
+INSERT INTO staffing_request.staffing_order_item_monthly_allocation (staffing_order_id, staff_id, year_month, effort) VALUES
     ('66666666-6666-4666-8666-666666661001', '11111111-1111-4111-8111-111111110202', '2026-05-01', 0.4),
     ('66666666-6666-4666-8666-666666661001', '11111111-1111-4111-8111-111111110202', '2026-06-01', 0.5),
     ('66666666-6666-4666-8666-666666661003', '11111111-1111-4111-8111-111111110202', '2026-07-01', 0.25);
@@ -101,7 +103,7 @@ INSERT INTO staffing_order_staff_resource_monthly_allocation (staffing_order_id,
 -- ---------------------------------------------------------------------------
 -- 稼働割当 WorkAssignment と月次
 -- ---------------------------------------------------------------------------
-INSERT INTO work_assignment (
+INSERT INTO work_assignment.work_assignment (
     id,
     staffing_order_id,
     project_id,
@@ -132,7 +134,7 @@ INSERT INTO work_assignment (
         '44444444-4444-4444-8444-444444441041'
     );
 
-INSERT INTO work_assignment_monthly_allocation (work_assignment_id, year_month, effort) VALUES
+INSERT INTO work_assignment.work_assignment_monthly_allocation (work_assignment_id, year_month, effort) VALUES
     ('66666666-6666-4666-8666-666666662001', '2026-05-01', 0.4),
     ('66666666-6666-4666-8666-666666662001', '2026-06-01', 0.5),
     ('66666666-6666-4666-8666-666666662002', '2026-07-01', 0.25);
@@ -140,7 +142,7 @@ INSERT INTO work_assignment_monthly_allocation (work_assignment_id, year_month, 
 -- ---------------------------------------------------------------------------
 -- スタッフ状態履歴
 -- ---------------------------------------------------------------------------
-INSERT INTO staff_status (
+INSERT INTO hr.staff_status (
     id,
     staff_id,
     status_id,

@@ -12,7 +12,8 @@
 | [autoassign-supabase-cli/seed.sql](autoassign-supabase-cli/seed.sql) | 開発用シード（マスタ・role / staff / employee） |
 | [autoassign-supabase-cli/seed_simulation.sql](autoassign-supabase-cli/seed_simulation.sql) | トランザクション系のシミュレーション用 INSERT |
 | [autoassign-supabase-cli/verify_seed.sql](autoassign-supabase-cli/verify_seed.sql) | 件数・JOIN の検証用 SQL（任意） |
-| [autoassign-supabase-cli/functions/](autoassign-supabase-cli/functions/) | Edge Functions（`health`, `projects`） |
+| [autoassign-supabase-cli/functions/](autoassign-supabase-cli/functions/) | Edge Functions（`health`, `projects`, `outbox-dispatch`） |
+| [archive/](archive/) | 置き換え済み SQL の退避（履歴参照用、適用対象外） |
 | [supabase-selfhost/](supabase-selfhost/) | 公式 [Self-Hosting with Docker](https://supabase.com/docs/guides/self-hosting/docker) の Compose 一式（CLI 用の `autoassign-supabase-cli/` とは別スタック） |
 | [supabase-selfhost/SETUP.ja.md](supabase-selfhost/SETUP.ja.md) | self-hosting 用メモ（起動・Windows の改行対策） |
 | [scripts/fix-supabase-selfhost-lf.ps1](scripts/fix-supabase-selfhost-lf.ps1) | self-host 用シェル類の CRLF を LF に直す（任意） |
@@ -60,6 +61,7 @@ Kong・Auth・Storage などフル構成は [supabase-selfhost/](supabase-selfho
 
 - [autoassign-supabase-cli/verify_seed.sql](autoassign-supabase-cli/verify_seed.sql) は任意。
 - [db/rdb-schema-postgresql.sql](db/rdb-schema-postgresql.sql) は参照用。変更はマイグレーションに追加する。
+- 旧版 SQL は [archive/](archive/) に退避しているため、適用対象は `autoassign-supabase-cli/migrations/` のみ。
 
 ## Edge Functions のシークレット（ローカル）
 
@@ -90,7 +92,7 @@ curl -s http://127.0.0.1:54321/functions/v1/projects
 案件作成の例（[autoassign-supabase-cli/seed.sql](autoassign-supabase-cli/seed.sql) のマスタ UUID。実際の DB に合わせて置き換える）:
 
 ```powershell
-curl -s -X POST http://127.0.0.1:54321/functions/v1/projects -H "Content-Type: application/json" -d "{\"main_status_id\":\"22222222-2222-4222-8222-222222220001\",\"sub_status_id\":\"22222222-2222-4222-8222-222222221011\",\"customer_name\":\"Demo\"}"
+curl -s -X POST http://127.0.0.1:54321/functions/v1/projects -H "Content-Type: application/json" -d "{\"name\":\"Demo Project\",\"main_status_id\":\"22222222-2222-4222-8222-222222220001\",\"sub_status_id\":\"22222222-2222-4222-8222-222222221011\",\"customer_name\":\"Demo Customer\"}"
 ```
 
 self-host で Kong 経由にする場合は、上記のホストとポートを `http://127.0.0.1:8000` に読み替える。

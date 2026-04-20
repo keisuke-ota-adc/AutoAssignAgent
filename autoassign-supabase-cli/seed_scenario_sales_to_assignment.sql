@@ -16,10 +16,11 @@
 -- ---------------------------------------------------------------------------
 -- Step 1: 案件登録（受注見込み50%、要件ドラフト）
 -- ---------------------------------------------------------------------------
-INSERT INTO project (
+INSERT INTO project.project (
     id,
+    name,
     sales_employee_id,
-    customer_name,
+    customer_id,
     description,
     period_start,
     period_end,
@@ -28,8 +29,9 @@ INSERT INTO project (
     sub_status_id
 ) VALUES (
     '77777777-7777-4777-8777-777777770001',
+    '営業フロー検証案件',
     '11111111-1111-4111-8111-111111110301',
-    'グローバル商事株式会社',
+    '77777777-7777-4777-8777-777777770101',
     'クラウド基盤リプレイス提案。受注見込み50%（社内メモ）。スコープ・体制は起票途中。',
     NULL,
     NULL,
@@ -41,7 +43,7 @@ INSERT INTO project (
 -- ---------------------------------------------------------------------------
 -- Step 2: 見込み上昇・期間・工数目安確定（要員予約待ち）
 -- ---------------------------------------------------------------------------
-UPDATE project
+UPDATE project.project
 SET
     description = 'クラウド基盤リプレイス。受注見込みは高（概算80%目安）。期間2026-08〜12、PS要員0.5人月程度の先行枠を想定。',
     period_start = '2026-08-01',
@@ -52,7 +54,7 @@ WHERE id = '77777777-7777-4777-8777-777777770001';
 -- ---------------------------------------------------------------------------
 -- Step 3: 予約作成（確定待ち×承認待ち）・要員内包
 -- ---------------------------------------------------------------------------
-INSERT INTO staffing_order (
+INSERT INTO staffing_request.staffing_order (
     id,
     project_id,
     period_start,
@@ -74,10 +76,10 @@ INSERT INTO staffing_order (
     '33333333-3333-4333-8333-333333331012'
 );
 
-INSERT INTO staffing_order_staff_resource (staffing_order_id, staff_id, role_id, amount) VALUES
+INSERT INTO staffing_request.staffing_order_item (staffing_order_id, staff_id, role_id, amount) VALUES
     ('77777777-7777-4777-8777-777777771001', '11111111-1111-4111-8111-111111110202', '11111111-1111-4111-8111-111111110102', 50);
 
-INSERT INTO staffing_order_staff_resource_monthly_allocation (staffing_order_id, staff_id, year_month, effort) VALUES
+INSERT INTO staffing_request.staffing_order_item_monthly_allocation (staffing_order_id, staff_id, year_month, effort) VALUES
     ('77777777-7777-4777-8777-777777771001', '11111111-1111-4111-8111-111111110202', '2026-08-01', 0.1),
     ('77777777-7777-4777-8777-777777771001', '11111111-1111-4111-8111-111111110202', '2026-09-01', 0.1),
     ('77777777-7777-4777-8777-777777771001', '11111111-1111-4111-8111-111111110202', '2026-10-01', 0.1),
@@ -87,27 +89,27 @@ INSERT INTO staffing_order_staff_resource_monthly_allocation (staffing_order_id,
 -- ---------------------------------------------------------------------------
 -- Step 4: アサイン管理者承認。予約は確定済み×顧客合意待ち。プロジェクトは契約・発注手続待ち。
 -- ---------------------------------------------------------------------------
-UPDATE staffing_order
+UPDATE staffing_request.staffing_order
 SET
     main_status_id = '33333333-3333-4333-8333-333333330002',
     sub_status_id = '33333333-3333-4333-8333-333333331021'
 WHERE id = '77777777-7777-4777-8777-777777771001';
 
-UPDATE project
+UPDATE project.project
 SET sub_status_id = '22222222-2222-4222-8222-222222221014'
 WHERE id = '77777777-7777-4777-8777-777777770001';
 
 -- ---------------------------------------------------------------------------
 -- Step 5: 受注。プロジェクトは完了待ち×参画待ち。稼働割当を新規作成（稼働待ち×開始日待ち）。
 -- ---------------------------------------------------------------------------
-UPDATE project
+UPDATE project.project
 SET
     main_status_id = '22222222-2222-4222-8222-222222220002',
     sub_status_id = '22222222-2222-4222-8222-222222222021',
     description = '受注確定。グローバル商事向けクラウド基盤リプレイス。体制確定・参画開始前。'
 WHERE id = '77777777-7777-4777-8777-777777770001';
 
-INSERT INTO work_assignment (
+INSERT INTO work_assignment.work_assignment (
     id,
     staffing_order_id,
     project_id,
@@ -127,7 +129,7 @@ INSERT INTO work_assignment (
     '44444444-4444-4444-8444-444444441011'
 );
 
-INSERT INTO work_assignment_monthly_allocation (work_assignment_id, year_month, effort) VALUES
+INSERT INTO work_assignment.work_assignment_monthly_allocation (work_assignment_id, year_month, effort) VALUES
     ('77777777-7777-4777-8777-777777772001', '2026-08-01', 0.1),
     ('77777777-7777-4777-8777-777777772001', '2026-09-01', 0.1),
     ('77777777-7777-4777-8777-777777772001', '2026-10-01', 0.1),

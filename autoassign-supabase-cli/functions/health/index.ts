@@ -21,7 +21,10 @@ Deno.serve(async (req) => {
   }
 
   const supabase = createClient(url, key);
-  const { count, error } = await supabase.from("project").select("*", { count: "exact", head: true });
+  const { count, error } = await supabase
+    .schema("project")
+    .from("project")
+    .select("*", { count: "exact", head: true });
 
   if (error) {
     return new Response(JSON.stringify({ ok: false, error: error.message }), {

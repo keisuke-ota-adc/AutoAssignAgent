@@ -1,0 +1,4 @@
+-- Archived legacy migration (public schema based).
+-- Original file moved on 2026-04-20 during schema-per-context rebuild.
+-- Active migration is:
+--   autoassign-supabase-cli/migrations/20260420160000_rebuild_acl_outbox.sql
